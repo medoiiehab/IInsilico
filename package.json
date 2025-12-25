@@ -1,0 +1,32 @@
+{
+  "name": "iinsilico-backend",
+  "version": "1.0.0",
+  "description": "An Application Made by Node js and Express Js for Iinsilico Company, in order to manage the Tasks and Projects of the Company.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "task-management",
+    "express",
+    "mongodb",
+    "iinsilico"
+  ],
+  "author": "Mohammed Ehab me15ehab0302@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "body-parser": "^1.20.3",
+    "compression": "^1.8.0",
+    "connect-mongo": "^5.1.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-handlebars": "^8.0.1",
+    "express-session": "^1.18.1",
+    "mongoose": "^8.12.1",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.10.0",
+    "winston": "^3.17.0"
+  }
+}

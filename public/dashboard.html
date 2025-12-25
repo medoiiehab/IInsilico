@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="icon" href="img/ICO.ico">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+    
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet"> 
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+    <style>
+        :root {
+            --primary-color: #0da7b3;
+            --secondary-color: #1cc88a;
+            --warning-color: #f6c23e;
+            --danger-color: #e74a3b;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f8f9fc;
+        }
+        
+        .dashboard-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #07747b 100%);
+            color: white;
+            padding: 2rem 0;
+            border-radius: 0.35rem;
+            margin-bottom: 2rem;
+        }
+        
+        .card {
+            border: none;
+            border-radius: 0.35rem;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+            margin-bottom: 1.5rem;
+        }
+        
+        .card-header {
+            background-color: #f8f9fc;
+            border-bottom: 1px solid #e3e6f0;
+            padding: 1rem 1.35rem;
+            font-weight: 600;
+        }
+        
+        .stat-card {
+            border-left: 0.25rem solid;
+            padding: 1rem;
+        }
+        
+        .stat-card.pending {
+            border-left-color: var(--warning-color);
+        }
+        
+        .stat-card.in-progress {
+            border-left-color: var(--primary-color);
+        }
+        
+        .stat-card.completed {
+            border-left-color: var(--secondary-color);
+        }
+        
+        .stat-card.rejected {
+            border-left-color: var(--danger-color);
+        }
+        
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            color: #5a5c69;
+        }
+        
+        .nav-tabs .nav-link.active {
+            font-weight: 600;
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .task-status {
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.35rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        
+        .status-pending {
+            background-color: #f6c23e;
+            color: white;
+        }
+        
+        .status-in-progress {
+            background-color: #4e73df;
+            color: white;
+        }
+        
+        .status-completed {
+            background-color: #1cc88a;
+            color: white;
+        }
+        
+        .status-rejected {
+            background-color: #e74a3b;
+            color: white;
+        }
+        
+        .file-link {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .file-link:hover {
+            text-decoration: underline;
+        }
+        
+        #profileModal .modal-content {
+            border-radius: 0.35rem;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 300px;
+        }
+
+        /* Style for download links */
+.file-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.file-link:hover {
+    text-decoration: underline;
+}
+
+/* Ensure tables are responsive */
+.table-responsive {
+    overflow-x: auto;
+}
+
+/* Add spacing between multiple files */
+.file-link:not(:last-child) {
+    margin-bottom: 5px;
+}
+    </style>
+</head>
+<body>
+
+ <!-- NAVBAR -->
+  <div class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a class="brand" href="index.html" aria-label="IInsilico Home">
+        <img src="img/1000472452-removebg-preview.png" alt="IInsilico logo" />
+      </a>
+      <div class="spacer"></div>
+      <button class="burger" id="burger" aria-label="Toggle menu">☰</button>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html" class="items">Home</a>
+        <a href="service.html" class="items">Services</a>
+        <a href="about.html" class="items">About</a>
+        <a id="ProfileSign" class="items" href="/register">Sign Up</a>
+        <a href="/Login" class="btn btn-primary" style="height: 40px;">Log In</a>
+      </nav>
+    </div>
+  </div>
+  <!-- NAVBAR END -->
+
+
+<!-- Request Details Modal -->
+<div class="modal fade" id="requestDetailsModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Request Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="requestDetailsContent">
+                <!-- Content will be loaded here -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <main class="container-fluid py-4">
+        <!-- Dashboard Header -->
+        <div class="dashboard-header px-4 py-3" style="margin-top: 90px;">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1 id="welcomeMessage" class="h2 mb-0" style="color: whitesmoke;">Welcome back, User!</h1>
+                    <p id="userAffiliation" class="mb-0">Affiliation: Loading...</p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <button id="editProfileBtn" class="btn btn-light">
+                        <i class="fas fa-user-edit me-2"></i>Edit Profile
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Metrics Section -->
+        <div class="row mb-4">
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card stat-card pending h-100">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <div class="stat-label" >Pending Requests</div>
+                                <div id="pending-counter" class="stat-value">0</div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-clock fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card stat-card in-progress h-100">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <div class="stat-label">Active Projects</div>
+                                <div id="projects-counter" class="stat-value">0</div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-tasks fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card stat-card completed h-100">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <div class="stat-label">Completed Projects</div>
+                                <div id="results-counter" class="stat-value">0</div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-check-circle fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+      
+        </div>
+
+       
+        <!-- Tabs Navigation -->
+        <ul class="nav nav-tabs mb-4" id="dashboardTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="requests-tab" data-bs-toggle="tab" data-bs-target="#requests" type="button" role="tab">Requests</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="projects-tab" data-bs-toggle="tab" data-bs-target="#projects" type="button" role="tab">Projects</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="results-tab" data-bs-toggle="tab" data-bs-target="#results" type="button" role="tab">Results</button>
+            </li>
+        </ul>
+
+        <!-- Tabs Content -->
+        <div class="tab-content" id="dashboardTabsContent">
+            <!-- Requests Tab -->
+            <div class="tab-pane fade show active" id="requests" role="tabpanel">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h6 class="m-0 font-weight-bold">Your Requests</h6>
+                        <button  class="btn btn-primary btn-sm">
+                          <a href="service.html"> <i class="fas fa-plus me-1"></i> New Request</a> 
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover" id="requests-table">
+                                <thead>
+                                    <tr>
+                                        <th>Request ID</th>
+                                        <th>Type</th>
+                                        <th>Submitted</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Requests will be loaded here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+          <!-- Projects Tab -->
+<div class="tab-pane fade show" id="projects" role="tabpanel">
+    <div class="card">
+        <div class="card-header">
+            <h6 class="m-0 font-weight-bold">Your Active Projects</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover" id="projects-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Assigned By</th>
+                            <th>Status</th>
+                            <th>Deadline</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<!-- Results Tab -->
+
+<!-- Add to the tabs navigation -->
+
+
+<!-- Add to the tab content -->
+<div class="tab-pane fade" id="results" role="tabpanel">
+    <div class="card">
+        <div class="card-header">
+            <h6 class="m-0 font-weight-bold">Your Results</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover" id="results-table">
+                    <thead>
+                        <tr>
+                            <th>Task Title</th>
+                            <th>Completed By</th>
+                            <th>Submitted At</th>
+                            <th>Files</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Results will load here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+    
+</div>
+<!--new tasks modal  -->
+<div class="modal fade" id="taskDetailsModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Task Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="taskDetailsContent">
+                <!-- Content loaded dynamically -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- edit modal to dashboard.html -->
+<div class="modal fade" id="editRequestModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Request</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="editRequestForm">
+                <div class="modal-body" id="editRequestContent">
+                    <!-- Content will be loaded here -->
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" id="editRequestId">
+                    <input type="hidden" id="editRequestType">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+        <!-- New Request Modal -->
+        <div class="modal fade" id="newRequestModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Submit New Request</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form id="requestForm" enctype="multipart/form-data">
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label for="requestType" class="form-label">Request Type</label>
+                                <select class="form-select" id="requestType" name="requestType" required>
+                                    <option value="">Select request type</option>
+                                    <option value="Molecular Dynamics">Molecular Dynamics</option>
+                                    <option value="Genomics">Genomics</option>
+                                    <option value="AI">AI</option>
+                                    <option value="DFT">DFT</option>
+                                    <option value="Metabolomics">Metabolomics</option>
+                                    <option value="Molecular Docking">Molecular Docking</option>
+                                    <option value="3D Modeling">3D Modeling</option>
+                                    <option value="Proteomics">Proteomics</option>
+                                    <option value="Special Study">Special Study</option>
+                                    <option value="Virtual Screening">Virtual Screening</option>
+                                    <option value="Transcriptomics">Transcriptomics</option>
+                                    <option value="Biostatistical Analysis">Biostatistical Analysis</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="requestTitle" class="form-label">Title</label>
+                                <input type="text" class="form-control" id="requestTitle" name="title" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="requestDescription" class="form-label">Description</label>
+                                <textarea class="form-control" id="requestDescription" name="description" rows="3" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="requestFile" class="form-label">Attachment (if any)</label>
+                                <input class="form-control" type="file" id="requestFile" name="file">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Submit Request</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Modal -->
+        <div class="modal fade" id="profileModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edit Profile</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form id="profileForm">
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label for="profileName" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="profileName" name="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="profileEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="profileEmail" name="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="profileAffiliation" class="form-label">Affiliation</label>
+                                <input type="text" class="form-control" id="profileAffiliation" name="affiliation">
+                            </div>
+                            <div class="mb-3">
+                                <label for="profilePhone" class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="profilePhone" name="phoneNumber">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Security Update -->
+<div class="modal fade" id="securityModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Security Settings</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="securityForm">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="currentPassword" class="form-label">Current Password</label>
+                        <input type="password" class="form-control" id="currentPassword" name="currentPassword" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="newPassword" class="form-label">New Password</label>
+                        <input type="password" class="form-control" id="newPassword" name="newPassword">
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirmPassword" class="form-label">Confirm New Password</label>
+                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+        <!-- Project Details Modal -->
+        <div class="modal fade" id="projectDetailsModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="projectDetailsTitle">Project Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="projectDetailsContent">
+                        <!-- Project details will be loaded here -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+            </main>
+
+     <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner bg-dark">
+      <div class="fcol">
+        <h4>IInsilico</h4>
+        <p>Egypt</p>
+        <p>01555073127<br>01144299280</p>
+        <p>IInSilico@iinsilico.com</p>
+      </div>
+      <div class="fcol">
+        <h4>Quick Links</h4>
+        <p><a href="about.html">About Us</a></p>
+        <p><a href="service.html">Our Services</a></p>
+        <p><a href="terms.html">Terms &amp; Conditions</a></p>
+      </div>
+      <div class="fcol">
+        <h4>Follow</h4>
+        <p><a href="https://www.facebook.com/iinsilico">Facebook</a></p>
+        <p><a href="https://www.linkedin.com/company/iinsilico/">LinkedIn</a></p>
+        <p style="margin-top:16px; color:var(--muted)">© i‑insilico [2025]. Science with a Smile.</p>
+      </div>
+    </div>
+  </footer>
+<!-- the auth code -->
+  <script src="js/Authcode.js"></script>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <script>
+       document.addEventListener("DOMContentLoaded", () => {
+   // Fetch user data
+fetch("/api/user-data")
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(user => {
+        document.getElementById("welcomeMessage").textContent = `Welcome back, ${user.name || 'User'}!`;
+        document.getElementById("userAffiliation").textContent = `Affiliation: ${user.affiliation || 'Not specified'}`;
+        
+        // Prefill profile form
+        document.getElementById("profileName").value = user.name || '';
+        document.getElementById("profileEmail").value = user.email || '';
+        document.getElementById("profileAffiliation").value = user.affiliation || '';
+        document.getElementById("profilePhone").value = user.phoneNumber || '';
+    })
+    .catch(err => {
+        console.error("Error fetching user data:", err);
+        alert("Failed to load profile data. Check console for details.");
+    });
+////////////////////////////////////////////////////////////////////////13/6/2025 security update
+
+
+// Security Settings button click handler
+document.getElementById("editProfileBtn").addEventListener("click", () => {
+    // Create a new button for security settings
+    const securityBtn = document.createElement("button");
+    securityBtn.className = "btn btn-warning";
+    securityBtn.innerHTML = '<i class="fas fa-lock me-2"></i>Security Settings';
+    securityBtn.onclick = (e) => {
+        e.preventDefault();
+        // Close profile modal
+        bootstrap.Modal.getInstance(document.getElementById('profileModal')).hide();
+        // Open security modal
+        const securityModal = new bootstrap.Modal(document.getElementById('securityModal'));
+        securityModal.show();
+    };
+    
+    // Add the button to the profile modal footer
+    const profileModalFooter = document.querySelector("#profileModal .modal-footer");
+    if (!profileModalFooter.querySelector(".btn-warning")) {
+        profileModalFooter.prepend(securityBtn);
+    }
+});
+
+// Security form submission
+document.getElementById("securityForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    
+    const currentPassword = document.getElementById("currentPassword").value;
+    const newPassword = document.getElementById("newPassword").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+    
+    // Validate password match if new password is provided
+    if (newPassword && newPassword !== confirmPassword) {
+        alert("New passwords don't match!");
+        return;
+    }
+    
+    try {
+        const response = await fetch("/api/update-security", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                currentPassword,
+                newPassword
+            })
+        });
+        
+        const data = await response.json();
+        
+        if (!response.ok) {
+            throw new Error(data.error || "Failed to update security settings");
+        }
+        
+        alert("Security settings updated successfully!");
+        document.getElementById("securityModal").querySelector(".btn-close").click();
+        document.getElementById("securityForm").reset();
+        
+        // Reload user data to reflect changes
+        loadUserData();
+    } catch (err) {
+        console.error("Update error:", err);
+        alert(`Error: ${err.message}`);
+    }
+});
+
+// Helper function to reload user data
+function loadUserData() {
+    fetch("/api/user-data")
+        .then(response => response.json())
+        .then(user => {
+            document.getElementById("welcomeMessage").textContent = `Welcome back, ${user.name || 'User'}!`;
+            document.getElementById("userAffiliation").textContent = `Affiliation: ${user.affiliation || 'Not specified'}`;
+            document.getElementById("profileName").value = user.name || '';
+            document.getElementById("profileEmail").value = user.email || '';
+        })
+        .catch(err => console.error("Error fetching user data:", err));
+}
+//////////////////////////////////////////////////////////////////////////////////////13/6/2025
+// Profile edit button
+document.getElementById("editProfileBtn").addEventListener("click", () => {
+    const profileModal = new bootstrap.Modal(document.getElementById('profileModal'));
+    profileModal.show();
+});
+
+// Profile form submission - UPDATED VERSION
+document.getElementById("profileForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    
+    try {
+        // Convert form data to JSON (recommended approach)
+        const formData = {
+            name: document.getElementById("profileName").value,
+            email: document.getElementById("profileEmail").value,
+            affiliation: document.getElementById("profileAffiliation").value,
+            phoneNumber: document.getElementById("profilePhone").value
+        };
+
+        const response = await fetch("/api/update-profile", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData)
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.error || "Failed to update profile");
+        }
+
+        alert("Profile updated successfully!");
+        location.reload();
+    } catch (err) {
+        console.error("Update error:", err);
+        alert(`Error: ${err.message}`);
+    }
+});
+  
+});
+
+
+// Fetch and display metrics
+function loadMetrics() {
+    fetch("/api/user-metrics")
+        .then(response => response.json())
+        .then(metrics => {
+            // Update the pending requests counter
+            document.getElementById("pendingCount").textContent = metrics.pendingRequests || 0;
+            
+            // Update other counters
+            document.getElementById("activeCount").textContent = metrics.active || 0;
+            document.getElementById("completedCount").textContent = metrics.completed || 0;
+            document.getElementById("deadlineCount").textContent = metrics.upcomingDeadlines || 0;
+            
+            // Update charts
+            updateStatusChart(metrics.statusDistribution);
+        })
+        .catch(err => {
+            console.error("Error loading metrics:", err);
+            // Set all counters to 0 if there's an error
+            document.getElementById("pendingCount").textContent = 0;
+            document.getElementById("activeCount").textContent = 0;
+            document.getElementById("completedCount").textContent = 0;
+            document.getElementById("deadlineCount").textContent = 0;
+        });
+}
+
+// Call this when page loads
+loadMetrics();
+// Call these when page loads
+loadRequests();
+loadProjects();
+
+// Load user requests
+async function loadRequests() {
+    fetch("/api/user-requests")
+        .then(response => response.json())
+        .then(requests => {
+            const tableBody = document.querySelector("#requests-table tbody");
+            tableBody.innerHTML = requests.map(request => `
+                <tr class="request-row ${request.status === 'pending' ? 'request-pending' : ''}">
+                    <td>${request._id.toString().substring(18)}</td>
+                    <td>${request.type || 'No type'}</td>
+                    <td>${new Date(request.createdAt).toLocaleDateString()}</td>
+                    <td>
+                        <span class="task-status status-${request.status || 'pending'}">
+                            ${request.status || 'pending'}
+                        </span>
+                    </td>
+                    <td>
+    <button class="btn btn-sm btn-info me-1" 
+            onclick="viewRequestDetails('${request._id}', '${request.source}')">
+        View
+    </button>
+    <button class="btn btn-sm btn-warning" 
+            onclick="loadEditForm('${request._id}', '${request.source}')">
+        Edit
+    </button>
+</td>
+                </tr>
+            `).join('') || '<tr><td colspan="5" class="text-center">No requests found</td></tr>';
+            
+            // Update the pending requests counter
+            updatePendingCounter();
+        })
+        .catch(err => {
+            console.error("Error loading requests:", err);
+            document.querySelector("#requests-table tbody").innerHTML = 
+                '<tr><td colspan="5" class="text-center">Error loading requests</td></tr>';
+            // Reset counter on error
+            document.getElementById('pending-counter').textContent = '0';
+        });
+}
+
+// View request details
+function viewRequestDetails(requestId, source) {
+    const endpoint = source === 'contact' 
+        ? `/api/contact-request/${requestId}`
+        : `/api/form-request/${requestId}`;
+
+    fetch(endpoint)
+        .then(response => response.json())
+        .then(request => {
+            const modal = new bootstrap.Modal(document.getElementById('requestDetailsModal'));
+            const content = document.getElementById("requestDetailsContent");
+            
+            let detailsHTML = `
+                <div class="mb-3">
+                    <h5>${request.subject || request.formType || 'Request Details'}</h5>
+                    <p class="text-muted">Submitted on: ${new Date(request.createdAt).toLocaleString()}</p>
+                </div>
+                <div class="mb-3">
+                    <h6>Details</h6>
+            `;
+
+            if (source === 'contact') {
+                detailsHTML += `
+                    <p><strong>From:</strong> ${request.name} (${request.email})</p>
+                    <p><strong>Message:</strong></p>
+                    <div class="p-2 bg-light rounded">${request.message}</div>
+                `;
+            } else {
+                detailsHTML += `
+                    <p><strong>Type:</strong> ${request.formType}</p>
+                    ${Object.entries(request.fields || {}).map(([key, value]) => `
+                        <p><strong>${key}:</strong> ${value}</p>
+                    `).join('')}
+                `;
+            }
+
+            if (request.file) {
+                detailsHTML += `
+                    <div class="mt-3">
+                        <strong>Attachment:</strong>
+                        <a href="uploads/${request.file}" download="${request.file}" class="file-link" download>Download File</a>
+                    </div>
+                `;
+            }
+
+            detailsHTML += `</div>`;
+            content.innerHTML = detailsHTML;
+            modal.show();
+        })
+        .catch(err => {
+            console.error("Error loading request:", err);
+            alert("Error loading request details");
+        });
+}
+// Function to load edit form
+function loadEditForm(requestId, source) {
+    const endpoint = source === 'contact' 
+        ? `/api/contact-request/${requestId}`
+        : `/api/form-request/${requestId}`;
+
+    fetch(endpoint)
+        .then(response => response.json())
+        .then(request => {
+            const modal = new bootstrap.Modal(document.getElementById('editRequestModal'));
+            const content = document.getElementById("editRequestContent");
+            
+            document.getElementById("editRequestId").value = requestId;
+            document.getElementById("editRequestType").value = source;
+            
+            let formHTML = '';
+            
+            if (source === 'contact') {
+                formHTML = `
+                    <div class="mb-3">
+                        <label class="form-label">Name</label>
+                        <input type="text" class="form-control" id="editName" value="${request.name || ''}">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" id="editEmail" value="${request.email || ''}">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Phone</label>
+                        <input type="text" class="form-control" id="editPhone" value="${request.phone || ''}">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Subject</label>
+                        <input type="text" class="form-control" id="editSubject" value="${request.subject || ''}">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Message</label>
+                        <textarea class="form-control" id="editMessage" rows="5">${request.message || ''}</textarea>
+                    </div>
+                `;
+            } else {
+                formHTML = `
+                    <div class="mb-3">
+                        <label class="form-label">Request Type</label>
+                        <select class="form-select" id="editFormType">
+                            <option value="Molecular Dynamics" ${request.formType === 'Molecular Dynamics' ? 'selected' : ''}>Molecular Dynamics</option>
+                            <option value="Genomics Analysis" ${request.formType === 'Genomics Analysis' ? 'selected' : ''}>Genomics Analysis</option>
+                            <option value="AI" ${request.formType === 'AI' ? 'selected' : ''} >AI</option>
+                            <option value="DFT" ${request.formType === 'DFT' ? 'selected' : ''}>DFT</option>
+                            <option value="Metabolomics" ${request.formType === 'Metabolomics' ? 'selected' : ''} >Metabolomics</option>
+                            <option value="Molecular Docking" ${request.formType === 'Molecular Docking' ? 'selected' : ''}>Molecular Docking</option>
+                            <option value="3D Modeling" ${request.formType === '3D Modeling' ? 'selected' : ''}>3D Modeling</option>
+                            <option value="Proteomics" ${request.formType === 'Proteomics' ? 'selected' : ''}>Proteomics</option>
+                            <option value="Special Study" ${request.formType === 'Special Study' ? 'selected' : ''}>Special Study</option>
+                            <option value="Virtual Screening" ${request.formType === 'Virtual Screening' ? 'selected' : ''}>Virtual Screening</option>
+                            <option value="Transcriptomics" ${request.formType === 'Transcriptomics' ? 'selected' : ''}>Transcriptomics</option>
+                            <option value="Biostatistical Analysis" ${request.formType === 'Biostatistical Analysis' ? 'selected' : ''}>Biostatistical Analysis</option>
+                        </select>
+                    </div>
+                `;
+                
+                // Add fields dynamically
+                Object.entries(request.fields || {}).forEach(([key, value]) => {
+                    formHTML += `
+                        <div class="mb-3">
+                            <label class="form-label">${key}</label>
+                            <input type="text" class="form-control" id="editField_${key}" value="${value || ''}">
+                        </div>
+                    `;
+                });
+            }
+            
+            content.innerHTML = formHTML;
+            modal.show();
+        })
+        .catch(err => {
+            console.error("Error loading request for edit:", err);
+            alert("Error loading request for editing");
+        });
+}
+
+// Form submission for editing
+document.getElementById("editRequestForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    
+    const requestId = document.getElementById("editRequestId").value;
+    const requestType = document.getElementById("editRequestType").value;
+    
+    let requestData = {};
+    let endpoint = '';
+    
+    if (requestType === 'contact') {
+        endpoint = `/api/contact-request/${requestId}`;
+        requestData = {
+            name: document.getElementById("editName").value,
+            email: document.getElementById("editEmail").value,
+            phone: document.getElementById("editPhone").value,
+            subject: document.getElementById("editSubject").value,
+            message: document.getElementById("editMessage").value
+        };
+    } else {
+        endpoint = `/api/form-request/${requestId}`;
+        
+        // Get all fields dynamically
+        const fields = {};
+        const formType = document.getElementById("editFormType").value;
+        
+        // Find all inputs that start with editField_
+        const fieldInputs = document.querySelectorAll('[id^="editField_"]');
+        fieldInputs.forEach(input => {
+            const fieldName = input.id.replace('editField_', '');
+            fields[fieldName] = input.value;
+        });
+        
+        requestData = {
+            formType,
+            fields
+        };
+    }
+    
+    fetch(endpoint, {
+        method: "PUT",
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(requestData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert("Request updated successfully!");
+            document.getElementById("editRequestModal").querySelector(".btn-close").click();
+            loadRequests(); // Refresh the requests list
+        } else {
+            alert("Error updating request: " + (data.error || "Unknown error"));
+        }
+    })
+    .catch(err => {
+        console.error("Error:", err);
+        alert("Error updating request");
+    });
+});
+async function loadProjects() {
+    try {
+        // Show loading state
+        document.querySelector("#projects-table tbody").innerHTML = 
+            '<tr><td colspan="6" class="text-center">Loading projects...</td></tr>';
+        document.getElementById('projects-counter').textContent = '...'; // Loading state for counter
+        
+         // Show loading state
+         document.querySelector("#results-table tbody").innerHTML = 
+            '<tr><td colspan="6" class="text-center">Loading projects...</td></tr>';
+        document.getElementById('results-counter').textContent = '...';
+        
+        // Wait for the API response
+        const response = await fetch("/api/user-tasks");
+        
+        // Check if response is OK (status 200-299)
+        if (!response.ok) {
+            throw new Error(`Server returned ${response.status}: ${response.statusText}`);
+        }
+        
+        // Wait for JSON parsing
+        const tasks = await response.json();
+        
+        // Process the tasks
+        renderProjects(tasks);
+        
+        // Update pending projects counter
+        updateProjectsCounter(tasks);
+        updateResultsCounter(tasks);
+    } catch (error) {
+        console.error("Failed to load projects:", error);
+        document.querySelector("#projects-table tbody").innerHTML = 
+            `<tr><td colspan="6" class="text-center text-danger">
+                Error: ${error.message}
+            </td></tr>`;
+        document.getElementById('projects-counter').textContent = '!'; // Error state
+    }
+}
+
+function renderProjects(tasks) {
+    const projectsTable = document.querySelector("#projects-table tbody");
+    const resultsTable = document.querySelector("#results-table tbody");
+    
+    // Clear tables
+    projectsTable.innerHTML = '';
+    resultsTable.innerHTML = '';
+    
+    if (!tasks || tasks.length === 0) {
+        projectsTable.innerHTML = '<tr><td colspan="6" class="text-center">No projects found</td></tr>';
+        return;
+    }
+
+    tasks.forEach(task => {
+        const row = `
+            <tr class="${task.status === 'pending' ? 'pending-task' : ''}">
+                <td>${task._id.toString().substring(18, 24)}...</td>
+                <td>${task.title || task.subject || 'No title'}</td>
+                <td>${task.assignedBy?.name || 'System'}</td>
+                <td><span class="task-status status-${task.status || 'pending'}">${task.status || 'pending'}</span></td>
+                <td>${task.dueDate ? new Date(task.dueDate).toLocaleDateString() : 'Done'}</td>
+                <td>
+                    <button class="btn btn-sm btn-info" onclick="viewTaskDetails('${task._id}')">
+                        View
+                    </button>
+                </td>
+            </tr>
+        `;
+
+        if (task.status === 'completed') {
+            resultsTable.insertAdjacentHTML('beforeend', row);
+        } else {
+            projectsTable.insertAdjacentHTML('beforeend', row);
+        }
+    });
+}
+// New function to load results
+function loadResults() {
+    fetch("/api/user-results")
+        .then(response => response.json())
+        .then(tasks => {
+            const tableBody = document.querySelector("#results-table tbody");
+            tableBody.innerHTML = tasks.map(task => {
+                // Each task may have multiple results
+                return task.results.map(result => `
+                    <tr>
+                        <td>${task.title || "Untitled Task"}</td>
+                        <td>${result.employeeId?.name || "Employee"}</td>
+                        <td>${new Date(result.submittedAt).toLocaleString()}</td>
+                                                <td>
+                            ${result.files.map(file => {
+                                // Extract filename and extension
+                                const filename = file.split('/').pop();
+                                const fileExt = filename.split('.').pop().toLowerCase();
+                                const iconClass = getFileIconClass(fileExt);
+                                
+                                return `
+                                    <div class="file-item">
+                                        <i class="${iconClass} me-2"></i>
+                                        <a href="${filename}" class="file-link" download="${filename}">
+                                            ${filename}
+                                        </a>
+                                        <span class="badge bg-secondary ms-2">${fileExt}</span>
+                                    </div>
+                                `;
+                            }).join("")}
+                        </td>
+
+                        <td>${result.notes || "No notes"}</td>
+                    </tr>
+                `).join("");
+            }).join("") || '<tr><td colspan="5" class="text-center">No results found</td></tr>';
+        })
+        .catch(err => {
+            console.error("Error loading results:", err);
+            document.querySelector("#results-table tbody").innerHTML = 
+                '<tr><td colspan="5" class="text-center text-danger">Error loading results</td></tr>';
+        });
+}
+// Helper function to get appropriate icon for file type
+function getFileIconClass(extension) {
+    const iconMap = {
+        'pdf': 'fas fa-file-pdf text-danger',
+        'doc': 'fas fa-file-word text-primary',
+        'docx': 'fas fa-file-word text-primary',
+        'xls': 'fas fa-file-excel text-success',
+        'xlsx': 'fas fa-file-excel text-success',
+        'ppt': 'fas fa-file-powerpoint text-warning',
+        'pptx': 'fas fa-file-powerpoint text-warning',
+        'zip': 'fas fa-file-archive text-muted',
+        'rar': 'fas fa-file-archive text-muted',
+        'jpg': 'fas fa-file-image text-info',
+        'jpeg': 'fas fa-file-image text-info',
+        'png': 'fas fa-file-image text-info',
+        'gif': 'fas fa-file-image text-info',
+        'txt': 'fas fa-file-alt text-secondary',
+        'csv': 'fas fa-file-csv text-success',
+        'py': 'fab fa-python text-primary',
+        'js': 'fab fa-js-square text-warning',
+        'html': 'fab fa-html5 text-danger',
+        'css': 'fab fa-css3-alt text-primary'
+    };
+    
+    return iconMap[extension] || 'fas fa-file text-secondary';
+}
+function updateProjectsCounter(tasks) {
+    // Count pending tasks (status !== 'completed')
+    const pendingCount = tasks.filter(task => task.status !== 'completed').length;
+    document.getElementById('projects-counter').textContent = pendingCount;
+}
+
+// Initialize when page loads
+document.addEventListener("DOMContentLoaded", () => {
+    loadProjects();
+});
+
+// Call this when the page loads and when the Results tab is clicked
+document.addEventListener("DOMContentLoaded", () => {
+    // Load results when the tab is shown
+    document.getElementById("results-tab").addEventListener("click", loadResults);
+});
+
+
+
+// New request button
+document.getElementById("newRequestBtn").addEventListener("click", () => {
+    const modal = new bootstrap.Modal(document.getElementById('newRequestModal'));
+    modal.show();
+});
+
+// Request form submission
+document.getElementById("requestForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    
+    fetch("/api/submit-request", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert("Request submitted successfully!");
+            document.getElementById("newRequestModal").querySelector(".btn-close").click();
+            e.target.reset();
+            loadRequests();
+        } else {
+            alert("Error submitting request: " + (data.error || "Unknown error"));
+        }
+    })
+    .catch(err => {
+        console.error("Error:", err);
+        alert("Error submitting request");
+    });
+});
+
+
+
+// View project details
+function viewProjectDetails(projectId) {
+    fetch(`/api/project/${projectId}`)
+        .then(response => response.json())
+        .then(project => {
+            const modal = new bootstrap.Modal(document.getElementById('projectDetailsModal'));
+            const content = document.getElementById("projectDetailsContent");
+            
+            content.innerHTML = `
+                <div class="mb-3">
+                    <h6>${project.title}</h6>
+                    <p>${project.description}</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><strong>Status:</strong> <span class="task-status status-${project.status}">${project.status}</span></p>
+                        <p><strong>Assigned:</strong> ${new Date(project.assignedDate).toLocaleDateString()}</p>
+                        ${project.dueDate ? `<p><strong>Deadline:</strong> ${new Date(project.dueDate).toLocaleDateString()}</p>` : ''}
+                    </div>
+                    <div class="col-md-6">
+                        ${project.file ? `<p><strong>Attachment:</strong> <a href="${project.file}" class="file-link">Download</a></p>` : ''}
+                        ${project.resultsFile ? `<p><strong>Results:</strong> <a href="${project.resultsFile}" class="file-link">Download</a></p>` : ''}
+                    </div>
+                </div>
+                ${project.adminNotes ? `<div class="mt-3"><strong>Admin Notes:</strong><p>${project.adminNotes}</p></div>` : ''}
+            `;
+            
+            document.getElementById("projectDetailsTitle").textContent = project.title;
+            modal.show();
+        })
+        .catch(err => console.error("Error loading project:", err));
+}
+
+function viewTaskDetails(taskId) {
+    fetch(`/api/task/${taskId}`)
+        .then(response => response.json())
+        .then(task => {
+            // Populate your task details modal here
+            const modal = new bootstrap.Modal(document.getElementById('taskDetailsModal'));
+            document.getElementById('taskDetailsContent').innerHTML = `
+                <h4>${task.title || task.subject}</h4>
+                <p><strong>Status:</strong> <span class="task-status status-${task.status}">${task.status}</span></p>
+                <p><strong>Description:</strong> ${task.description || 'No description'}</p>
+                <p><strong>Assigned:</strong> ${new Date(task.createdAt).toLocaleDateString()}</p>
+                ${task.dueDate ? `<p><strong>Due:</strong> ${new Date(task.dueDate).toLocaleDateString()}</p>` : ''}
+                ${task.file ? `<p><strong>Attachment:</strong> <a href="/uploads/${task.file}" download>Download</a></p>` : ''}
+            `;
+            modal.show();
+        })
+        .catch(err => console.error("Error loading task details:", err));
+}
+// Call these when page loads
+loadRequests();
+loadProjects();
+
+
+
+
+// Update the pending requests counter
+function updatePendingCounter() {
+    // Count rows with 'request-pending' class
+    const pendingCount = document.querySelectorAll('tr.request-row').length;
+    document.getElementById('pending-counter').textContent = pendingCount;
+}
+
+// Call this whenever the page loads or requests are updated
+document.addEventListener('DOMContentLoaded', loadRequests);
+
+function updateResultsCounter(tasks) {
+    const completedCount = tasks.filter(t => t.status === 'completed').length;
+    document.getElementById('results-counter').textContent = completedCount;
+}
+    </script>
+    
+</body>
+</html>

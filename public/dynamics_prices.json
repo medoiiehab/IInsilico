@@ -1,0 +1,21 @@
+[
+  { "MoleculeType": "Small Molecule", "NonSolvated": 10, "Solvated": 15 },
+  { "MoleculeType": "Protein", "NonSolvated": 20, "Solvated": 30 },
+  { "MoleculeType": "Peptide", "NonSolvated": 15, "Solvated": 20 },
+  { "MoleculeType": "DNA", "NonSolvated": 10, "Solvated": 15 },
+  { "MoleculeType": "RNA", "NonSolvated": 10, "Solvated": 15 },
+
+  { "MoleculeType": "Protein", "MoleculeTypeT": "Small Molecule", "NonSolvated": 15, "Solvated": 30 },
+  { "MoleculeType": "Protein", "MoleculeTypeT": "nucleic acid", "NonSolvated": 20, "Solvated": 30 },
+  { "MoleculeType": "Protein", "MoleculeTypeT": "Peptide", "NonSolvated": 30, "Solvated": 40 },
+  { "MoleculeType": "Protein", "MoleculeTypeT": "Protein", "NonSolvated": 40, "Solvated": 50 },
+  { "MoleculeType": "Protein", "MoleculeTypeT": "DNA", "NonSolvated": 15, "Solvated": 30 },
+  { "MoleculeType": "Protein", "MoleculeTypeT": "RNA", "NonSolvated": 15, "Solvated": 30 },
+
+
+  { "MoleculeType": "Small Molecule", "MoleculeTypeT": "Protein", "NonSolvated": 15, "Solvated": 30 },
+  { "MoleculeType": "Peptide", "MoleculeTypeT": "Protein", "NonSolvated": 30, "Solvated": 40 },
+  { "MoleculeType": "Protein", "MoleculeTypeT": "Protein", "NonSolvated": 40, "Solvated": 50 },
+  { "MoleculeType": "DNA", "MoleculeTypeT": "Protein", "NonSolvated": 15, "Solvated": 30 },
+  { "MoleculeType": "RNA", "MoleculeTypeT": "Protein", "NonSolvated": 15, "Solvated": 30 }
+]

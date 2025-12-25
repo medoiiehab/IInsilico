@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>IInsilico</title>
+  <link rel="icon" href="img/ICO.ico">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicon -->
+  <link href="img/favicon.ico" rel="icon">
+
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Icon Font Stylesheet -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Libraries Stylesheet -->
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Template Stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+    /*
+     * Apple-inspired UI reset & tokens
+     */
+    :root {
+      --bg: #ffffff;
+      --fg: #0a0a0a;
+      --muted: #6e6e73;
+      /* iOS gray */
+      --tint: #068992;
+      /* Apple blue */
+      --surface: rgba(255, 255, 255, 0.7);
+      --border: rgba(0, 0, 0, 0.08);
+      --radius: 22px;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .06), 0 8px 30px rgba(0, 0, 0, .05);
+      --hero-grad: radial-gradient(1200px 800px at 80% -10%, rgba(0, 113, 227, .12), transparent 60%),
+        radial-gradient(1000px 600px at 10% 10%, rgba(0, 0, 0, .04), transparent 60%);
+    }
+
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      height: 100%
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--fg);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: var(--tint);
+      text-decoration: none
+    }
+
+    img {
+      max-width: 100%;
+      display: block
+    }
+
+    /* Nav */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      backdrop-filter: saturate(180%) blur(20px);
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      justify-content: space-between !important;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-right: auto !important;
+    }
+
+    .brand img {
+      height: 60px;
+      width: auto
+    }
+
+    .brand-title {
+      font-weight: 600;
+      letter-spacing: .2px
+    }
+
+    .spacer {
+      flex: 1
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      align-items: center
+    }
+
+    .nav-links a {
+      color: var(--fg);
+      opacity: .86
+    }
+
+    .nav-links a:hover {
+      opacity: 1
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255, 255, 255, .9), rgba(255, 255, 255, .7));
+      color: #111;
+      box-shadow: var(--shadow);
+      font-weight: 600
+    }
+
+    .btn-primary {
+      background: linear-gradient(180deg, #0da7b3, #068992);
+      color: #fff;
+      border-color: rgba(255, 255, 255, .15)
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.05)
+    }
+
+    /* Mobile menu */
+    .burger {
+      display: none;
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--fg)
+    }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none
+      }
+
+      .burger {
+        display: inline-grid;
+        place-items: center
+      }
+
+      .nav-open .nav-links {
+        display: flex;
+        position: absolute;
+        inset: 56px 16px auto 16px;
+        flex-direction: column;
+        padding: 14px;
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        background: var(--surface);
+        backdrop-filter: saturate(180%) blur(16px)
+      }
+
+      .nav-open .nav-links a,
+      .nav-open .nav-links .btn {
+        width: 100%
+      }
+
+      .brand img {
+        height: 40px;
+        width: auto
+      }
+
+      .btn-primary {
+        background: linear-gradient(180deg, #0da7b3, #068992);
+        color: #fff;
+        border-color: rgba(255, 255, 255, .15);
+        width: 25% !important;
+        margin-right: auto !important;
+      }
+
+      .btn-primary:hover {
+        filter: brightness(1.05)
+      }
+
+      .items {
+        margin-left: 18px;
+      }
+
+    }
+
+    /* ========== TYPOGRAPHY: MOBILE FRIENDLY ========== */
+    @media (max-width: 900px) {
+      h1 {
+        font-size: 1.8rem !important;
+        line-height: 1.2 !important;
+      }
+
+      h2 {
+        font-size: 1.5rem !important;
+        line-height: 1.3 !important;
+      }
+
+      h3 {
+        font-size: 1.25rem !important;
+        line-height: 1.3 !important;
+      }
+
+      h4,
+      h5,
+      h6 {
+        font-size: 1.1rem !important;
+      }
+
+      p,
+      li,
+      .text,
+      .card p,
+      .feature p {
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+      }
+
+      .btn,
+      .btn-primary {
+        font-size: 0.95rem !important;
+        padding: 10px 14px !important;
+      }
+
+      /* Hero tagline / eyebrow */
+      .eyebrow {
+        font-size: 0.7rem !important;
+        letter-spacing: 0.5px !important;
+      }
+    }
+
+    /* Extra small phones (≤420px) */
+    @media (max-width: 420px) {
+      h1 {
+        font-size: 1.5rem !important;
+      }
+
+      h2 {
+        font-size: 1.25rem !important;
+      }
+
+      p,
+      li {
+        font-size: 0.9rem !important;
+      }
+
+      .btn,
+      .btn-primary {
+        font-size: 0.9rem !important;
+        padding: 9px 12px !important;
+      }
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: var(--hero-grad);
+      margin-top: 50px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url('img/Dna.jpg') center/cover no-repeat;
+      opacity: .15
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: auto;
+      padding: 96px 20px 64px;
+      position: relative
+    }
+
+    .eyebrow {
+      color: var(--primary);
+      font-weight: 700;
+      letter-spacing: .3px;
+      text-transform: uppercase;
+      font-size: 12px
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: 1.04;
+      margin: .3em 0
+    }
+
+    .hero p {
+      font-size: clamp(16px, 2.2vw, 20px);
+      color: var(--muted);
+      max-width: 720px
+    }
+
+    .cta {
+      margin-top: 22px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap
+    }
+
+    /* Sections */
+    section {
+      padding: 72px 20px
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 22px
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      backdrop-filter: saturate(180%) blur(10px);
+      box-shadow: var(--shadow)
+    }
+
+    .card-pad {
+      padding: 26px
+    }
+
+    .media {
+      border-radius: var(--radius);
+      overflow: hidden
+    }
+
+    /* About */
+    .about .text h2 {
+      font-size: clamp(28px, 4.5vw, 40px);
+      margin: .2em 0 .4em
+    }
+
+    .about .text p {
+      color: var(--muted)
+    }
+
+    /* Feature rows */
+    .feature h3 {
+      font-size: clamp(20px, 3.2vw, 28px);
+      margin: 0 0 .4em
+    }
+
+    .feature p {
+      color: var(--muted)
+    }
+
+    /* Stats */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px
+    }
+
+    .stat {
+      grid-column: span 4;
+      text-align: center;
+      padding: 26px;
+      border: 1px solid var(--border);
+      border-radius: 18px
+    }
+
+    .stat .num {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 700
+    }
+
+    .stat .label {
+      color: var(--muted)
+    }
+
+    @media (max-width:800px) {
+      .stat {
+        grid-column: span 12
+      }
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      backdrop-filter: saturate(180%) blur(16px)
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 22px
+    }
+
+    .fcol {
+      grid-column: span 4
+    }
+
+    .fcol h4 {
+      margin: 0 0 12px;
+      color: #068992 !important;
+      font-weight: bolder;
+    }
+
+    .fcol p,
+    .fcol a {
+      color: #ffffff
+    }
+
+    @media (max-width:900px) {
+      .fcol {
+        grid-column: span 12
+      }
+    }
+
+    /* Back to top */
+    .back-to-top {
+      background-color: #0da7b3 !important;
+      color: #fff !important;
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      border: 1px solid #111;
+      background: var(--surface);
+      cursor: pointer
+    }
+
+    /* ========== RESPONSIVE GRID MEDIA STACKING ========== */
+    @media (max-width: 900px) {
+
+      /* collapse grids to single column */
+      .grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+      }
+
+      /* make media fill width */
+      .grid .media,
+      .grid img,
+      .grid video {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100% !important;
+        border-radius: 12px !important;
+        object-fit: contain !important;
+      }
+
+      /* if a grid contains multiple images (like stats strip), stack them too */
+      .grid img {
+        display: block !important;
+        margin: 0 auto 16px auto !important;
+      }
+    }
+
+    /* even tighter for very small phones */
+    @media (max-width: 420px) {
+      .grid {
+        gap: 14px !important;
+      }
+
+      .grid img,
+      .grid video {
+        border-radius: 10px !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Spinner Start -->
+  <div id="spinner"
+    class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+  <!-- Spinner End -->
+  <!-- NAVBAR -->
+  <div class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a class="brand" href="index.html" aria-label="IInsilico Home">
+        <img src="img/1000472452-removebg-preview.png" alt="IInsilico logo" />
+      </a>
+      <div class="spacer"></div>
+      <button class="burger" id="burger" aria-label="Toggle menu">☰</button>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html" class="items selected">Home</a>
+        <a href="service.html" class="items">Services</a>
+        <a href="about.html" class="items">About</a>
+        <a id="ProfileSign" class="items" href="/register">Sign Up</a>
+        <a href="/logout" class="btn btn-primary" style="height: 40px;">Log Out</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Bioinformatics, minus the headache</div>
+      <h1>We speak bioinformatics,<br />so you don’t have to.</h1>
+      <p>“IInsilico: Where every molecule has a story—and we can’t wait to help you tell it.”</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#about">Read More</a>
+        <a class="btn" href="service.html">Explore Services</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="grid">
+        <div class="card media" style="grid-column: span 6; min-height: 340px">
+          <img src="img/about.jpg" alt="About IInsilico" style="width:100%; height:100%; object-fit:cover" />
+        </div>
+        <div class="text card card-pad" style="grid-column: span 6">
+          <h2>Welcome to IInsilico — Bioinformatics made easy</h2>
+          <p>At IInsilico, we’re more than just a team of number‑crunchers and code wizards — we’re your trusted allies
+            in scientific exploration. Driven by high‑performance computing and a love of solving problems, our aim is
+            to make the impossible feel normal. Whether you are a seasoned pharma veteran or a driven graduate student,
+            trust us to provide the tools, insights, and spark that propel life‑changing discoveries.</p>
+          <div class="cta">
+            <div class="cta"><a class="btn" href="service.html">Explore Services</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHT: DFT -->
+  <section>
+    <div class="container">
+      <div class="grid feature">
+        <div class="text card card-pad" style="grid-column: span 6">
+          <h3>Ever wonder what’s really happening at the quantum level?</h3>
+          <p><strong>Density Functional Theory (DFT)</strong> is a quantum mechanical method used to study the
+            electronic structure of atoms, molecules, and materials. Predict molecular geometry, reaction mechanisms,
+            spectra, and more — because sometimes you need the quantum truth to handle the big ideas.</p>
+          <div class="cta"><a class="btn" href="service.html">Explore Services</a></div>
+        </div>
+        <div class="card media" style="grid-column: span 6">
+          <!-- Simple image strip (replace with your existing images) -->
+          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:6px; padding:6px">
+            <img src="img/Chitosan.jpg" alt="Chitosan" />
+            <img src="img/HOMO.jpg" alt="HOMO" />
+            <img src="img/NBO.jpg" alt="NBO" />
+            <img src="img/LUMO.jpg" alt="LUMO" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE ROWS: Docking & MD (videos preserved) -->
+  <section>
+    <div class="container">
+      <div class="grid feature">
+        <div class="text card card-pad" style="grid-column: span 6">
+          <h3>Molecular Docking</h3>
+          <p>Predict the binding affinity of ligands to receptor proteins. From nutraceutical research to drug
+            development, docking has become a formidable tool for discovery.</p>
+          <div class="cta"><a class="btn" href="service.html">Explore Services</a></div>
+        </div>
+        <div class="card media" style="grid-column: span 6">
+          <video class="myVideo" autoplay loop muted playsinline style="width:100%; height:100%; display:block">
+            <source src="img/Omp31 - OP-S DnaK.mp4" type="video/mp4" />
+          </video>
+
+        </div>
+      </div>
+
+      <div class="grid feature" style="margin-top:22px">
+        <div class="text card card-pad" style="grid-column: span 6">
+          <h3>Ligand ↔ Protein Docking</h3>
+          <p>Study how small molecules bind to target proteins to inform drug discovery, molecular biology, and
+            nanotechnology applications.</p>
+          <div class="cta"><a class="btn" href="service.html">Explore Services</a></div>
+        </div>
+        <div class="card media" style="grid-column: span 6">
+          <video class="myVideo" autoplay loop muted playsinline style="width:100%; height:100%">
+            <source src="img/l2p.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+
+      <div class="grid feature" style="margin-top:22px">
+        <div class="text card card-pad" style="grid-column: span 6">
+          <h3>Protein ↔ Protein Docking</h3>
+          <p>Predict interactions between proteins for pathway analysis, enzyme‑substrate studies, antigen‑antibody
+            binding, and beyond.</p>
+          <div class="cta"><a class="btn" href="service.html">Explore Services</a></div>
+        </div>
+        <div class="card media" style="grid-column: span 6">
+          <video class="myVideo" autoplay loop muted playsinline style="width:100%; height:100%">
+            <source src="img/pp.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+
+      <div class="grid feature" style="margin-top:22px">
+        <div class="text card card-pad" style="grid-column: span 6">
+          <h3>Ligand ↔ Ligand Docking</h3>
+          <p>Analyze interactions between small molecules for supramolecular chemistry, drug‑drug interactions, and
+            nanotechnology.</p>
+          <div class="cta"><a class="btn" href="service.html">Explore Services</a></div>
+        </div>
+        <div class="card media" style="grid-column: span 6">
+          <video class="myVideo" autoplay loop muted playsinline style="width:100%; height:100%">
+            <source src="img/l2l.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+
+      <div class="grid feature" style="margin-top:22px">
+        <div class="text card card-pad" style="grid-column: span 6">
+          <h3>DNA–Molecule Docking</h3>
+          <p>Predict and analyze how small molecules interact with DNA for drug discovery, gene regulation, and nanotech
+            applications.</p>
+          <div class="cta"><a class="btn" href="service.html">Explore Services</a></div>
+        </div>
+        <div class="card media" style="grid-column: span 6">
+          <video class="myVideo" autoplay loop muted playsinline style="width:100%; height:100%">
+            <source src="img/1.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+
+      <div class="grid feature" style="margin-top:22px">
+        <div class="text card card-pad" style="grid-column: span 6">
+          <h3>Molecular Dynamics (MD)</h3>
+          <p>Study atomic motion over time to explore protein‑ligand interactions, folding, membranes, nanomaterials and
+            more.
+            <br>
+            <span style="color: #068992; font-weight: bold;"> As Molecular Dynamics Is : </span> a computational
+            simulation technique that models the physical movements of atoms and molecules over time by applying
+            Newtonian mechanics to their interactions. This method reveals the dynamic "evolution" of a molecular
+            system, allowing researchers to visualize conformational changes, predict chemical reaction outcomes, and
+            understand the behavior of biological molecules like proteins and DNA at an atomic level.
+          </p>
+          <div class="cta"><a class="btn" href="service.html">Explore Services</a></div>
+        </div>
+        <div class="card media" style="grid-column: span 6">
+          <video class="myVideo" autoplay loop muted playsinline style="width:100%; height:100%">
+            <source src="img/md.webm" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MULTI-OMICS / STATS STRIP (images preserved) -->
+  <section>
+    <div class="container">
+      <div class="grid">
+
+        <div class="card card-pad" style="grid-column: span 6">
+          <h3>Multi‑Omics & Big Data</h3>
+          <p>Genomics, transcriptomics, proteomics — one omic or all of them. Our job is to turn that data mountain into
+            actionable insights — no new coding wizardry required.</p>
+          <h3 style="margin-top:16px">Statistical Analysis for Publications</h3>
+          <p>Turn experimental chaos into crystal‑clear data stories. With rigorous stats and elegant visuals, we’ll
+            help your research stand out in any journal.</p>
+          <div class="cta"><a class="btn btn-primary" href="service.html">Explore Services</a></div>
+        </div>
+
+        <div class="card media" style="grid-column: span 6">
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:8px; padding:10px">
+            <img src="img/stats (1).png" alt="stats1" />
+            <img src="img/stats (2).png" alt="stats2" />
+            <img src="img/stats (3).png" alt="stats3" />
+            <img src="img/stats (4).png" alt="stats4" />
+            <img src="img/stats (5).png" alt="stats5" />
+            <img src="img/stats (6).png" alt="stats6" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Molecular Modeling -->
+  <section>
+    <div class="container">
+      <div class="grid feature">
+        <div class="text card card-pad" style="grid-column: span 6">
+          <h3>Molecular Modeling</h3>
+          <p>Simulate, visualize, and analyze molecular structures — from small molecules to complex biological systems
+            — for drug discovery, protein engineering, nanotech and more.</p>
+          <div class="cta"><a class="btn" href="service.html">Explore Services</a></div>
+        </div>
+        <div class="card media" style="grid-column: span 6">
+          <video class="myVideo" autoplay loop muted playsinline style="width:100%; height:100%">
+            <source src="img/Copy of mm.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats" style="margin-top:30px">
+        <div class="stat">
+          <div class="num" data-counter="220">220</div>
+          <div class="label">Happy Customers</div>
+        </div>
+        <div class="stat">
+          <div class="num" data-counter="500">500</div>
+          <div class="label">Projects Done</div>
+        </div>
+        <div class="stat">
+          <div class="num" data-counter="16">16</div>
+          <div class="label">Number Of Foundation</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner bg-dark">
+      <div class="fcol">
+        <h4>IInsilico</h4>
+        <p>Egypt</p>
+        <p>01555073127<br>01144299280</p>
+        <p>IInSilico@iinsilico.com</p>
+      </div>
+      <div class="fcol">
+        <h4>Quick Links</h4>
+        <p><a href="about.html">About Us</a></p>
+        <p><a href="service.html">Our Services</a></p>
+        <p><a href="terms.html">Terms &amp; Conditions</a></p>
+      </div>
+      <div class="fcol">
+        <h4>Follow</h4>
+        <p><a href="https://www.facebook.com/iinsilico">Facebook</a></p>
+        <p><a href="https://www.linkedin.com/company/iinsilico/">LinkedIn</a></p>
+        <p style="margin-top:16px; color:var(--muted)">© i‑insilico [2025]. Science with a Smile.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Check authentication status and update button
+    function updateAuthButton() {
+      fetch('/api/check-auth')
+        .then(response => response.json())
+        .then(data => {
+          const loginBtn = document.querySelector('.navbar .btn-primary');
+          const signupLink = document.getElementById('ProfileSign');
+
+          if (data.isAuthenticated) {
+            loginBtn.innerHTML = '<i class="fa fa-sign-out-alt me-2"></i>Log Out';
+            loginBtn.href = '/logout';
+            signupLink.innerHTML = 'Profile';
+            signupLink.href = '/dashboard';
+          } else {
+            loginBtn.innerHTML = '<i class="fa fa-arrow-right me-2"></i>Log In';
+            loginBtn.href = '/Login';
+            signupLink.innerHTML = 'SignUp';
+            signupLink.href = 'register.html';
+          }
+        })
+        .catch(error => console.error('Error checking auth status:', error));
+    }
+
+    // Run on page load
+    document.addEventListener('DOMContentLoaded', updateAuthButton);
+  </script>
+  <script>
+    // Mobile nav
+    const burger = document.getElementById('burger');
+    const navbar = document.getElementById('navbar');
+    burger?.addEventListener('click', () => {
+      navbar.classList.toggle('nav-open');
+    });
+
+    // Back to top
+    const btt = document.getElementById('backToTop');
+    btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Subtle counter animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const el = e.target; const target = +el.getAttribute('data-counter');
+          let cur = 0; const step = Math.max(1, Math.floor(target / 60));
+          const tick = () => { cur += step; if (cur >= target) { el.textContent = target; return; } el.textContent = cur; requestAnimationFrame(tick) };
+          tick();
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: .6 });
+    document.querySelectorAll('[data-counter]')?.forEach(el => observer.observe(el));
+
+    // Tap-to-fullscreen for videos
+    document.querySelectorAll('.myVideo').forEach(video => {
+      video.addEventListener('click', () => {
+        if (!document.fullscreenElement) {
+          if (video.requestFullscreen) video.requestFullscreen();
+        } else {
+          if (document.exitFullscreen) document.exitFullscreen();
+        }
+      })
+    })
+  </script>
+  <!-- JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+  <!-- Template Javascript -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>

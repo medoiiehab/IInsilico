@@ -1,0 +1,33 @@
+[
+  { "Receptor": "Protein", "Ligand": "Small Molecule", "Price": 200 },
+  { "Receptor": "Protein", "Ligand": "Large Molecule (100-200 atoms)", "Price": 400 },
+  { "Receptor": "Protein", "Ligand": "Large Molecule (>200 atoms)", "Price": 200 },
+  { "Receptor": "Protein", "Ligand": "Peptide", "Price": 600 },
+  { "Receptor": "Protein", "Ligand": "Protein", "Price": 1200 },
+  { "Receptor": "Protein", "Ligand": "DNA", "Price": 600 },
+  { "Receptor": "Protein", "Ligand": "RNA", "Price": 400 },
+
+  { "Receptor": "Peptide", "Ligand": "Small Molecule", "Price": 200 },
+  { "Receptor": "Peptide", "Ligand": "Large Molecule (100-200 atoms)", "Price": 400 },
+  { "Receptor": "Peptide", "Ligand": "Large Molecule (>200 atoms)", "Price": 600 },
+  { "Receptor": "Peptide", "Ligand": "Peptide", "Price": 800 },
+  { "Receptor": "Peptide", "Ligand": "Protein", "Price": 1000 },
+  { "Receptor": "Peptide", "Ligand": "DNA", "Price": 600 },
+  { "Receptor": "Peptide", "Ligand": "RNA", "Price": 400 },
+
+  { "Receptor": "DNA", "Ligand": "Small Molecule", "Price": 200 },
+  { "Receptor": "DNA", "Ligand": "Large Molecule (100-200 atoms)", "Price": 400 },
+  { "Receptor": "DNA", "Ligand": "Large Molecule (>200 atoms)", "Price": 600 },
+  { "Receptor": "DNA", "Ligand": "Peptide", "Price": 600 },
+  { "Receptor": "DNA", "Ligand": "Protein", "Price": 800 },
+  { "Receptor": "DNA", "Ligand": "DNA", "Price": 1000 },
+  { "Receptor": "DNA", "Ligand": "RNA", "Price": 800 },
+
+  { "Receptor": "RNA", "Ligand": "Small Molecule", "Price": 200 },
+  { "Receptor": "RNA", "Ligand": "Large Molecule (100-200 atoms)", "Price": 400 },
+  { "Receptor": "RNA", "Ligand": "Large Molecule (>200 atoms)", "Price": 600 },
+  { "Receptor": "RNA", "Ligand": "Peptide", "Price": 400 },
+  { "Receptor": "RNA", "Ligand": "Protein", "Price": 600 },
+  { "Receptor": "RNA", "Ligand": "DNA", "Price": 800 },
+  { "Receptor": "RNA", "Ligand": "RNA", "Price": 1000 }
+]

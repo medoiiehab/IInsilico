@@ -1,0 +1,6 @@
+[
+  { "MoleculeType": "Protein", "Price": 800 },
+  { "MoleculeType": "Peptide", "Price": 700 },
+  { "MoleculeType": "DNA", "Price": 600 },
+  { "MoleculeType": "RNA", "Price": 600 }
+]
