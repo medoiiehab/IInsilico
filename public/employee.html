@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,32 +8,23 @@
     <link rel="icon" href="img/ICO.ico">
     <meta content="" name="keywords">
     <meta content="" name="description">
-    
+
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
-    
+
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet"> 
-    
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-    
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-    
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
-    <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/modern-ios.css" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
         :root {
@@ -41,12 +33,12 @@
             --warning-color: #f6c23e;
             --danger-color: #e74a3b;
         }
-        
+
         body {
             font-family: 'Open Sans', sans-serif;
             background-color: #f8f9fc;
         }
-        
+
         .dashboard-header {
             background: linear-gradient(135deg, var(--primary-color) 0%, #07747b 100%);
             color: white;
@@ -54,21 +46,21 @@
             border-radius: 0.35rem;
             margin-bottom: 2rem;
         }
-        
+
         .card {
             border: none;
             border-radius: 0.35rem;
             box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
             margin-bottom: 1.5rem;
         }
-        
+
         .card-header {
             background-color: #f8f9fc;
             border-bottom: 1px solid #e3e6f0;
             padding: 1rem 1.35rem;
             font-weight: 600;
         }
-        
+
         .task-status {
             padding: 0.25rem 0.5rem;
             border-radius: 0.35rem;
@@ -76,65 +68,80 @@
             font-weight: 700;
             text-transform: uppercase;
         }
-        
+
         .status-pending {
             background-color: #f6c23e;
             color: white;
         }
-        
+
         .status-in-progress {
             background-color: #4e73df;
             color: white;
         }
-        
+
         .status-completed {
             background-color: #1cc88a;
             color: white;
         }
-        
+
         .status-rejected {
             background-color: #e74a3b;
             color: white;
         }
-        
+
         .file-link {
             color: var(--primary-color);
             text-decoration: none;
         }
-        
+
         .file-link:hover {
             text-decoration: underline;
         }
-        
+
         .modal-content {
             border-radius: 0.35rem;
         }
     </style>
-    
+
 </head>
+
 <body>
-    <!-- NAVBAR -->
-  <div class="navbar" id="navbar">
-    <div class="nav-inner">
-      <a class="brand" href="index.html" aria-label="IInsilico Home">
-        <img src="img/1000472452-removebg-preview.png" alt="IInsilico logo" />
-      </a>
-      <div class="spacer"></div>
-      <button class="burger" id="burger" aria-label="Toggle menu">☰</button>
-      <nav class="nav-links" id="navLinks">
-        <a href="index.html" class="items">Home</a>
-        <a href="service.html" class="items">Services</a>
-        <a href="about.html" class="items">About</a>
-        
-        <a href="/logout" class="btn btn-primary" style="height: 40px;">Log Out</a>
-      </nav>
+    <!-- NAVBAR - Desktop -->
+    <nav class="navbar-custom glass" id="navbar">
+        <a class="brand" href="index.html">
+            <img src="img/1000472452-removebg-preview.png" alt="IInsilico logo" />
+        </a>
+        <div class="nav-links-desktop">
+            <a href="index.html">Home</a>
+            <a href="service.html">Services</a>
+            <a href="about.html">About</a>
+            <a href="/logout" class="nav-btn">Log Out</a>
+        </div>
+    </nav>
+
+    <!-- NAVBAR - Mobile/Tablet -->
+    <div class="mobile-nav glass">
+        <a href="index.html" class="mobile-nav-item">
+            <i class="bi bi-house-door"></i>
+            <span>Home</span>
+        </a>
+        <a href="service.html" class="mobile-nav-item">
+            <i class="bi bi-grid"></i>
+            <span>Services</span>
+        </a>
+        <a href="about.html" class="mobile-nav-item">
+            <i class="bi bi-info-circle"></i>
+            <span>About</span>
+        </a>
+        <a href="/logout" class="mobile-nav-item">
+            <i class="bi bi-box-arrow-right"></i>
+            <span>Logout</span>
+        </a>
     </div>
-  </div>
-  <!-- End Navbar -->
 
     <main class="container-fluid py-4" style="margin-top: 90px;">
         <!-- Dashboard Header -->
-        <div class="dashboard-header px-4 py-3">
+        <div class="dashboard-header px-4 py-3 glass-card glass" style="background: var(--primary); color: white;">
             <div class="row align-items-center">
                 <div class="col-md-8">
                     <h1 id="welcomeMessage" class="h2 mb-0" style="color: whitesmoke;">Welcome, Employee!</h1>
@@ -144,31 +151,31 @@
         </div>
 
         <!-- Assigned Tasks Section -->
-       <!-- Assigned Tasks Section -->
-    <div class="card">
-        <div class="card-header">
-            <h3 class="m-0 font-weight-bold">Your Assigned Tasks</h3>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-hover" id="tasks-table">
-                    <thead>
-                        <tr>
-                            <th>Title</th>
-                            <th>Assigned By</th>
-                            <th>Status</th>
-                            <th>Due Date</th>
-                            <th>Files</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Tasks will be loaded here -->
-                    </tbody>
-                </table>
+        <!-- Assigned Tasks Section -->
+        <div class="card glass-card glass">
+            <div class="card-header">
+                <h3 class="m-0 font-weight-bold">Your Assigned Tasks</h3>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover" id="tasks-table">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Assigned By</th>
+                                <th>Status</th>
+                                <th>Due Date</th>
+                                <th>Files</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Tasks will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-    </div>
 
     </main>
 
@@ -189,7 +196,7 @@
             </div>
         </div>
     </div>
-<!-- Update Due date model -->
+    <!-- Update Due date model -->
     <div class="modal fade" id="updateDueDateModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -213,7 +220,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Submit Results Modal -->
     <div class="modal fade" id="submitResultsModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
@@ -243,33 +250,61 @@
         </div>
     </div>
 
-      <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner bg-dark">
-      <div class="fcol">
-        <h4>IInsilico</h4>
-        <p>Egypt</p>
-        <p>01555073127<br>01144299280</p>
-        <p>IInSilico@iinsilico.com</p>
-      </div>
-      <div class="fcol">
-        <h4>Quick Links</h4>
-        <p><a href="about.html">About Us</a></p>
-        <p><a href="service.html">Our Services</a></p>
-        <p><a href="terms.html">Terms &amp; Conditions</a></p>
-      </div>
-      <div class="fcol">
-        <h4>Follow</h4>
-        <p><a href="https://www.facebook.com/iinsilico">Facebook</a></p>
-        <p><a href="https://www.linkedin.com/company/iinsilico/">LinkedIn</a></p>
-        <p style="margin-top:16px; color:var(--muted)">© i‑insilico [2025]. Science with a Smile.</p>
-      </div>
-    </div>
-  </footer>
+    <!-- FOOTER -->
+    <footer class="glass-footer glass">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-primary mb-4 fw-bold">IInSilico</h4>
+                    <p class="mb-4 text-muted">Science with a Smile. We are pioneers in bioinformatics, delivering
+                        high-quality in-silico research solutions.</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-square btn-outline-primary rounded-circle me-2"
+                            href="https://www.facebook.com/iinsilico"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-outline-primary rounded-circle me-2"
+                            href="https://www.linkedin.com/company/iinsilico/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-dark mb-4 fw-bold">Services</h5>
+                    <a class="btn btn-link" href="3d modeling.html">3D Modeling</a>
+                    <a class="btn btn-link" href="Genomics.html">Genomics</a>
+                    <a class="btn btn-link" href="molecular Docking.html">Docking</a>
+                    <a class="btn btn-link" href="service.html">All Services</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-dark mb-4 fw-bold">Quick Links</h5>
+                    <a class="btn btn-link" href="about.html">About Us</a>
+                    <a class="btn btn-link" href="service.html">Services</a>
+                    <a class="btn btn-link" href="terms.html">Terms & Condition</a>
+                    <a class="btn btn-link" href="Login.html">Login</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-dark mb-4 fw-bold">Contact</h5>
+                    <p class="text-muted"><i class="fa fa-map-marker-alt me-3 text-primary"></i>Egypt</p>
+                    <p class="text-muted"><i class="fa fa-phone-alt me-3 text-primary"></i>01555073127</p>
+                    <p class="text-muted"><i class="fa fa-envelope me-3 text-primary"></i>IInSilico@iinsilico.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0 text-muted">
+                        &copy; <a href="#" class="text-primary">IInSilico</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end text-muted">
+                        Designed By <a href="https://github.com/medoiiehab">Medo Ehab</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
     <!-- JavaScript Libraries -->
-     <script src="js/Authcode.js"></script>
+    <!-- Template Javascript -->
+    <script src="js/Authcode.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
@@ -277,8 +312,9 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/ui-init.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             // Load user data
@@ -310,9 +346,9 @@
                             </td>
                             <td>${task.dueDate ? new Date(task.dueDate).toLocaleDateString() : 'Not set'}</td>
                             <td>
-                                ${task.file ? 
-                                    `<a href="${task.file}" class="file-link" download>Download</a>` : 
-                                    'No files'}
+                                ${task.file ?
+                            `<a href="${task.file}" class="file-link" download>Download</a>` :
+                            'No files'}
                             </td>
                             <td>
                                 <button class="btn btn-sm btn-info me-1" onclick="viewTaskDetails('${task._id}')">
@@ -330,113 +366,113 @@
                 })
                 .catch(err => {
                     console.error("Error loading tasks:", err);
-                    document.querySelector("#tasks-table tbody").innerHTML = 
+                    document.querySelector("#tasks-table tbody").innerHTML =
                         '<tr><td colspan="6" class="text-center">Error loading tasks</td></tr>';
                 });
         }
 
-        
-        document.getElementById("resultsForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-    
-    const taskId = document.getElementById("currentTaskId").value;
-    const notes = document.getElementById("resultNotes").value;
-    const files = document.getElementById("resultFiles").files;
-    
-    // Create FormData object for file upload
-    const formData = new FormData();
-    formData.append("notes", notes);
-    
-    // Append each file to the FormData
-    for (let i = 0; i < files.length; i++) {
-        formData.append("files", files[i]);
-    }
-    
-    fetch(`/api/submit-results/${taskId}`, {
-        method: "POST",
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            alert("Results submitted successfully!");
-            // Close the modal
-            bootstrap.Modal.getInstance(document.getElementById('submitResultsModal')).hide();
-            // Refresh the tasks list
-            loadTasks();
-        } else {
-            throw new Error(data.error || "Failed to submit results");
-        }
-    })
-    .catch(err => {
-        console.error("Error submitting results:", err);
-        alert("Error submitting results: " + err.message);
-    });
-});
-//view due date edit
-document.getElementById("dueDateForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-    
-    const taskId = document.getElementById("dueDateTaskId").value;
-    const newDueDate = document.getElementById("newDueDate").value;
-    
-    if (!newDueDate) {
-        alert("Please select a date");
-        return;
-    }
-    
-    fetch(`/api/update-due-date/${taskId}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ dueDate: newDueDate })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            alert("Due date updated successfully!");
-            document.getElementById("updateDueDateModal").querySelector(".btn-close").click();
-            loadTasks(); // Refresh the tasks list
-        } else {
-            throw new Error(data.error || "Failed to update due date");
-        }
-    })
-    .catch(err => {
-        console.error("Error updating due date:", err);
-        alert("Error updating due date: " + err.message);
-    });
-});
+
+        document.getElementById("resultsForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const taskId = document.getElementById("currentTaskId").value;
+            const notes = document.getElementById("resultNotes").value;
+            const files = document.getElementById("resultFiles").files;
+
+            // Create FormData object for file upload
+            const formData = new FormData();
+            formData.append("notes", notes);
+
+            // Append each file to the FormData
+            for (let i = 0; i < files.length; i++) {
+                formData.append("files", files[i]);
+            }
+
+            fetch(`/api/submit-results/${taskId}`, {
+                method: "POST",
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert("Results submitted successfully!");
+                        // Close the modal
+                        bootstrap.Modal.getInstance(document.getElementById('submitResultsModal')).hide();
+                        // Refresh the tasks list
+                        loadTasks();
+                    } else {
+                        throw new Error(data.error || "Failed to submit results");
+                    }
+                })
+                .catch(err => {
+                    console.error("Error submitting results:", err);
+                    alert("Error submitting results: " + err.message);
+                });
+        });
+        //view due date edit
+        document.getElementById("dueDateForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const taskId = document.getElementById("dueDateTaskId").value;
+            const newDueDate = document.getElementById("newDueDate").value;
+
+            if (!newDueDate) {
+                alert("Please select a date");
+                return;
+            }
+
+            fetch(`/api/update-due-date/${taskId}`, {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ dueDate: newDueDate })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert("Due date updated successfully!");
+                        document.getElementById("updateDueDateModal").querySelector(".btn-close").click();
+                        loadTasks(); // Refresh the tasks list
+                    } else {
+                        throw new Error(data.error || "Failed to update due date");
+                    }
+                })
+                .catch(err => {
+                    console.error("Error updating due date:", err);
+                    alert("Error updating due date: " + err.message);
+                });
+        });
         // View task details
         function viewTaskDetails(taskId) {
-    fetch(`/api/task/${taskId}`)
-        .then(response => response.json())
-        .then(task => {
-            const modal = new bootstrap.Modal(document.getElementById('taskDetailsModal'));
-            const content = document.getElementById("taskDetailsContent");
-            
-            // Format date fields
-            const formatDate = (dateString) => {
-                if (!dateString) return 'Not set';
-                const date = new Date(dateString);
-                return date.toLocaleString();
-            };
+            fetch(`/api/task/${taskId}`)
+                .then(response => response.json())
+                .then(task => {
+                    const modal = new bootstrap.Modal(document.getElementById('taskDetailsModal'));
+                    const content = document.getElementById("taskDetailsContent");
 
-            // Create file links if available
-            const createFileLink = (filePath) => {
-                if (!filePath) return 'No files attached';
-                return `<a href="${filePath}" class="file-link" target="_blank">Download File</a>`;
-            };
+                    // Format date fields
+                    const formatDate = (dateString) => {
+                        if (!dateString) return 'Not set';
+                        const date = new Date(dateString);
+                        return date.toLocaleString();
+                    };
 
-            // Create status badge
-            const statusBadge = (status) => {
-                if (!status) status = 'pending';
-                return `<span class="task-status status-${status}">${status}</span>`;
-            };
+                    // Create file links if available
+                    const createFileLink = (filePath) => {
+                        if (!filePath) return 'No files attached';
+                        return `<a href="${filePath}" class="file-link" target="_blank">Download File</a>`;
+                    };
 
-            // Use task.subject as the title, fallback to title if subject doesn't exist
-            const modalTitle = task.subject || task.title || 'Task Details';
+                    // Create status badge
+                    const statusBadge = (status) => {
+                        if (!status) status = 'pending';
+                        return `<span class="task-status status-${status}">${status}</span>`;
+                    };
 
-            // Build the detailed HTML
-            let detailsHTML = `
+                    // Use task.subject as the title, fallback to title if subject doesn't exist
+                    const modalTitle = task.subject || task.title || 'Task Details';
+
+                    // Build the detailed HTML
+                    let detailsHTML = `
                 <div class="row">
                     <div class="col-md-6">
                         <div class="mb-3">
@@ -515,11 +551,11 @@ document.getElementById("dueDateForm").addEventListener("submit", function(e) {
                                     <div class="mb-2">
                                         <p><strong>Notes:</strong> ${result.notes || 'No notes'}</p>
                                         <p><strong>Files:</strong> 
-                                            ${result.files && result.files.length > 0 ? 
-                                                result.files.map(file => 
-                                                    `<a href="${file}" class="file-link me-2" target="_blank">Download</a>`
-                                                ).join('') : 
-                                                'No files'}
+                                            ${result.files && result.files.length > 0 ?
+                            result.files.map(file =>
+                                `<a href="${file}" class="file-link me-2" target="_blank">Download</a>`
+                            ).join('') :
+                            'No files'}
                                         </p>
                                         <small class="text-muted">Submitted: ${formatDate(result.submittedAt)}</small>
                                     </div>
@@ -530,23 +566,23 @@ document.getElementById("dueDateForm").addEventListener("submit", function(e) {
                     ` : ''}
                 </div>
             `;
-            
-            // Set the modal title to the task subject (or fallback to title)
-            document.getElementById("taskDetailsTitle").textContent = modalTitle;
-            content.innerHTML = detailsHTML;
+
+                    // Set the modal title to the task subject (or fallback to title)
+                    document.getElementById("taskDetailsTitle").textContent = modalTitle;
+                    content.innerHTML = detailsHTML;
+                    modal.show();
+                })
+                .catch(err => {
+                    console.error("Error loading task:", err);
+                    alert("Error loading task details");
+                });
+        }
+        // Show update due date modal
+        function showUpdateDueDate(taskId) {
+            document.getElementById("dueDateTaskId").value = taskId;
+            const modal = new bootstrap.Modal(document.getElementById('updateDueDateModal'));
             modal.show();
-        })
-        .catch(err => {
-            console.error("Error loading task:", err);
-            alert("Error loading task details");
-        });
-}
-// Show update due date modal
-function showUpdateDueDate(taskId) {
-    document.getElementById("dueDateTaskId").value = taskId;
-    const modal = new bootstrap.Modal(document.getElementById('updateDueDateModal'));
-    modal.show();
-}
+        }
         // Show submit results modal
         function showSubmitResults(taskId) {
             document.getElementById("currentTaskId").value = taskId;
@@ -555,14 +591,14 @@ function showUpdateDueDate(taskId) {
         }
 
         // Submit results form
-        document.getElementById("resultsForm").addEventListener("submit", function(e) {
+        document.getElementById("resultsForm").addEventListener("submit", function (e) {
             e.preventDefault();
-            
+
             const taskId = document.getElementById("currentTaskId").value;
             const dueDate = document.getElementById("dueDate").value;
             const notes = document.getElementById("resultNotes").value;
             const files = document.getElementById("resultFiles").files;
-            
+
             // First update due date if provided
             if (dueDate) {
                 fetch(`/api/update-due-date/${taskId}`, {
@@ -570,37 +606,38 @@ function showUpdateDueDate(taskId) {
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ dueDate })
                 })
-                .catch(err => console.error("Error updating due date:", err));
+                    .catch(err => console.error("Error updating due date:", err));
             }
-            
+
             // Then submit results
             const formData = new FormData();
             formData.append("notes", notes);
             for (let i = 0; i < files.length; i++) {
                 formData.append("files", files[i]);
             }
-            
+
             fetch(`/api/submit-results/${taskId}`, {
                 method: "POST",
                 body: formData
             })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    alert("Results submitted successfully!");
-                    document.getElementById("submitResultsModal").querySelector(".btn-close").click();
-                    loadTasks(); // Refresh the tasks list
-                } else {
-                    throw new Error(data.error || "Failed to submit results");
-                }
-            })
-            .catch(err => {
-                console.error("Error submitting results:", err);
-                alert("Error submitting results: " + err.message);
-            });
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert("Results submitted successfully!");
+                        document.getElementById("submitResultsModal").querySelector(".btn-close").click();
+                        loadTasks(); // Refresh the tasks list
+                    } else {
+                        throw new Error(data.error || "Failed to submit results");
+                    }
+                })
+                .catch(err => {
+                    console.error("Error submitting results:", err);
+                    alert("Error submitting results: " + err.message);
+                });
         });
     </script>
-    
-    
+
+
 </body>
+
 </html>

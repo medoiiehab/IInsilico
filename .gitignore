@@ -1,0 +1,55 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Build / temp
+dist/
+build/
+.tmp/
+.cache/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Uploads and user-generated files
+uploads/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+.history/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Misc
+lib-cov/
+.npm
+
+# Optional: keep lockfiles (uncomment if you want to ignore)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml

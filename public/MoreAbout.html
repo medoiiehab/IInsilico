@@ -2,178 +2,242 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>IInSilico</title>
-    <link rel="icon" href="img/ICO.ico">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+  <meta charset="utf-8">
+  <title>IInSilico</title>
+  <link rel="icon" href="img/ICO.ico">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+  <!-- Favicon -->
+  <link href="img/favicon.ico" rel="icon">
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet"> 
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap"
+    rel="stylesheet">
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/modern-ios.css" rel="stylesheet">
 </head>
 
 <body>
-    <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
+  <!-- Spinner Start -->
+  <div id="spinner"
+    class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+      <span class="sr-only">Loading...</span>
     </div>
-    <!-- Spinner End -->
+  </div>
+  <!-- Spinner End -->
 
- <!-- NAVBAR -->
-  <div class="navbar" id="navbar">
-    <div class="nav-inner">
-      <a class="brand" href="index.html" aria-label="IInsilico Home">
-        <img src="img/1000472452-removebg-preview.png" alt="IInsilico logo" />
-      </a>
-      <div class="spacer"></div>
-      <button class="burger" id="burger" aria-label="Toggle menu">☰</button>
-      <nav class="nav-links" id="navLinks">
-        <a href="index.html" class="items">Home</a>
-        <a href="service.html" class="items">Services</a>
-        <a href="about.html" class="items">About</a>
-        
-        <a href="/logout" class="btn btn-primary" style="height: 40px;">Log Out</a>
+  <!-- NAVBAR - Desktop -->
+  <nav class="navbar-custom glass" id="navbar">
+    <a class="brand" href="index.html">
+      <img src="img/1000472452-removebg-preview.png" alt="IInsilico logo" />
+    </a>
+    <div class="nav-links-desktop">
+      <a href="index.html">Home</a>
+      <a href="service.html">Services</a>
+      <a href="about.html">About</a>
+      <a id="ProfileSign" href="/register">Sign Up</a>
+      <a href="/Login" class="nav-btn">Log In</a>
+    </div>
+  </nav>
+
+  <!-- NAVBAR - Mobile/Tablet -->
+  <div class="mobile-nav glass">
+    <a href="index.html" class="mobile-nav-item">
+      <i class="bi bi-house-door"></i>
+      <span>Home</span>
+    </a>
+    <a href="service.html" class="mobile-nav-item">
+      <i class="bi bi-grid"></i>
+      <span>Services</span>
+    </a>
+    <a href="about.html" class="mobile-nav-item active">
+      <i class="bi bi-info-circle"></i>
+      <span>About</span>
+    </a>
+    <a href="Login.html" class="mobile-nav-item">
+      <i class="bi bi-person"></i>
+      <span>Account</span>
+    </a>
+  </div>
+
+  <!-- Page Header Start -->
+  <div class="container-fluid page-header py-5 mb-5">
+    <div class="container py-5">
+      <h1 class="display-3 text-white mb-3 animated slideInDown">About US</h1>
+      <nav aria-label="breadcrumb animated slideInDown">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+          <li class="breadcrumb-item text-white active" aria-current="page">About US</li>
+        </ol>
       </nav>
     </div>
   </div>
-  <!-- End Navbar -->
+  <!-- Page Header End -->
 
-    <!-- Page Header Start -->
-    <div class="container-fluid page-header py-5 mb-5">
-        <div class="container py-5">
-            <h1 class="display-3 text-white mb-3 animated slideInDown">About US</h1>
-            <nav aria-label="breadcrumb animated slideInDown">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
-                    <li class="breadcrumb-item text-white active" aria-current="page">About US</li>
-                </ol>
-            </nav>
+
+
+
+
+  <!-- About Start -->
+  <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+    <div class="container about px-lg-0">
+      <div class="row g-0 mx-lg-0">
+        <div class="col-lg-3 ps-lg-0 wow fadeIn" data-wow-delay="0.1s" style="min-height: 400px;">
+
         </div>
-    </div>
-    <!-- Page Header End -->
+        <div class="col-lg-6 about-text py-5 wow fadeIn" data-wow-delay="0.5s">
+          <div class="p-lg-5 pe-lg-0 glass-card glass" style="border-radius: 20px; padding: 40px !important;">
+            <h6 class="" style="margin-bottom: 30px;">I-Insilico is an advanced AI-driven research platform that
+              specializes in I-InSilico simulations, predictive analytics, and computational modeling to accelerate
+              scientific discoveries in the pharmaceutical, biotechnology, and life sciences industries.
+              <br>By harnessing the power of artificial intelligence, machine learning, and big data analytics,
+              I-Insilico provides researchers with high-precision tools for drug discovery, molecular research, and
+              biostatistical analysis, enabling groundbreaking innovations at a fraction of the time and cost of
+              traditional methods.
+            </h6>
+            <h4 class="mb-4 text-primary">Key Features of I-Insilico:</h4>
+            <p> <b>1. AI-Powered Drug Discovery: </b>
+              I-Insilico streamlines the drug development pipeline by employing deep learning models to predict
+              molecular interactions, optimize lead compounds, and assess pharmacokinetics and toxicity. The platform
+              significantly reduces the need for extensive laboratory testing, increasing efficiency and success rates
+              in preclinical and clinical trials.
+              <br> <b>2. Molecular Research & Simulation: </b>
+              The platform enables precise molecular modeling, virtual screening, and computational docking to analyze
+              protein-ligand interactions, identify novel therapeutic targets, and explore biomolecular structures with
+              unprecedented accuracy. This facilitates rapid hypothesis testing and accelerates the identification of
+              promising drug candidates.
+              <br> <b>3. Predictive Biostatistical Analysis: </b>
+              With advanced statistical modeling and AI-driven analytics, I-Insilico supports biomarker identification,
+              disease modeling, and genomic data interpretation. The platform enhances the ability to predict patient
+              responses, personalize medicine, and improve clinical trial design.
+              <br> <b>4. Cloud-Based & Scalable Infrastructure: </b>
+              I-Insilico offers a highly scalable cloud-based environment that allows seamless collaboration among
+              researchers, biotech firms, and pharmaceutical companies worldwide. The platform’s real-time data
+              processing and high-performance computing capabilities ensure rapid analysis and decision-making.
+              <br><b> 5. Cost-Effective & Time-Efficient Solutions: </b>
+              Traditional drug discovery and molecular research can take years and require significant financial
+              investment. I-Insilico’s AI-powered approach minimizes costs by reducing the need for trial-and-error
+              experiments while increasing the likelihood of successful outcomes.
+            </p>
+
+            <h4 class="mb-4 text-primary">Applications of I-Insilico:</h4>
+            <p><b>Pharmaceutical R&D:</b> Accelerates drug development, improves hit identification, and refines drug
+              candidate selection.
 
 
-    
-    
-
-    <!-- About Start -->
-    <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
-        <div class="container about px-lg-0">
-            <div class="row g-0 mx-lg-0">
-                <div class="col-lg-3 ps-lg-0 wow fadeIn" data-wow-delay="0.1s" style="min-height: 400px;">
-                    
-                </div>
-                <div class="col-lg-6 about-text py-5 wow fadeIn" data-wow-delay="0.5s">
-                    <div class="p-lg-5 pe-lg-0">
-                        <h6 class="" style="margin-bottom: 30px;">I-Insilico is an advanced AI-driven research platform that specializes in I-InSilico simulations, predictive analytics, and computational modeling to accelerate scientific discoveries in the pharmaceutical, biotechnology, and life sciences industries. 
-                            <br>By harnessing the power of artificial intelligence, machine learning, and big data analytics, I-Insilico provides researchers with high-precision tools for drug discovery, molecular research, and biostatistical analysis, enabling groundbreaking innovations at a fraction of the time and cost of traditional methods.</h6>
-                        <h4 class="mb-4 text-primary">Key Features of I-Insilico:</h4>
-                        <p> <b>1. AI-Powered Drug Discovery: </b>
-                            I-Insilico streamlines the drug development pipeline by employing deep learning models to predict molecular interactions, optimize lead compounds, and assess pharmacokinetics and toxicity. The platform significantly reduces the need for extensive laboratory testing, increasing efficiency and success rates in preclinical and clinical trials.
-                           <br> <b>2. Molecular Research & Simulation: </b>
-                            The platform enables precise molecular modeling, virtual screening, and computational docking to analyze protein-ligand interactions, identify novel therapeutic targets, and explore biomolecular structures with unprecedented accuracy. This facilitates rapid hypothesis testing and accelerates the identification of promising drug candidates.
-                           <br> <b>3. Predictive Biostatistical Analysis: </b>
-                            With advanced statistical modeling and AI-driven analytics, I-Insilico supports biomarker identification, disease modeling, and genomic data interpretation. The platform enhances the ability to predict patient responses, personalize medicine, and improve clinical trial design.
-                           <br> <b>4. Cloud-Based & Scalable Infrastructure: </b>
-                            I-Insilico offers a highly scalable cloud-based environment that allows seamless collaboration among researchers, biotech firms, and pharmaceutical companies worldwide. The platform’s real-time data processing and high-performance computing capabilities ensure rapid analysis and decision-making.
-                            <br><b> 5. Cost-Effective & Time-Efficient Solutions: </b>
-                            Traditional drug discovery and molecular research can take years and require significant financial investment. I-Insilico’s AI-powered approach minimizes costs by reducing the need for trial-and-error experiments while increasing the likelihood of successful outcomes.
-                            </p>
-                             
-                        <h4 class="mb-4 text-primary">Applications of I-Insilico:</h4>
-                        <p><b>Pharmaceutical R&D:</b> Accelerates drug development, improves hit identification, and refines drug candidate selection.
+              <br><b>Precision Medicine:</b> Facilitates personalized treatment strategies based on genomic and
+              molecular profiling.
 
 
-                            <br><b>Precision Medicine:</b> Facilitates personalized treatment strategies based on genomic and molecular profiling.
-                            
-                            
-                            <br><b>Toxicology & Pharmacokinetics:</b> Predicts adverse effects, bioavailability, and metabolic pathways of drug candidates.
-                            
-                            
-                            <br><b>Synthetic Biology & Nanotechnology:</b> Aids in the design of novel biomaterials, peptides, and nanoparticles for medical applications.
-                            
-                            
-                            <br><b>Cancer Research:</b> Identifies key molecular targets and optimizes therapeutic approaches for oncology treatments.</p>
-                            <br><br>
-                            <h2 class="mb-4 text-primary">The Future of AI in Scientific Research:</h2>
-                            <p>I-Insilico represents the next generation of AI-powered scientific innovation. By continuously integrating cutting-edge technologies such as quantum computing, deep neural networks, and natural language processing (NLP), the platform evolves to meet the ever-growing demands of the scientific community.
-                              <br><br>  With its mission to revolutionize research through computational intelligence, I-Insilico empowers scientists, researchers, and biotech companies to achieve faster, more accurate, and cost-effective discoveries, shaping the future of medicine and biotechnology.
-                                
-                                </p>
+              <br><b>Toxicology & Pharmacokinetics:</b> Predicts adverse effects, bioavailability, and metabolic
+              pathways of drug candidates.
 
-                               
-                    </div>
-                </div>
-               
-               
-            </div>
+
+              <br><b>Synthetic Biology & Nanotechnology:</b> Aids in the design of novel biomaterials, peptides, and
+              nanoparticles for medical applications.
+
+
+              <br><b>Cancer Research:</b> Identifies key molecular targets and optimizes therapeutic approaches for
+              oncology treatments.
+            </p>
+            <br><br>
+            <h2 class="mb-4 text-primary">The Future of AI in Scientific Research:</h2>
+            <p>I-Insilico represents the next generation of AI-powered scientific innovation. By continuously
+              integrating cutting-edge technologies such as quantum computing, deep neural networks, and natural
+              language processing (NLP), the platform evolves to meet the ever-growing demands of the scientific
+              community.
+              <br><br> With its mission to revolutionize research through computational intelligence, I-Insilico
+              empowers scientists, researchers, and biotech companies to achieve faster, more accurate, and
+              cost-effective discoveries, shaping the future of medicine and biotechnology.
+
+            </p>
+
+
+          </div>
         </div>
+
+
+      </div>
     </div>
-    <!-- About End -->
+  </div>
+  <!-- About End -->
 
 
 
-    <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner bg-dark">
-      <div class="fcol">
-        <h4>IInsilico</h4>
-        <p>Egypt</p>
-        <p>01555073127<br>01144299280</p>
-        <p>IInSilico@iinsilico.com</p>
+  <!-- FOOTER -->
+  <footer class="glass-footer glass">
+    <div class="container py-5">
+      <div class="row g-5">
+        <div class="col-lg-4 col-md-6">
+          <h4 class="text-primary mb-4 fw-bold">IInSilico</h4>
+          <p class="mb-4 text-muted">Science with a Smile. We are pioneers in bioinformatics, delivering high-quality
+            in-silico research solutions.</p>
+          <div class="d-flex pt-2">
+            <a class="btn btn-square btn-outline-primary rounded-circle me-2"
+              href="https://www.facebook.com/iinsilico"><i class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-square btn-outline-primary rounded-circle me-2"
+              href="https://www.linkedin.com/company/iinsilico/"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h5 class="text-dark mb-4 fw-bold">Services</h5>
+          <a class="btn btn-link" href="3d modeling.html">3D Modeling</a>
+          <a class="btn btn-link" href="Genomics.html">Genomics</a>
+          <a class="btn btn-link" href="molecular Docking.html">Docking</a>
+          <a class="btn btn-link" href="service.html">All Services</a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5 class="text-dark mb-4 fw-bold">Quick Links</h5>
+          <a class="btn btn-link" href="about.html">About Us</a>
+          <a class="btn btn-link" href="service.html">Services</a>
+          <a class="btn btn-link" href="terms.html">Terms & Condition</a>
+          <a class="btn btn-link" href="Login.html">Login</a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5 class="text-dark mb-4 fw-bold">Contact</h5>
+          <p class="text-muted"><i class="fa fa-map-marker-alt me-3 text-primary"></i>Egypt</p>
+          <p class="text-muted"><i class="fa fa-phone-alt me-3 text-primary"></i>01555073127</p>
+          <p class="text-muted"><i class="fa fa-envelope me-3 text-primary"></i>IInSilico@iinsilico.com</p>
+        </div>
       </div>
-      <div class="fcol">
-        <h4>Quick Links</h4>
-        <p><a href="about.html">About Us</a></p>
-        <p><a href="service.html">Our Services</a></p>
-        <p><a href="terms.html">Terms &amp; Conditions</a></p>
-      </div>
-      <div class="fcol">
-        <h4>Follow</h4>
-        <p><a href="https://www.facebook.com/iinsilico">Facebook</a></p>
-        <p><a href="https://www.linkedin.com/company/iinsilico/">LinkedIn</a></p>
-        <p style="margin-top:16px; color:var(--muted)">© i‑insilico [2025]. Science with a Smile.</p>
+    </div>
+    <div class="container-fluid copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0 text-muted">
+            &copy; <a href="#" class="text-primary">IInSilico</a>, All Right Reserved.
+          </div>
+          <div class="col-md-6 text-center text-md-end text-muted">
+            Designed By <a href="https://github.com/medoiiehab">Medo Ehab</a>
+          </div>
+        </div>
       </div>
     </div>
   </footer>
 
-    <!-- JavaScript Libraries -->
-     <script src="js/Authcode.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+  <!-- Template Javascript -->
+  <script src="js/Authcode.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/lightbox/js/lightbox.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/ui-init.js"></script>
 </body>
 
 </html>

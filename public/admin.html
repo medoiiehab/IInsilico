@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>IInsilico Admin</title>
-    <link rel="icon" href="img/ICO.ico">
+  <link rel="icon" href="img/ICO.ico">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -16,1062 +17,1081 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Icon Font Stylesheet -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
-
-  <!-- Customized Bootstrap Stylesheet -->
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  
-  <!-- Template Stylesheet -->
   <link href="css/style.css" rel="stylesheet">
-  <style>
-    :root {
-      --primary-color: #0da7b3;
-      --primary-hover: #066895;
-      --secondary-color: #10b981;
-      --warning-color: #f59e0b;
-      --danger-color: #ef4444;
-      --dark-color: #1f2937;
-      --light-color: #f9fafb;
-      --border-color: #e5e7eb;
-      --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    }
+  <link href="css/modern-ios.css" rel="stylesheet">
+</head>
+<style>
+  :root {
+    --primary-color: #0da7b3;
+    --primary-hover: #066895;
+    --secondary-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+    --dark-color: #1f2937;
+    --light-color: #f9fafb;
+    --border-color: #e5e7eb;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f3f4f6;
-      color: #374151;
-    }
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f3f4f6;
+    color: #374151;
+  }
 
-    /* Navbar */
-    .navbar {
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-      background-color: white !important;
-    }
+  /* Navbar */
+  .navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    background-color: white !important;
+  }
 
-    .navbar-brand img {
-      max-height: 50px;
-    }
+  .navbar-brand img {
+    max-height: 50px;
+  }
 
-    .nav-item {
-      margin: 0 8px;
-    }
+  .nav-item {
+    margin: 0 8px;
+  }
 
-    .nav-link {
-      font-weight: 500;
-      color: #4b5563 !important;
-      transition: color 0.2s;
-    }
+  .nav-link {
+    font-weight: 500;
+    color: #4b5563 !important;
+    transition: color 0.2s;
+  }
 
-    .nav-link:hover, .nav-link.active {
-      color: var(--primary-color) !important;
-    }
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--primary-color) !important;
+  }
 
-    /* Dashboard Header */
-    .dashboard-header {
-      background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-hover) 100%);
-      color: white;
-      padding: 1.5rem;
-      border-radius: 0.5rem;
-      margin-bottom: 1.5rem;
-      box-shadow: var(--card-shadow);
-    }
+  /* Dashboard Header */
+  .dashboard-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-hover) 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--card-shadow);
+  }
 
-    .dashboard-header h1 {
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
+  .dashboard-header h1 {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
 
-    /* Buttons */
-    .btn {
-      font-weight: 500;
-      padding: 0.5rem 1rem;
-      border-radius: 0.375rem;
-      transition: all 0.2s;
-      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    }
+  /* Buttons */
+  .btn {
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    transition: all 0.2s;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
 
-    .btn-primary {
-      background-color: var(--primary-color);
-      border-color: var(--primary-color);
-    }
+  .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
 
-    .btn-primary:hover {
-      background-color: var(--primary-hover);
-      border-color: var(--primary-hover);
-      transform: translateY(-1px);
-    }
+  .btn-primary:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    transform: translateY(-1px);
+  }
 
-    .btn-secondary {
-      background-color: #6b7280;
-      border-color: #6b7280;
-    }
+  .btn-secondary {
+    background-color: #6b7280;
+    border-color: #6b7280;
+  }
 
-    .btn-secondary:hover {
-      background-color: #4b5563;
-      border-color: #4b5563;
-    }
+  .btn-secondary:hover {
+    background-color: #4b5563;
+    border-color: #4b5563;
+  }
 
-    .btn-warning {
-      background-color: var(--warning-color);
-      border-color: var(--warning-color);
-      color: white;
-    }
+  .btn-warning {
+    background-color: var(--warning-color);
+    border-color: var(--warning-color);
+    color: white;
+  }
 
-    .btn-danger {
-      background-color: var(--danger-color);
-      border-color: var(--danger-color);
-    }
+  .btn-danger {
+    background-color: var(--danger-color);
+    border-color: var(--danger-color);
+  }
 
-    .btn-info {
-      background-color: #06b6d4;
-      border-color: #06b6d4;
-    }
+  .btn-info {
+    background-color: #06b6d4;
+    border-color: #06b6d4;
+  }
 
-    .btn-sm {
-      padding: 0.25rem 0.5rem;
-      font-size: 0.875rem;
-    }
+  .btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+  }
 
-    /* Cards */
-    .card {
-      border: none;
-      border-radius: 0.5rem;
-      box-shadow: var(--card-shadow);
-      margin-bottom: 1.5rem;
-    }
+  /* Cards */
+  .card {
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 1.5rem;
+  }
 
-    .card-header {
-      background-color: white;
-      border-bottom: 1px solid var(--border-color);
-      padding: 1rem 1.5rem;
-      font-weight: 600;
-      border-radius: 0.5rem 0.5rem 0 0 !important;
-    }
+  .card-header {
+    background-color: white;
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+    border-radius: 0.5rem 0.5rem 0 0 !important;
+  }
 
-    .card-body {
-      padding: 1.5rem;
-    }
+  .card-body {
+    padding: 1.5rem;
+  }
 
-    /* Tables */
-    .table {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0;
-    }
+  /* Tables */
+  .table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
 
-    .table th {
-      background-color: #f9fafb;
-      color: #4b5563;
-      font-weight: 600;
-      padding: 0.75rem 1.5rem;
-      border-bottom: 1px solid var(--border-color);
-      text-transform: uppercase;
-      font-size: 0.75rem;
-      letter-spacing: 0.05em;
-    }
+  .table th {
+    background-color: #f9fafb;
+    color: #4b5563;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+  }
 
-    .table td {
-      padding: 1rem 1.5rem;
-      border-bottom: 1px solid var(--border-color);
-      vertical-align: middle;
-    }
+  .table td {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+  }
 
-    .table tr:last-child td {
-      border-bottom: none;
-    }
+  .table tr:last-child td {
+    border-bottom: none;
+  }
 
-    .table tr:hover td {
-      background-color: #f9fafb;
-    }
+  .table tr:hover td {
+    background-color: #f9fafb;
+  }
 
-    /* Status Badges */
-    .badge {
-      font-weight: 500;
-      padding: 0.35em 0.65em;
-      font-size: 0.75em;
-      letter-spacing: 0.05em;
-      border-radius: 0.25rem;
-    }
+  /* Status Badges */
+  .badge {
+    font-weight: 500;
+    padding: 0.35em 0.65em;
+    font-size: 0.75em;
+    letter-spacing: 0.05em;
+    border-radius: 0.25rem;
+  }
 
-    .status-pending {
-      background-color: var(--warning-color);
-      color: white;
-    }
+  .status-pending {
+    background-color: var(--warning-color);
+    color: white;
+  }
 
-    .status-in-progress {
-      background-color: var(--primary-color);
-      color: white;
-    }
+  .status-in-progress {
+    background-color: var(--primary-color);
+    color: white;
+  }
 
-    .status-completed {
-      background-color: var(--secondary-color);
-      color: white;
-    }
+  .status-completed {
+    background-color: var(--secondary-color);
+    color: white;
+  }
 
-    .status-rejected {
-      background-color: var(--danger-color);
-      color: white;
-    }
+  .status-rejected {
+    background-color: var(--danger-color);
+    color: white;
+  }
 
-    /* Forms */
-    .form-control, .form-select {
-      padding: 0.5rem 0.75rem;
-      border: 1px solid var(--border-color);
-      border-radius: 0.375rem;
-      transition: border-color 0.2s;
-    }
+  /* Forms */
+  .form-control,
+  .form-select {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.375rem;
+    transition: border-color 0.2s;
+  }
 
-    .form-control:focus, .form-select:focus {
-      border-color: var(--primary-color);
-      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-    }
+  .form-control:focus,
+  .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
 
-    textarea.form-control {
-      min-height: 100px;
-    }
+  textarea.form-control {
+    min-height: 100px;
+  }
 
-    /* Modals */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1050;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(4px);
+  /* Modals */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1050;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+  }
+
+  .modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    max-height: 80vh;
+    overflow-y: auto;
+    border: none;
+  }
+
+  .modal-header {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .modal-title {
+    font-weight: 600;
+    font-size: 1.25rem;
+  }
+
+  .close {
+    color: #6b7280;
+    font-size: 1.5rem;
+    font-weight: 400;
+    opacity: 0.75;
+    transition: opacity 0.2s;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+
+  .close:hover {
+    opacity: 1;
+    color: var(--danger-color);
+  }
+
+  /* Detail Boxes */
+  .detail-row {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .detail-row:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .detail-row strong {
+    display: block;
+    color: #4b5563;
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+  }
+
+  .message-box,
+  .description-box {
+    background-color: #f9fafb;
+    padding: 0.75rem;
+    border-radius: 0.375rem;
+    margin-top: 0.5rem;
+    white-space: pre-wrap;
+    border: 1px solid var(--border-color);
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* File Links */
+  .file-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .file-link:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+  }
+
+  /* Utility Classes */
+  .shadow-sm {
+    box-shadow: var(--card-shadow);
+  }
+
+  .rounded-lg {
+    border-radius: 0.5rem;
+  }
+
+  /* Action Buttons Container */
+  .action-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .table-responsive {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
     }
 
     .modal-content {
-      background-color: white;
-      margin: 5% auto;
-      padding: 1.5rem;
-      border-radius: 0.5rem;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      max-width: 800px;
-      max-height: 80vh;
-      overflow-y: auto;
-      border: none;
+      width: 95%;
+      margin: 10% auto;
     }
 
-    .modal-header {
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .modal-title {
-      font-weight: 600;
-      font-size: 1.25rem;
-    }
-
-    .close {
-      color: #6b7280;
-      font-size: 1.5rem;
-      font-weight: 400;
-      opacity: 0.75;
-      transition: opacity 0.2s;
-      background: none;
-      border: none;
-      padding: 0;
-    }
-
-    .close:hover {
-      opacity: 1;
-      color: var(--danger-color);
-    }
-
-    /* Detail Boxes */
-    .detail-row {
-      margin-bottom: 1rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .detail-row:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-
-    .detail-row strong {
-      display: block;
-      color: #4b5563;
-      margin-bottom: 0.25rem;
-      font-weight: 500;
-    }
-
-    .message-box, .description-box {
-      background-color: #f9fafb;
-      padding: 0.75rem;
-      border-radius: 0.375rem;
-      margin-top: 0.5rem;
-      white-space: pre-wrap;
-      border: 1px solid var(--border-color);
-      font-family: 'Inter', sans-serif;
-    }
-
-    /* File Links */
-    .file-link {
-      color: var(--primary-color);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-
-    .file-link:hover {
-      color: var(--primary-hover);
-      text-decoration: underline;
-    }
-
-    /* Utility Classes */
-    .shadow-sm {
-      box-shadow: var(--card-shadow);
-    }
-
-    .rounded-lg {
-      border-radius: 0.5rem;
-    }
-
-    /* Action Buttons Container */
     .action-buttons {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 0.25rem;
     }
 
-    /* Responsive Adjustments */
-    @media (max-width: 768px) {
-      .table-responsive {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-      }
-      
-      .modal-content {
-        width: 95%;
-        margin: 10% auto;
-      }
-      
-      .action-buttons {
-        flex-direction: column;
-        gap: 0.25rem;
-      }
-      
-      .action-buttons .btn {
-        width: 100%;
-      }
+    .action-buttons .btn {
+      width: 100%;
     }
+  }
 
 
 
-    /* Stats Cards */
-.card-body h6 {
-  font-size: 0.875rem;
-  color: #6b7280;
-}
+  /* Stats Cards */
+  .card-body h6 {
+    font-size: 0.875rem;
+    color: #6b7280;
+  }
 
-.card-body h3 {
-  font-size: 1.75rem;
-  font-weight: 600;
-}
+  .card-body h3 {
+    font-size: 1.75rem;
+    font-weight: 600;
+  }
 
-.bg-opacity-10 {
-  background-color: rgba(0, 0, 0, 0.1);
-}
+  .bg-opacity-10 {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
 
-/* Filter Buttons */
-.btn-group .btn {
-  border-radius: 0.25rem !important;
-  margin-right: 0.25rem;
-}
+  /* Filter Buttons */
+  .btn-group .btn {
+    border-radius: 0.25rem !important;
+    margin-right: 0.25rem;
+  }
 
-.btn-group .btn:last-child {
-  margin-right: 0;
-}
+  .btn-group .btn:last-child {
+    margin-right: 0;
+  }
 
-.btn-group .btn.active {
-  background-color: var(--primary-color);
-  color: white;
-  border-color: var(--primary-color);
-}
-  </style>
+  .btn-group .btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+  }
+</style>
 </head>
+
 <body>
 
- <!-- NAVBAR -->
-  <div class="navbar" id="navbar">
-    <div class="nav-inner">
-      <a class="brand" href="index.html" aria-label="IInsilico Home">
-        <img src="img/1000472452-removebg-preview.png" alt="IInsilico logo" />
-      </a>
-      <div class="spacer"></div>
-      <button class="burger" id="burger" aria-label="Toggle menu">☰</button>
-      <nav class="nav-links" id="navLinks">
-        <a href="index.html" class="items">Home</a>
-        <a href="service.html" class="items">Services</a>
-        <a href="about.html" class="items">About</a>
-        <a href="/logout" class="btn btn-primary" style="height: 40px;">Log Out</a>
-      </nav>
+  <!-- NAVBAR - Desktop -->
+  <nav class="navbar-custom glass" id="navbar">
+    <a class="brand" href="index.html">
+      <img src="img/1000472452-removebg-preview.png" alt="IInsilico logo" />
+    </a>
+    <div class="nav-links-desktop">
+      <a href="index.html">Home</a>
+      <a href="service.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="/logout" class="nav-btn">Log Out</a>
     </div>
+  </nav>
+
+  <!-- NAVBAR - Mobile/Tablet -->
+  <div class="mobile-nav glass">
+    <a href="index.html" class="mobile-nav-item">
+      <i class="bi bi-house-door"></i>
+      <span>Home</span>
+    </a>
+    <a href="service.html" class="mobile-nav-item">
+      <i class="bi bi-grid"></i>
+      <span>Services</span>
+    </a>
+    <a href="about.html" class="mobile-nav-item">
+      <i class="bi bi-info-circle"></i>
+      <span>About</span>
+    </a>
+    <a href="/logout" class="mobile-nav-item">
+      <i class="bi bi-box-arrow-right"></i>
+      <span>Logout</span>
+    </a>
   </div>
 
-<main class="container py-4" style="margin-top: 90px;">
-  <!-- Dashboard Header -->
-  <div class="dashboard-header">
-    <div class="row align-items-center">
-      <div class="col-md-8">
-        <h1 id="welcomeMessage" class="h2 mb-2 text-white">Welcome, Admin!</h1>
-        <p id="userAffiliation" class="mb-0 opacity-75">Role: Administrator</p>
-      </div>
-      <div class="col-md-4 text-md-end">
-        <!-- Action Buttons -->
-        <div class="d-flex gap-2 justify-content-md-end">
-          <button id="show-add-user-btn" class="btn btn-light">
-            <i class="fas fa-user-plus me-2"></i>Add User
-          </button>
-          <button id="show-add-task-btn" class="btn btn-light">
-            <i class="fas fa-tasks me-2"></i>Add Task
-          </button>
+  <main class="container py-4" style="margin-top: 90px;">
+    <!-- Dashboard Header -->
+    <div class="dashboard-header glass-card glass" style="background: var(--primary); color: white;">
+      <div class="row align-items-center">
+        <div class="col-md-8">
+          <h1 id="welcomeMessage" class="h2 mb-2 text-white">Welcome, Admin!</h1>
+          <p id="userAffiliation" class="mb-0 opacity-75">Role: Administrator</p>
         </div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Add User Form -->
-  <div id="add-user-form" class="card mb-4" style="display: none;">
-    <div class="card-header d-flex justify-content-between align-items-center">
-      <h2 class="h5 mb-0">Add New User</h2>
-      <button type="button" id="cancel-add-user" class="btn btn-sm btn-secondary">Cancel</button>
-    </div>
-    <div class="card-body">
-      <form id="user-form">
-        <div class="row g-3">
-          <div class="col-md-6">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" name="name" placeholder="Full Name" required>
-          </div>
-          <div class="col-md-6">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" name="email" placeholder="Email Address" required>
-          </div>
-          <div class="col-md-6">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" name="password" placeholder="Password" required>
-          </div>
-          <div class="col-md-6">
-            <label for="role" class="form-label">Role</label>
-            <select class="form-select" name="role">
-              <option value="user">User</option>
-              <option value="admin">Admin</option>
-              <option value="employee">Employee</option>
-            </select>
-          </div>
-          <div class="col-md-6">
-            <label for="affiliation" class="form-label">Affiliation</label>
-            <input type="text" class="form-control" name="affiliation" placeholder="Affiliation">
-          </div>
-          <div class="col-md-6">
-            <label for="jobTitle" class="form-label">Job Title</label>
-            <input type="text" class="form-control" name="jobTitle" placeholder="Job Title">
-          </div>
-          <div class="col-md-4">
-            <label for="gender" class="form-label">Gender</label>
-            <input type="text" class="form-control" name="gender" placeholder="Gender">
-          </div>
-          <div class="col-md-4">
-            <label for="company" class="form-label">Company</label>
-            <input type="text" class="form-control" name="company" placeholder="Company">
-          </div>
-          <div class="col-md-4">
-            <label for="phoneNumber" class="form-label">Phone Number</label>
-            <input type="text" class="form-control" name="phoneNumber" placeholder="Phone Number">
-          </div>
-          <div class="col-md-6">
-            <label for="research" class="form-label">Field of Research</label>
-            <input type="text" class="form-control" name="research" placeholder="Research Field">
-          </div>
-          <div class="col-md-6">
-            <label for="birthDate" class="form-label">Birth Date</label>
-            <input type="date" class="form-control" name="birthDate">
-          </div>
-          <div class="col-12">
-            <button type="submit" class="btn btn-primary">Create User</button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
-  
-  <!-- Add Task Form -->
-  <div id="add-task-form" class="card mb-4" style="display: none;">
-    <div class="card-header d-flex justify-content-between align-items-center">
-      <h2 class="h5 mb-0">Add New Task</h2>
-      <button type="button" id="cancel-add-task" class="btn btn-sm btn-secondary">Cancel</button>
-    </div>
-    <div class="card-body">
-      <form id="task-form">
-        <div class="row g-3">
-          <div class="col-md-6">
-            <label for="task-user-select" class="form-label">Assign To</label>
-            <select class="form-select" name="userId" id="task-user-select" required>
-              <option value="">-- Select a user --</option>
-            </select>
-          </div>
-          <div class="col-md-6">
-            <label for="title" class="form-label">Task Title</label>
-            <input type="text" class="form-control" name="title" placeholder="Task Title" required>
-          </div>
-          <div class="col-12">
-            <label for="description" class="form-label">Description</label>
-            <textarea class="form-control" name="description" placeholder="Task Description" rows="3" required></textarea>
-          </div>
-          <div class="col-md-6">
-            <label for="subject" class="form-label">Subject</label>
-            <input type="text" class="form-control" name="subject" placeholder="Task Subject">
-          </div>
-          <div class="col-12">
-            <button type="submit" class="btn btn-primary">Create Task</button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
-  
-  <!-- Stats Cards & Charts Section -->
-<div class="row mb-4">
-  <!-- Quick Stats Cards -->
-  <div class="col-md-3">
-    <div class="card shadow-sm h-100">
-      <div class="card-body">
-        <div class="d-flex justify-content-between align-items-center">
-          <div>
-            <h6 class="text-muted mb-2">Total Users</h6>
-            <h3 id="total-users-count" class="mb-0">0</h3>
-          </div>
-          <div class="bg-primary bg-opacity-10 p-3 rounded">
-            <i class="fas fa-users text-primary"></i>
+        <div class="col-md-4 text-md-end">
+          <!-- Action Buttons -->
+          <div class="d-flex gap-2 justify-content-md-end">
+            <button id="show-add-user-btn" class="btn btn-light">
+              <i class="fas fa-user-plus me-2"></i>Add User
+            </button>
+            <button id="show-add-task-btn" class="btn btn-light">
+              <i class="fas fa-tasks me-2"></i>Add Task
+            </button>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  
-  <div class="col-md-3">
-    <div class="card shadow-sm h-100">
-      <div class="card-body">
-        <div class="d-flex justify-content-between align-items-center">
-          <div>
-            <h6 class="text-muted mb-2">Employees</h6>
-            <h3 id="employees-count" class="mb-0">0</h3>
+
+    <!-- Add User Form -->
+    <div id="add-user-form" class="card mb-4" style="display: none;">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <h2 class="h5 mb-0">Add New User</h2>
+        <button type="button" id="cancel-add-user" class="btn btn-sm btn-secondary">Cancel</button>
+      </div>
+      <div class="card-body glass-card glass">
+        <form id="user-form">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" name="name" placeholder="Full Name" required>
+            </div>
+            <div class="col-md-6">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" name="email" placeholder="Email Address" required>
+            </div>
+            <div class="col-md-6">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" name="password" placeholder="Password" required>
+            </div>
+            <div class="col-md-6">
+              <label for="role" class="form-label">Role</label>
+              <select class="form-select" name="role">
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+                <option value="employee">Employee</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="affiliation" class="form-label">Affiliation</label>
+              <input type="text" class="form-control" name="affiliation" placeholder="Affiliation">
+            </div>
+            <div class="col-md-6">
+              <label for="jobTitle" class="form-label">Job Title</label>
+              <input type="text" class="form-control" name="jobTitle" placeholder="Job Title">
+            </div>
+            <div class="col-md-4">
+              <label for="gender" class="form-label">Gender</label>
+              <input type="text" class="form-control" name="gender" placeholder="Gender">
+            </div>
+            <div class="col-md-4">
+              <label for="company" class="form-label">Company</label>
+              <input type="text" class="form-control" name="company" placeholder="Company">
+            </div>
+            <div class="col-md-4">
+              <label for="phoneNumber" class="form-label">Phone Number</label>
+              <input type="text" class="form-control" name="phoneNumber" placeholder="Phone Number">
+            </div>
+            <div class="col-md-6">
+              <label for="research" class="form-label">Field of Research</label>
+              <input type="text" class="form-control" name="research" placeholder="Research Field">
+            </div>
+            <div class="col-md-6">
+              <label for="birthDate" class="form-label">Birth Date</label>
+              <input type="date" class="form-control" name="birthDate">
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary">Create User</button>
+            </div>
           </div>
-          <div class="bg-warning bg-opacity-10 p-3 rounded">
-            <i class="fas fa-user-tie text-warning"></i>
+        </form>
+      </div>
+    </div>
+
+    <!-- Add Task Form -->
+    <div id="add-task-form" class="card mb-4" style="display: none;">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <h2 class="h5 mb-0">Add New Task</h2>
+        <button type="button" id="cancel-add-task" class="btn btn-sm btn-secondary">Cancel</button>
+      </div>
+      <div class="card-body glass-card glass">
+        <form id="task-form">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="task-user-select" class="form-label">Assign To</label>
+              <select class="form-select" name="userId" id="task-user-select" required>
+                <option value="">-- Select a user --</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="title" class="form-label">Task Title</label>
+              <input type="text" class="form-control" name="title" placeholder="Task Title" required>
+            </div>
+            <div class="col-12">
+              <label for="description" class="form-label">Description</label>
+              <textarea class="form-control" name="description" placeholder="Task Description" rows="3"
+                required></textarea>
+            </div>
+            <div class="col-md-6">
+              <label for="subject" class="form-label">Subject</label>
+              <input type="text" class="form-control" name="subject" placeholder="Task Subject">
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary">Create Task</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Stats Cards & Charts Section -->
+    <div class="row mb-4">
+      <!-- Quick Stats Cards -->
+      <div class="col-md-3">
+        <div class="card shadow-sm h-100 glass-card glass">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <h6 class="text-muted mb-2">Total Users</h6>
+                <h3 id="total-users-count" class="mb-0">0</h3>
+              </div>
+              <div class="bg-primary bg-opacity-10 p-3 rounded">
+                <i class="fas fa-users text-primary"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card shadow-sm h-100 glass-card glass">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <h6 class="text-muted mb-2">Employees</h6>
+                <h3 id="employees-count" class="mb-0">0</h3>
+              </div>
+              <div class="bg-warning bg-opacity-10 p-3 rounded">
+                <i class="fas fa-user-tie text-warning"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card shadow-sm h-100 glass-card glass">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <h6 class="text-muted mb-2">Active Tasks</h6>
+                <h3 id="active-tasks-count" class="mb-0">0</h3>
+              </div>
+              <div class="bg-info bg-opacity-10 p-3 rounded">
+                <i class="fas fa-tasks text-info"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card shadow-sm h-100 glass-card glass">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <h6 class="text-muted mb-2">Completed Tasks</h6>
+                <h3 id="completed-tasks-count" class="mb-0">0</h3>
+              </div>
+              <div class="bg-success bg-opacity-10 p-3 rounded">
+                <i class="fas fa-check-circle text-success"></i>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  
-  <div class="col-md-3">
-    <div class="card shadow-sm h-100">
-      <div class="card-body">
-        <div class="d-flex justify-content-between align-items-center">
-          <div>
-            <h6 class="text-muted mb-2">Active Tasks</h6>
-            <h3 id="active-tasks-count" class="mb-0">0</h3>
+
+    <!-- Charts Row -->
+    <div class="row mb-4">
+      <div class="col-md-6">
+        <div class="card shadow-sm h-100">
+          <div class="card-header">
+            <h5 class="mb-0">Tasks by Status</h5>
           </div>
-          <div class="bg-info bg-opacity-10 p-3 rounded">
-            <i class="fas fa-tasks text-info"></i>
+          <div class="card-body">
+            <canvas id="tasksStatusChart" height="250"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card shadow-sm h-100">
+          <div class="card-header">
+            Analysis Section
+          </div>
+          <div class="card-body">
+
+
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Users Section -->
+    <div class="card mb-4">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center">
+          <h2 class="h5 mb-0 me-3">Users</h2>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-sm btn-outline-secondary active" data-filter="all">All</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary" data-filter="admin">Admins</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary" data-filter="employee">Employees</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary" data-filter="user">Users</button>
+          </div>
+        </div>
+        <span class="badge bg-primary rounded-pill" id="users-count">0</span>
+      </div>
+      <div class="card-body p-0">
+        <div class="table-responsive">
+          <table id="users-table" class="table table-hover mb-0">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- User data will be loaded here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tasks Section -->
+    <div class="card mb-4">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <h2 class="h5 mb-0">Tasks</h2>
+        <span class="badge bg-primary rounded-pill" id="tasks-count">0</span>
+      </div>
+      <div class="card-body p-0">
+        <div class="table-responsive">
+          <table id="tasks-table" class="table table-hover mb-0">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>From (Requester)</th>
+                <th>Assigned To (Employee)</th>
+                <th>Status</th>
+                <th>Created</th>
+                <th>File</th>
+                <th>Priority</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="task-list">
+              <!-- Task data will be loaded here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Requests Section -->
+    <div class="card glass-card glass">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <h2 class="h5 mb-0">Contact Requests</h2>
+        <span class="badge bg-primary rounded-pill" id="requests-count">0</span>
+      </div>
+      <div class="card-body p-0">
+        <div class="table-responsive">
+          <table id="contact-table" class="table table-hover mb-0">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Subject</th>
+                <th>Date</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Contact requests will be loaded here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Edit User Modal -->
+  <div id="editUserModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Edit User</h2>
+        <button type="button" class="close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="edit-user-form" class="p-3">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="edit-name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="edit-name" name="name" required>
+            </div>
+            <div class="col-md-6">
+              <label for="edit-email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="edit-email" name="email" required>
+            </div>
+            <div class="col-md-6">
+              <label for="edit-password" class="form-label">Password (leave blank to keep current)</label>
+              <input type="password" class="form-control" id="edit-password" name="password" placeholder="New password">
+            </div>
+            <div class="col-md-6">
+              <label for="edit-role" class="form-label">Role</label>
+              <select class="form-select" id="edit-role" name="role">
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+                <option value="employee">Employee</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="edit-affiliation" class="form-label">Affiliation</label>
+              <input type="text" class="form-control" id="edit-affiliation" name="affiliation">
+            </div>
+            <div class="col-md-6">
+              <label for="edit-jobTitle" class="form-label">Job Title</label>
+              <input type="text" class="form-control" id="edit-jobTitle" name="jobTitle">
+            </div>
+            <div class="col-md-4">
+              <label for="edit-gender" class="form-label">Gender</label>
+              <input type="text" class="form-control" id="edit-gender" name="gender">
+            </div>
+            <div class="col-md-4">
+              <label for="edit-company" class="form-label">Company</label>
+              <input type="text" class="form-control" id="edit-company" name="company">
+            </div>
+            <div class="col-md-4">
+              <label for="edit-phoneNumber" class="form-label">Phone Number</label>
+              <input type="text" class="form-control" id="edit-phoneNumber" name="phoneNumber">
+            </div>
+            <div class="col-md-6">
+              <label for="edit-research" class="form-label">Field of Research</label>
+              <input type="text" class="form-control" id="edit-research" name="research">
+            </div>
+            <div class="col-md-6">
+              <label for="edit-birthDate" class="form-label">Birth Date</label>
+              <input type="date" class="form-control" id="edit-birthDate" name="birthDate">
+            </div>
+            <div class="col-12 d-flex justify-content-end gap-2">
+              <button type="button" onclick="closeModal(document.getElementById('editUserModal'))"
+                class="btn btn-secondary">Cancel</button>
+              <button type="submit" class="btn btn-primary">Save Changes</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
-  
-  <div class="col-md-3">
-    <div class="card shadow-sm h-100">
-      <div class="card-body">
-        <div class="d-flex justify-content-between align-items-center">
-          <div>
-            <h6 class="text-muted mb-2">Completed Tasks</h6>
-            <h3 id="completed-tasks-count" class="mb-0">0</h3>
-          </div>
-          <div class="bg-success bg-opacity-10 p-3 rounded">
-            <i class="fas fa-check-circle text-success"></i>
-          </div>
+
+  <!-- Assign Task Modal -->
+  <div id="assignTaskModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Assign Task</h2>
+        <button type="button" class="close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div id="assign-modal-content">
+          <!-- Content will be loaded dynamically -->
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Charts Row -->
-<div class="row mb-4">
-  <div class="col-md-6">
-    <div class="card shadow-sm h-100">
-      <div class="card-header">
-        <h5 class="mb-0">Tasks by Status</h5>
+  <!-- Edit Task Modal -->
+  <div id="editTaskModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Edit Task</h2>
+        <button type="button" class="close">&times;</button>
       </div>
-      <div class="card-body">
-        <canvas id="tasksStatusChart" height="250"></canvas>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-md-6">
-    <div class="card shadow-sm h-100">
-      <div class="card-header">
-        Analysis Section
-      </div>
-      <div class="card-body">
- 
-
-      </div>
-    </div>
-  </div>
-</div>
-
-  <!-- Users Section -->
-  <div class="card mb-4">
-    <div class="card-header d-flex justify-content-between align-items-center">
-  <div class="d-flex align-items-center">
-    <h2 class="h5 mb-0 me-3">Users</h2>
-    <div class="btn-group" role="group">
-      <button type="button" class="btn btn-sm btn-outline-secondary active" data-filter="all">All</button>
-      <button type="button" class="btn btn-sm btn-outline-secondary" data-filter="admin">Admins</button>
-      <button type="button" class="btn btn-sm btn-outline-secondary" data-filter="employee">Employees</button>
-      <button type="button" class="btn btn-sm btn-outline-secondary" data-filter="user">Users</button>
-    </div>
-  </div>
-  <span class="badge bg-primary rounded-pill" id="users-count">0</span>
-</div>
-    <div class="card-body p-0">
-      <div class="table-responsive">
-        <table id="users-table" class="table table-hover mb-0">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Role</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- User data will be loaded here -->
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Tasks Section -->
-  <div class="card mb-4">
-    <div class="card-header d-flex justify-content-between align-items-center">
-      <h2 class="h5 mb-0">Tasks</h2>
-      <span class="badge bg-primary rounded-pill" id="tasks-count">0</span>
-    </div>
-    <div class="card-body p-0">
-      <div class="table-responsive">
-        <table id="tasks-table" class="table table-hover mb-0">
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>From (Requester)</th>
-              <th>Assigned To (Employee)</th> 
-              <th>Status</th>
-              <th>Created</th>
-              <th>File</th>
-              <th>Priority</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody id="task-list">
-            <!-- Task data will be loaded here -->
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Contact Requests Section -->
-  <div class="card">
-    <div class="card-header d-flex justify-content-between align-items-center">
-      <h2 class="h5 mb-0">Contact Requests</h2>
-      <span class="badge bg-primary rounded-pill" id="requests-count">0</span>
-    </div>
-    <div class="card-body p-0">
-      <div class="table-responsive">
-        <table id="contact-table" class="table table-hover mb-0">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Subject</th>
-              <th>Date</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Contact requests will be loaded here -->
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</main>
-
-<!-- Edit User Modal -->
-<div id="editUserModal" class="modal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2 class="modal-title">Edit User</h2>
-      <button type="button" class="close">&times;</button>
-    </div>
-    <div class="modal-body">
-      <form id="edit-user-form" class="p-3">
-        <div class="row g-3">
-          <div class="col-md-6">
-            <label for="edit-name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="edit-name" name="name" required>
-          </div>
-          <div class="col-md-6">
-            <label for="edit-email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="edit-email" name="email" required>
-          </div>
-          <div class="col-md-6">
-            <label for="edit-password" class="form-label">Password (leave blank to keep current)</label>
-            <input type="password" class="form-control" id="edit-password" name="password" placeholder="New password">
-          </div>
-          <div class="col-md-6">
-            <label for="edit-role" class="form-label">Role</label>
-            <select class="form-select" id="edit-role" name="role">
-              <option value="user">User</option>
-              <option value="admin">Admin</option>
-              <option value="employee">Employee</option>
-            </select>
-          </div>
-          <div class="col-md-6">
-            <label for="edit-affiliation" class="form-label">Affiliation</label>
-            <input type="text" class="form-control" id="edit-affiliation" name="affiliation">
-          </div>
-          <div class="col-md-6">
-            <label for="edit-jobTitle" class="form-label">Job Title</label>
-            <input type="text" class="form-control" id="edit-jobTitle" name="jobTitle">
-          </div>
-          <div class="col-md-4">
-            <label for="edit-gender" class="form-label">Gender</label>
-            <input type="text" class="form-control" id="edit-gender" name="gender">
-          </div>
-          <div class="col-md-4">
-            <label for="edit-company" class="form-label">Company</label>
-            <input type="text" class="form-control" id="edit-company" name="company">
-          </div>
-          <div class="col-md-4">
-            <label for="edit-phoneNumber" class="form-label">Phone Number</label>
-            <input type="text" class="form-control" id="edit-phoneNumber" name="phoneNumber">
-          </div>
-          <div class="col-md-6">
-            <label for="edit-research" class="form-label">Field of Research</label>
-            <input type="text" class="form-control" id="edit-research" name="research">
-          </div>
-          <div class="col-md-6">
-            <label for="edit-birthDate" class="form-label">Birth Date</label>
-            <input type="date" class="form-control" id="edit-birthDate" name="birthDate">
-          </div>
-          <div class="col-12 d-flex justify-content-end gap-2">
-            <button type="button" onclick="closeModal(document.getElementById('editUserModal'))" class="btn btn-secondary">Cancel</button>
-            <button type="submit" class="btn btn-primary">Save Changes</button>
-          </div>
+      <div class="modal-body">
+        <div id="edit-modal-content">
+          <!-- Content will be loaded dynamically -->
         </div>
-      </form>
-    </div>
-  </div>
-</div>
-
-<!-- Assign Task Modal -->
-<div id="assignTaskModal" class="modal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2 class="modal-title">Assign Task</h2>
-      <button type="button" class="close">&times;</button>
-    </div>
-    <div class="modal-body">
-      <div id="assign-modal-content">
-        <!-- Content will be loaded dynamically -->
       </div>
     </div>
   </div>
-</div>
 
-<!-- Edit Task Modal -->
-<div id="editTaskModal" class="modal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2 class="modal-title">Edit Task</h2>
-      <button type="button" class="close">&times;</button>
-    </div>
-    <div class="modal-body">
-      <div id="edit-modal-content">
-        <!-- Content will be loaded dynamically -->
+  <!-- Task Details Modal -->
+  <div id="taskDetailsModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Task Details</h2>
+        <button type="button" class="close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div id="task-details-content" class="p-3">
+          <!-- Details will be loaded here -->
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Task Details Modal -->
-<div id="taskDetailsModal" class="modal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2 class="modal-title">Task Details</h2>
-      <button type="button" class="close">&times;</button>
-    </div>
-    <div class="modal-body">
-      <div id="task-details-content" class="p-3">
-        <!-- Details will be loaded here -->
+  <!-- View Request Modal -->
+  <div id="viewRequestModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Contact Request Details</h2>
+        <button type="button" class="close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div id="request-details-content" class="p-3">
+          <!-- Details will be loaded here -->
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-<!-- View Request Modal -->
-<div id="viewRequestModal" class="modal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2 class="modal-title">Contact Request Details</h2>
-      <button type="button" class="close">&times;</button>
-    </div>
-    <div class="modal-body">
-      <div id="request-details-content" class="p-3">
-        <!-- Details will be loaded here -->
-      </div>
-    </div>
-  </div>
-</div>
 
 
- 
-
-  <!-- Back to top -->
-  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
 
-<script src="js/Authcode.js"></script>
-<!-- Chart.js -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<!-- JavaScript Libraries -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="lib/wow/wow.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/waypoints/waypoints.min.js"></script>
-<script src="lib/counterup/counterup.min.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="lib/isotope/isotope.pkgd.min.js"></script>
-<script src="lib/lightbox/js/lightbox.min.js"></script>
 
 
-<script>
-  // Global variables
-  let allUsers = [];
-  let allTasks = [];
-  let allContactRequests = [];
-  
-  // Helper function to escape HTML (add this at the top of your script)
-  function escapeHtml(unsafe) {
-    if (!unsafe) return unsafe;
-    return unsafe
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#039;");
-  }
+  <script src="js/Authcode.js"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-  // DOM Content Loaded
-  document.addEventListener("DOMContentLoaded", () => {
-    fetchAdminData();
-    setupEventListeners();
-    initCharts(); //charts
-    setupRoleFilters();// Role-based filters for users
-  });
-  
-  // Setup event listeners
-  function setupEventListeners() {
-    // Show/hide Add User form
-    document.getElementById("show-add-user-btn").addEventListener("click", () => {
-      document.getElementById("add-user-form").style.display = "block";
+  <!-- JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+
+  <script>
+    // Global variables
+    let allUsers = [];
+    let allTasks = [];
+    let allContactRequests = [];
+
+    // Helper function to escape HTML (add this at the top of your script)
+    function escapeHtml(unsafe) {
+      if (!unsafe) return unsafe;
+      return unsafe
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    // DOM Content Loaded
+    document.addEventListener("DOMContentLoaded", () => {
+      fetchAdminData();
+      setupEventListeners();
+      initCharts(); //charts
+      setupRoleFilters();// Role-based filters for users
     });
-    
-    document.getElementById("cancel-add-user").addEventListener("click", () => {
-      document.getElementById("add-user-form").style.display = "none";
-    });
-    
-    // Show/hide Add Task form
-    document.getElementById("show-add-task-btn").addEventListener("click", () => {
-      document.getElementById("add-task-form").style.display = "block";
-      loadUserOptions();
-    });
-    
-    document.getElementById("cancel-add-task").addEventListener("click", () => {
-      document.getElementById("add-task-form").style.display = "none";
-    });
-    
-    // Form submissions
-    document.getElementById("user-form").addEventListener("submit", addUser);
-    document.getElementById("task-form").addEventListener("submit", addTask);
-    
-    // Modal close buttons
-    document.querySelectorAll('.modal .close').forEach(closeBtn => {
-      closeBtn.addEventListener('click', () => {
-        closeModal(closeBtn.closest('.modal'));
+
+    // Setup event listeners
+    function setupEventListeners() {
+      // Show/hide Add User form
+      document.getElementById("show-add-user-btn").addEventListener("click", () => {
+        document.getElementById("add-user-form").style.display = "block";
       });
-    });
-    
-    // Close modal when clicking outside
-    document.querySelectorAll('.modal').forEach(modal => {
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-          closeModal(modal);
-        }
+
+      document.getElementById("cancel-add-user").addEventListener("click", () => {
+        document.getElementById("add-user-form").style.display = "none";
       });
-    });
-  }
-  
-  // Fetch admin data
-  function fetchAdminData() {
-    fetch("/api/admin-data")
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then(data => {
-        if (data.error) {
-          console.error("Error: ", data.error);
-          return;
-        }
-        allUsers = data.users;
-        allTasks = data.tasks;
-        populateUsersTable(data.users);
-        populateTasksTable(data.tasks);
-        fetchContactRequests();
-        
-        // Update counts
-        document.getElementById('users-count').textContent = data.users.length;
-        document.getElementById('tasks-count').textContent = data.tasks.length;
+
+      // Show/hide Add Task form
+      document.getElementById("show-add-task-btn").addEventListener("click", () => {
+        document.getElementById("add-task-form").style.display = "block";
+        loadUserOptions();
+      });
+
+      document.getElementById("cancel-add-task").addEventListener("click", () => {
+        document.getElementById("add-task-form").style.display = "none";
+      });
+
+      // Form submissions
+      document.getElementById("user-form").addEventListener("submit", addUser);
+      document.getElementById("task-form").addEventListener("submit", addTask);
+
+      // Modal close buttons
+      document.querySelectorAll('.modal .close').forEach(closeBtn => {
+        closeBtn.addEventListener('click', () => {
+          closeModal(closeBtn.closest('.modal'));
+        });
+      });
+
+      // Close modal when clicking outside
+      document.querySelectorAll('.modal').forEach(modal => {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            closeModal(modal);
+          }
+        });
+      });
+    }
+
+    // Fetch admin data
+    function fetchAdminData() {
+      fetch("/api/admin-data")
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(data => {
+          if (data.error) {
+            console.error("Error: ", data.error);
+            return;
+          }
+          allUsers = data.users;
+          allTasks = data.tasks;
+          populateUsersTable(data.users);
+          populateTasksTable(data.tasks);
+          fetchContactRequests();
+
+          // Update counts
+          document.getElementById('users-count').textContent = data.users.length;
+          document.getElementById('tasks-count').textContent = data.tasks.length;
 
           // Update charts and additional counters
           updateChartsData();
-      })
-      .catch(err => {
-        console.error("Error fetching admin data:", err);
-        alert("Error loading admin data. Please check console for details.");
-      });
-  }
-  
-
-
-// Initialize charts
-let tasksStatusChart;
-
-function initCharts() {
-  // Tasks by Status Chart
-  const tasksCtx = document.getElementById('tasksStatusChart').getContext('2d');
-  tasksStatusChart = new Chart(tasksCtx, {
-    type: 'doughnut',
-    data: {
-      labels: ['Pending', 'In Progress', 'Completed', 'Rejected'],
-      datasets: [{
-        data: [0, 0, 0, 0],
-        backgroundColor: [
-          '#F59E0B', // pending - amber
-          '#3B82F6', // in progress - blue
-          '#10B981', // completed - emerald
-          '#EF4444'  // rejected - red
-        ],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: {
-          position: 'bottom'
-        }
-      }
+        })
+        .catch(err => {
+          console.error("Error fetching admin data:", err);
+          alert("Error loading admin data. Please check console for details.");
+        });
     }
-  });
 
 
-}
 
-// Update charts with data
-function updateChartsData() {
-  // Tasks by status
-  const pendingTasks = allTasks.filter(t => t.status === 'pending').length;
-  const inProgressTasks = allTasks.filter(t => t.status === 'in-progress').length;
-  const completedTasks = allTasks.filter(t => t.status === 'completed').length;
-  const rejectedTasks = allTasks.filter(t => t.status === 'rejected').length;
-  
-  tasksStatusChart.data.datasets[0].data = [
-    pendingTasks, 
-    inProgressTasks, 
-    completedTasks, 
-    rejectedTasks
-  ];
-  tasksStatusChart.update();
-  
-  // Requests data (you might need to adjust based on your actual request types)
-  const contactRequests = allContactRequests.filter(r => r.type === 'contact').length;
-  const otherRequests = allContactRequests.length - contactRequests;
-  
-  
-  // Update counters
-  document.getElementById('total-users-count').textContent = allUsers.length;
-  document.getElementById('employees-count').textContent = allUsers.filter(u => u.role === 'employee').length;
-  document.getElementById('active-tasks-count').textContent = allTasks.filter(t => 
-    t.status === 'pending' || t.status === 'in-progress'
-  ).length;
-  document.getElementById('completed-tasks-count').textContent = completedTasks;
-}
+    // Initialize charts
+    let tasksStatusChart;
 
-// Role filtering functionality
-function setupRoleFilters() {
-  document.querySelectorAll('[data-filter]').forEach(btn => {
-    btn.addEventListener('click', function() {
-      // Update active state
-      document.querySelectorAll('[data-filter]').forEach(b => 
-        b.classList.remove('active')
-      );
-      this.classList.add('active');
-      
-      // Filter users
-      const filter = this.dataset.filter;
-      let filteredUsers = allUsers;
-      
-      if (filter !== 'all') {
-        filteredUsers = allUsers.filter(u => u.role === filter);
-      }
-      
-      populateUsersTable(filteredUsers);
-    });
-  });
-}
+    function initCharts() {
+      // Tasks by Status Chart
+      const tasksCtx = document.getElementById('tasksStatusChart').getContext('2d');
+      tasksStatusChart = new Chart(tasksCtx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Pending', 'In Progress', 'Completed', 'Rejected'],
+          datasets: [{
+            data: [0, 0, 0, 0],
+            backgroundColor: [
+              '#F59E0B', // pending - amber
+              '#3B82F6', // in progress - blue
+              '#10B981', // completed - emerald
+              '#EF4444'  // rejected - red
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              position: 'bottom'
+            }
+          }
+        }
+      });
 
 
-  // Populate users table
-  function populateUsersTable(users) {
-    const usersTableBody = document.querySelector("#users-table tbody");
-    usersTableBody.innerHTML = "";
-    
-    users.forEach(user => {
-      const tr = document.createElement("tr");
-      tr.innerHTML = `
+    }
+
+    // Update charts with data
+    function updateChartsData() {
+      // Tasks by status
+      const pendingTasks = allTasks.filter(t => t.status === 'pending').length;
+      const inProgressTasks = allTasks.filter(t => t.status === 'in-progress').length;
+      const completedTasks = allTasks.filter(t => t.status === 'completed').length;
+      const rejectedTasks = allTasks.filter(t => t.status === 'rejected').length;
+
+      tasksStatusChart.data.datasets[0].data = [
+        pendingTasks,
+        inProgressTasks,
+        completedTasks,
+        rejectedTasks
+      ];
+      tasksStatusChart.update();
+
+      // Requests data (you might need to adjust based on your actual request types)
+      const contactRequests = allContactRequests.filter(r => r.type === 'contact').length;
+      const otherRequests = allContactRequests.length - contactRequests;
+
+
+      // Update counters
+      document.getElementById('total-users-count').textContent = allUsers.length;
+      document.getElementById('employees-count').textContent = allUsers.filter(u => u.role === 'employee').length;
+      document.getElementById('active-tasks-count').textContent = allTasks.filter(t =>
+        t.status === 'pending' || t.status === 'in-progress'
+      ).length;
+      document.getElementById('completed-tasks-count').textContent = completedTasks;
+    }
+
+    // Role filtering functionality
+    function setupRoleFilters() {
+      document.querySelectorAll('[data-filter]').forEach(btn => {
+        btn.addEventListener('click', function () {
+          // Update active state
+          document.querySelectorAll('[data-filter]').forEach(b =>
+            b.classList.remove('active')
+          );
+          this.classList.add('active');
+
+          // Filter users
+          const filter = this.dataset.filter;
+          let filteredUsers = allUsers;
+
+          if (filter !== 'all') {
+            filteredUsers = allUsers.filter(u => u.role === filter);
+          }
+
+          populateUsersTable(filteredUsers);
+        });
+      });
+    }
+
+
+    // Populate users table
+    function populateUsersTable(users) {
+      const usersTableBody = document.querySelector("#users-table tbody");
+      usersTableBody.innerHTML = "";
+
+      users.forEach(user => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
         <td>${user.name || ""}</td>
         <td>${user.email || ""}</td>
         <td><span class="badge ${user.role === 'admin' ? 'bg-primary' : user.role === 'employee' ? 'bg-warning' : 'bg-secondary'}">${user.role || "user"}</span></td>
@@ -1082,53 +1102,53 @@ function setupRoleFilters() {
           </div>
         </td>
       `;
-      usersTableBody.appendChild(tr);
-    });
-  }
-                                // Populate tasks table   // 3292025  
- function populateTasksTable(tasks) {
-  const tasksTableBody = document.querySelector("#tasks-table tbody");
-  tasksTableBody.innerHTML = "";
-  
-  if (tasks.length === 0) {
-    const tr = document.createElement("tr");
-    tr.innerHTML = `<td colspan="8" class="text-center py-4">No tasks found</td>`;
-    tasksTableBody.appendChild(tr);
-    return;
-  }
-  
-  tasks.forEach(task => {
-    const statusClass = `status-${(task.status || 'pending').replace(' ', '-')}`;
-    
-    // Get requester info
-    let requesterInfo = 'Unassigned';
-    if (task.userId && typeof task.userId === 'object') {
-      requesterInfo = `${task.userId.name || 'No name'} (${task.userId.email || 'No email'})`;
-    } else if (task.userId && typeof task.userId === 'string') {
-      const user = allUsers.find(u => u._id === task.userId);
-      requesterInfo = user ? `${user.name || 'No name'} (${user.email || 'No email'})` : 'Unassigned';
-    } else if (task.userName) {
-      requesterInfo = `${task.userName || 'No name'} (${task.userEmail || 'No email'})`;
+        usersTableBody.appendChild(tr);
+      });
     }
-    
-    // Get assigned employee info
-    let employeeInfo = 'Unassigned';
-    if (task.workOn && typeof task.workOn === 'object') {
-      employeeInfo = `${task.workOn.name || 'No name'} (${task.workOn.email || 'No email'})`;
-    } else if (task.workOn && typeof task.workOn === 'string') {
-      const employee = allUsers.find(u => u._id === task.workOn);
-      employeeInfo = employee ? `${employee.name || 'No name'} (${employee.email || 'No email'})` : 'Unassigned';
-    }
-    //prio fix
-    const priority = task.priority || 'normal';
-    let priorityClass = 'bg-primary'; // default
-    if (priority === 'high') priorityClass = 'bg-warning';
-    if (priority === 'urgent') priorityClass = 'bg-danger';
-    if (priority === 'low') priorityClass = 'bg-secondary';
+    // Populate tasks table   // 3292025  
+    function populateTasksTable(tasks) {
+      const tasksTableBody = document.querySelector("#tasks-table tbody");
+      tasksTableBody.innerHTML = "";
 
-    // Create table row
-    const tr = document.createElement("tr");
-    tr.innerHTML = `
+      if (tasks.length === 0) {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `<td colspan="8" class="text-center py-4">No tasks found</td>`;
+        tasksTableBody.appendChild(tr);
+        return;
+      }
+
+      tasks.forEach(task => {
+        const statusClass = `status-${(task.status || 'pending').replace(' ', '-')}`;
+
+        // Get requester info
+        let requesterInfo = 'Unassigned';
+        if (task.userId && typeof task.userId === 'object') {
+          requesterInfo = `${task.userId.name || 'No name'} (${task.userId.email || 'No email'})`;
+        } else if (task.userId && typeof task.userId === 'string') {
+          const user = allUsers.find(u => u._id === task.userId);
+          requesterInfo = user ? `${user.name || 'No name'} (${user.email || 'No email'})` : 'Unassigned';
+        } else if (task.userName) {
+          requesterInfo = `${task.userName || 'No name'} (${task.userEmail || 'No email'})`;
+        }
+
+        // Get assigned employee info
+        let employeeInfo = 'Unassigned';
+        if (task.workOn && typeof task.workOn === 'object') {
+          employeeInfo = `${task.workOn.name || 'No name'} (${task.workOn.email || 'No email'})`;
+        } else if (task.workOn && typeof task.workOn === 'string') {
+          const employee = allUsers.find(u => u._id === task.workOn);
+          employeeInfo = employee ? `${employee.name || 'No name'} (${employee.email || 'No email'})` : 'Unassigned';
+        }
+        //prio fix
+        const priority = task.priority || 'normal';
+        let priorityClass = 'bg-primary'; // default
+        if (priority === 'high') priorityClass = 'bg-warning';
+        if (priority === 'urgent') priorityClass = 'bg-danger';
+        if (priority === 'low') priorityClass = 'bg-secondary';
+
+        // Create table row
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
       <td>${task.title || task.subject || "No Title"}</td>
       <td>${requesterInfo}</td>
       <td>${employeeInfo}</td>
@@ -1145,32 +1165,32 @@ function setupRoleFilters() {
         </div>
       </td>
     `;
-    tasksTableBody.appendChild(tr);
-  });
-}
-  
-  // Fetch contact requests from the server
-  function fetchContactRequests() {
-    fetch("/api/contact-requests")
+        tasksTableBody.appendChild(tr);
+      });
+    }
+
+    // Fetch contact requests from the server
+    function fetchContactRequests() {
+      fetch("/api/contact-requests")
         .then(response => {
-            if (!response.ok) throw new Error('Network response was not ok');
-            return response.json();
+          if (!response.ok) throw new Error('Network response was not ok');
+          return response.json();
         })
         .then(requests => {
-            allContactRequests = requests;
-            const tableBody = document.querySelector("#contact-table tbody");
-            tableBody.innerHTML = "";
-            
-            if (requests.length === 0) {
-                tableBody.innerHTML = `<tr><td colspan="5" class="text-center py-4">No contact requests found</td></tr>`;
-                return;
-            }
-            
-            document.getElementById('requests-count').textContent = requests.length;
-            
-            requests.forEach(request => {
-                const tr = document.createElement("tr");
-                tr.innerHTML = `
+          allContactRequests = requests;
+          const tableBody = document.querySelector("#contact-table tbody");
+          tableBody.innerHTML = "";
+
+          if (requests.length === 0) {
+            tableBody.innerHTML = `<tr><td colspan="5" class="text-center py-4">No contact requests found</td></tr>`;
+            return;
+          }
+
+          document.getElementById('requests-count').textContent = requests.length;
+
+          requests.forEach(request => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
                     <td>${request.name || "N/A"}</td>
                     <td>${request.email || "N/A"}</td>
                     <td>${request.subject || "N/A"}</td>
@@ -1183,85 +1203,85 @@ function setupRoleFilters() {
                         </div>
                     </td>
                 `;
-                tableBody.appendChild(tr);
-            });
+            tableBody.appendChild(tr);
+          });
         })
         .catch(err => {
-            console.error("Error fetching contact requests:", err);
-            const tableBody = document.querySelector("#contact-table tbody");
-            tableBody.innerHTML = `<tr><td colspan="5" class="text-center py-4">Error loading requests</td></tr>`;
+          console.error("Error fetching contact requests:", err);
+          const tableBody = document.querySelector("#contact-table tbody");
+          tableBody.innerHTML = `<tr><td colspan="5" class="text-center py-4">Error loading requests</td></tr>`;
         });
-  }
+    }
 
-  // the acceptRequest function:
-  function acceptRequest(requestId, requestType = 'form') {
+    // the acceptRequest function:
+    function acceptRequest(requestId, requestType = 'form') {
       if (!confirm("Accept this request and create a task?")) return;
-      
+
       fetch(`/api/accept-contact/${requestId}`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ requestType })
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ requestType })
       })
-      .then(response => {
+        .then(response => {
           if (!response.ok) {
-              return response.json().then(err => { throw err; });
+            return response.json().then(err => { throw err; });
           }
           return response.json();
-      })
-      .then(response => {
+        })
+        .then(response => {
           alert(response.message || "Request accepted and task created");
           fetchAdminData(); // Refresh the data
-      })
-      .catch(err => {
+        })
+        .catch(err => {
           console.error("Error accepting request:", err);
           alert(err.error || "Error accepting request");
-      });
-  }
+        });
+    }
 
-  // Update the deleteRequest function:
-  function deleteRequest(requestId, requestType = 'form') {
-    if (!confirm("Are you sure you want to delete this request?")) return;
-    
-    const endpoint = requestType === 'contact' 
-      ? `/api/contact-requests/${requestId}`
-      : `/api/form-requests/${requestId}`;
-    
-    fetch(endpoint, { method: "DELETE" })
-      .then(response => {
-        if (!response.ok) {
-          return response.json().then(err => { throw err; });
-        }
-        return response.json();
-      })
-      .then(response => {
-        alert(response.message || "Request deleted successfully");
-        fetchAdminData();
-      })
-      .catch(err => {
-        console.error("Error deleting request:", err);
-        alert(err.error || "Error deleting request");
-      });
-  }
-  
-  // Update the showRequestDetails function
-  function showRequestDetails(requestId, requestType) {
+    // Update the deleteRequest function:
+    function deleteRequest(requestId, requestType = 'form') {
+      if (!confirm("Are you sure you want to delete this request?")) return;
+
+      const endpoint = requestType === 'contact'
+        ? `/api/contact-requests/${requestId}`
+        : `/api/form-requests/${requestId}`;
+
+      fetch(endpoint, { method: "DELETE" })
+        .then(response => {
+          if (!response.ok) {
+            return response.json().then(err => { throw err; });
+          }
+          return response.json();
+        })
+        .then(response => {
+          alert(response.message || "Request deleted successfully");
+          fetchAdminData();
+        })
+        .catch(err => {
+          console.error("Error deleting request:", err);
+          alert(err.error || "Error deleting request");
+        });
+    }
+
+    // Update the showRequestDetails function
+    function showRequestDetails(requestId, requestType) {
       fetch(`/api/contact-request/${requestId}`)
-          .then(response => response.json())
-          .then(request => {
-              const modal = document.getElementById("viewRequestModal");
-              const content = document.getElementById("request-details-content");
-              
-              // Determine the name and email based on request type
-              let name, email;
-              if (requestType === 'form') {
-                  name = request.userName || request.name || 'N/A';
-                  email = request.userEmail || request.email || 'N/A';
-              } else {
-                  name = request.name || request.userName || 'N/A';
-                  email = request.email || request.userEmail || 'N/A';
-              }
-              
-              let detailsHTML = `
+        .then(response => response.json())
+        .then(request => {
+          const modal = document.getElementById("viewRequestModal");
+          const content = document.getElementById("request-details-content");
+
+          // Determine the name and email based on request type
+          let name, email;
+          if (requestType === 'form') {
+            name = request.userName || request.name || 'N/A';
+            email = request.userEmail || request.email || 'N/A';
+          } else {
+            name = request.name || request.userName || 'N/A';
+            email = request.email || request.userEmail || 'N/A';
+          }
+
+          let detailsHTML = `
                   <div class="detail-row">
                       <strong>Type:</strong> ${requestType === 'form' ? 'Form Submission' : 'Contact Request'}
                   </div>
@@ -1271,9 +1291,9 @@ function setupRoleFilters() {
                   <div class="detail-row">
                       <strong>Email:</strong> ${email}
                   </div>`;
-              
-              if (requestType === 'form') {
-                  detailsHTML += `
+
+          if (requestType === 'form') {
+            detailsHTML += `
                       <div class="detail-row">
                           <strong>Form Type:</strong> ${request.formType || 'N/A'}
                       </div>
@@ -1281,8 +1301,8 @@ function setupRoleFilters() {
                           <strong>Fields:</strong>
                           <div class="message-box">${JSON.stringify(request.fields || {}, null, 2)}</div>
                       </div>`;
-              } else {
-                  detailsHTML += `
+          } else {
+            detailsHTML += `
                       <div class="detail-row">
                           <strong>Subject:</strong> ${request.subject || 'N/A'}
                       </div>
@@ -1290,57 +1310,57 @@ function setupRoleFilters() {
                           <strong>Message:</strong>
                           <div class="message-box">${request.message || 'N/A'}</div>
                       </div>`;
-              }
-              
-              detailsHTML += `
+          }
+
+          detailsHTML += `
                   <div class="detail-row">
                       <strong>Date:</strong> ${request.createdAt ? new Date(request.createdAt).toLocaleString() : 'N/A'}
                   </div>`;
-              
-              if (request.file) {
-                  detailsHTML += `
+
+          if (request.file) {
+            detailsHTML += `
                       <div class="detail-row">
                           <strong>Attachment:</strong>
                           <a href="${request.file}" target="_blank" class="file-link"><i class="fas fa-file-download me-1"></i> Download File</a>
                       </div>`;
-              }
-              
-              content.innerHTML = detailsHTML;
-              modal.style.display = "block";
-          })
-          .catch(err => {
-              console.error("Error fetching request details:", err);
-              alert("Error loading request details");
-          });
-  }
+          }
 
-                                                // Show task details
-function showTaskDetails(taskId) {
-  const task = allTasks.find(t => t._id === taskId);
-  if (!task) {
-    alert("Task not found");
-    return;
-  }
+          content.innerHTML = detailsHTML;
+          modal.style.display = "block";
+        })
+        .catch(err => {
+          console.error("Error fetching request details:", err);
+          alert("Error loading request details");
+        });
+    }
 
-  const modal = document.getElementById("taskDetailsModal");
-  const content = document.getElementById("task-details-content");
-  
-  // Format assigned user
-  let assignedTo = 'Unassigned';
-  if (task.userId && typeof task.userId === 'object') {
-    assignedTo = `${task.userId.name || 'No name'} (${task.userId.email || 'No email'})`;
-  } else if (task.userId && typeof task.userId === 'string') {
-    const user = allUsers.find(u => u._id === task.userId);
-    assignedTo = user ? `${user.name || 'No name'} (${user.email || 'No email'})` : 'Unassigned';
-  } else if (task.userName) {
-    assignedTo = `${task.userName || 'No name'} (${task.userEmail || 'No email'})`;
-  }
+    // Show task details
+    function showTaskDetails(taskId) {
+      const task = allTasks.find(t => t._id === taskId);
+      if (!task) {
+        alert("Task not found");
+        return;
+      }
 
-  // Format creation date
-  const createdAt = task.createdAt ? new Date(task.createdAt).toLocaleString() : 'Not available';
-  
-  // Build the details HTML
-  let detailsHTML = `
+      const modal = document.getElementById("taskDetailsModal");
+      const content = document.getElementById("task-details-content");
+
+      // Format assigned user
+      let assignedTo = 'Unassigned';
+      if (task.userId && typeof task.userId === 'object') {
+        assignedTo = `${task.userId.name || 'No name'} (${task.userId.email || 'No email'})`;
+      } else if (task.userId && typeof task.userId === 'string') {
+        const user = allUsers.find(u => u._id === task.userId);
+        assignedTo = user ? `${user.name || 'No name'} (${user.email || 'No email'})` : 'Unassigned';
+      } else if (task.userName) {
+        assignedTo = `${task.userName || 'No name'} (${task.userEmail || 'No email'})`;
+      }
+
+      // Format creation date
+      const createdAt = task.createdAt ? new Date(task.createdAt).toLocaleString() : 'Not available';
+
+      // Build the details HTML
+      let detailsHTML = `
     <div class="detail-row">
       <strong>Title:</strong> ${task.title || task.subject || 'No title'}
     </div>
@@ -1360,17 +1380,17 @@ function showTaskDetails(taskId) {
     </div>
   `;
 
-  if (task.description) {
-    detailsHTML += `
+      if (task.description) {
+        detailsHTML += `
       <div class="detail-row">
         <strong>Description:</strong>
         <div class="description-box">${task.description}</div>
       </div>
     `;
-  }
+      }
 
-  if (task.file) {
-    detailsHTML += `
+      if (task.file) {
+        detailsHTML += `
       <div class="detail-row">
         <strong>Attachment:</strong>
         <a href="${task.file}" target="_blank" class="file-link">
@@ -1378,212 +1398,212 @@ function showTaskDetails(taskId) {
         </a>
       </div>
     `;
-  }
+      }
 
-  if (task.message) {
-    let formattedMessage = task.message;
-    
-    try {
-      // Try to parse as JSON
-      const messageObj = JSON.parse(task.message);
-      // If successful, format as key-value pairs
-      formattedMessage = Object.entries(messageObj)
-        .map(([key, value]) => `<strong>${key}:</strong> ${value}`)
-        .join('<br>');
-    } catch (e) {
-      // If not JSON, use as-is
-      formattedMessage = task.message;
-    }
-    
-    detailsHTML += `
+      if (task.message) {
+        let formattedMessage = task.message;
+
+        try {
+          // Try to parse as JSON
+          const messageObj = JSON.parse(task.message);
+          // If successful, format as key-value pairs
+          formattedMessage = Object.entries(messageObj)
+            .map(([key, value]) => `<strong>${key}:</strong> ${value}`)
+            .join('<br>');
+        } catch (e) {
+          // If not JSON, use as-is
+          formattedMessage = task.message;
+        }
+
+        detailsHTML += `
       <div class="detail-row">
         <strong>Details:</strong>
         <div class="message-box">${formattedMessage}</div>
       </div>
     `;
-  }
-
-  content.innerHTML = detailsHTML;
-  modal.style.display = "block";
-}
-
-  // Load user options for task assignment
-  function loadUserOptions() {
-    const select = document.getElementById("task-user-select");
-    select.innerHTML = "";
-    
-    const defaultOption = document.createElement("option");
-    defaultOption.value = "";
-    defaultOption.textContent = "-- Select a user --";
-    select.appendChild(defaultOption);
-    
-    allUsers.forEach(user => {
-      const option = document.createElement("option");
-      option.value = user._id;
-      option.textContent = `${user.name || 'No name'} (${user.email || 'No email'})`;
-      select.appendChild(option);
-    });
-  }
-                                                // adding //
-  // Add new user
-  function addUser(e) {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData.entries());
-    
-    fetch("/api/add-user", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
-    })
-      .then(response => {
-        if (!response.ok) {
-          return response.json().then(err => { throw err; });
-        }
-        return response.json();
-      })
-      .then(response => {
-        alert(response.message || "User added successfully");
-        fetchAdminData();
-        e.target.reset();
-        document.getElementById("add-user-form").style.display = "none";
-      })
-      .catch(err => {
-        console.error("Error adding user:", err);
-        alert(err.error || "Error adding user");
-      });
-  }
-  
-  // Add new task
-  function addTask(e) {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData.entries());
-    
-    fetch("/api/add-task", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
-    })
-      .then(response => {
-        if (!response.ok) {
-          return response.json().then(err => { throw err; });
-        }
-        return response.json();
-      })
-      .then(response => {
-        alert(response.message || "Task added successfully");
-        fetchAdminData();
-        e.target.reset();
-        document.getElementById("add-task-form").style.display = "none";
-      })
-      .catch(err => {
-        console.error("Error adding task:", err);
-        alert(err.error || "Error adding task");
-      });
-  }
-                                                  // Users //
-  // Edit user
-  // Show edit user modal with current data
-function editUser(userId) {
-  const user = allUsers.find(u => u._id === userId);
-  if (!user) {
-    alert("User not found");
-    return;
-  }
-
-  // Populate form fields
-  document.getElementById('edit-name').value = user.name || '';
-  document.getElementById('edit-email').value = user.email || '';
-  document.getElementById('edit-role').value = user.role || 'user';
-  document.getElementById('edit-affiliation').value = user.affiliation || '';
-  document.getElementById('edit-jobTitle').value = user.jobTitle || '';
-  document.getElementById('edit-gender').value = user.gender || '';
-  document.getElementById('edit-company').value = user.company || '';
-  document.getElementById('edit-phoneNumber').value = user.phoneNumber || '';
-  document.getElementById('edit-research').value = user.research || '';
-  document.getElementById('edit-birthDate').value = user.birthDate ? user.birthDate.split('T')[0] : '';
-
-  // Set the user ID as a data attribute on the form
-  document.getElementById('edit-user-form').dataset.userId = userId;
-
-  // Show the modal
-  document.getElementById('editUserModal').style.display = 'block';
-}
-
-// Handle edit user form submission
-document.getElementById('edit-user-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  
-  const userId = this.dataset.userId;
-  if (!userId) {
-    alert("User ID not found");
-    return;
-  }
-
-  const formData = new FormData(this);
-  const data = Object.fromEntries(formData.entries());
-  
-  // Remove password field if it's empty
-  if (!data.password) {
-    delete data.password;
-  }
-
-  fetch(`/api/update-user/${userId}`, {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data)
-  })
-    .then(response => {
-      if (!response.ok) {
-        return response.json().then(err => { throw err; });
       }
-      return response.json();
-    })
-    .then(response => {
-      alert(response.message || "User updated successfully");
-      closeModal(document.getElementById('editUserModal'));
-      fetchAdminData();
-    })
-    .catch(err => {
-      console.error("Error updating user:", err);
-      alert(err.error || "Error updating user");
-    });
-});
-  
-  // Delete user
-  function deleteUser(userId) {
-    if (!confirm("Are you sure you want to delete this user?")) return;
-    
-    fetch(`/admin/deleteUser/${userId}`, { method: "DELETE" })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Delete failed');
-        }
-        return response;
-      })
-      .then(() => {
-        alert("User deleted successfully!");
-        fetchAdminData();
-      })
-      .catch(err => {
-        console.error("Error deleting user:", err);
-        alert("Error deleting user!");
-      });
-  }
-                              //tasks Functions //
-  // Show assign task modal
-  function showAssignTaskModal(taskId) {
-  const task = allTasks.find(t => t._id === taskId);
-  if (!task) {
-    alert("Task not found");
-    return;
-  }
 
-  const modal = document.getElementById("assignTaskModal");
-  const content = document.getElementById("assign-modal-content");
-  
-  content.innerHTML = `
+      content.innerHTML = detailsHTML;
+      modal.style.display = "block";
+    }
+
+    // Load user options for task assignment
+    function loadUserOptions() {
+      const select = document.getElementById("task-user-select");
+      select.innerHTML = "";
+
+      const defaultOption = document.createElement("option");
+      defaultOption.value = "";
+      defaultOption.textContent = "-- Select a user --";
+      select.appendChild(defaultOption);
+
+      allUsers.forEach(user => {
+        const option = document.createElement("option");
+        option.value = user._id;
+        option.textContent = `${user.name || 'No name'} (${user.email || 'No email'})`;
+        select.appendChild(option);
+      });
+    }
+    // adding //
+    // Add new user
+    function addUser(e) {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const data = Object.fromEntries(formData.entries());
+
+      fetch("/api/add-user", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      })
+        .then(response => {
+          if (!response.ok) {
+            return response.json().then(err => { throw err; });
+          }
+          return response.json();
+        })
+        .then(response => {
+          alert(response.message || "User added successfully");
+          fetchAdminData();
+          e.target.reset();
+          document.getElementById("add-user-form").style.display = "none";
+        })
+        .catch(err => {
+          console.error("Error adding user:", err);
+          alert(err.error || "Error adding user");
+        });
+    }
+
+    // Add new task
+    function addTask(e) {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const data = Object.fromEntries(formData.entries());
+
+      fetch("/api/add-task", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      })
+        .then(response => {
+          if (!response.ok) {
+            return response.json().then(err => { throw err; });
+          }
+          return response.json();
+        })
+        .then(response => {
+          alert(response.message || "Task added successfully");
+          fetchAdminData();
+          e.target.reset();
+          document.getElementById("add-task-form").style.display = "none";
+        })
+        .catch(err => {
+          console.error("Error adding task:", err);
+          alert(err.error || "Error adding task");
+        });
+    }
+    // Users //
+    // Edit user
+    // Show edit user modal with current data
+    function editUser(userId) {
+      const user = allUsers.find(u => u._id === userId);
+      if (!user) {
+        alert("User not found");
+        return;
+      }
+
+      // Populate form fields
+      document.getElementById('edit-name').value = user.name || '';
+      document.getElementById('edit-email').value = user.email || '';
+      document.getElementById('edit-role').value = user.role || 'user';
+      document.getElementById('edit-affiliation').value = user.affiliation || '';
+      document.getElementById('edit-jobTitle').value = user.jobTitle || '';
+      document.getElementById('edit-gender').value = user.gender || '';
+      document.getElementById('edit-company').value = user.company || '';
+      document.getElementById('edit-phoneNumber').value = user.phoneNumber || '';
+      document.getElementById('edit-research').value = user.research || '';
+      document.getElementById('edit-birthDate').value = user.birthDate ? user.birthDate.split('T')[0] : '';
+
+      // Set the user ID as a data attribute on the form
+      document.getElementById('edit-user-form').dataset.userId = userId;
+
+      // Show the modal
+      document.getElementById('editUserModal').style.display = 'block';
+    }
+
+    // Handle edit user form submission
+    document.getElementById('edit-user-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const userId = this.dataset.userId;
+      if (!userId) {
+        alert("User ID not found");
+        return;
+      }
+
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData.entries());
+
+      // Remove password field if it's empty
+      if (!data.password) {
+        delete data.password;
+      }
+
+      fetch(`/api/update-user/${userId}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      })
+        .then(response => {
+          if (!response.ok) {
+            return response.json().then(err => { throw err; });
+          }
+          return response.json();
+        })
+        .then(response => {
+          alert(response.message || "User updated successfully");
+          closeModal(document.getElementById('editUserModal'));
+          fetchAdminData();
+        })
+        .catch(err => {
+          console.error("Error updating user:", err);
+          alert(err.error || "Error updating user");
+        });
+    });
+
+    // Delete user
+    function deleteUser(userId) {
+      if (!confirm("Are you sure you want to delete this user?")) return;
+
+      fetch(`/admin/deleteUser/${userId}`, { method: "DELETE" })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Delete failed');
+          }
+          return response;
+        })
+        .then(() => {
+          alert("User deleted successfully!");
+          fetchAdminData();
+        })
+        .catch(err => {
+          console.error("Error deleting user:", err);
+          alert("Error deleting user!");
+        });
+    }
+    //tasks Functions //
+    // Show assign task modal
+    function showAssignTaskModal(taskId) {
+      const task = allTasks.find(t => t._id === taskId);
+      if (!task) {
+        alert("Task not found");
+        return;
+      }
+
+      const modal = document.getElementById("assignTaskModal");
+      const content = document.getElementById("assign-modal-content");
+
+      content.innerHTML = `
     <div class="mb-3">
       <label class="form-label">Current Assignment:</label>
       <div class="p-2 bg-light rounded">
@@ -1618,65 +1638,65 @@ document.getElementById('edit-user-form').addEventListener('submit', function(e)
       <button type="button" onclick="assignTask('${taskId}')" class="btn btn-primary">Save Assignments</button>
     </div>
   `;
-  
-  modal.style.display = "block";
-}
 
-  // Update the assignTask function to include workOn
-  function assignTask(taskId) {
-    const userId = document.getElementById("assign-user-select").value;
-    const employeeId = document.getElementById("assign-employee-select").value;
-    
-    if (!userId && !employeeId) {
-      alert("Please select at least one assignee");
-      return;
+      modal.style.display = "block";
     }
-    
-    fetch(`/api/assign-task/${taskId}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ 
-        userId: userId || undefined,
-        workOn: employeeId || undefined
-      })
-    })
-    .then(response => {
-      if (!response.ok) {
-        return response.json().then(err => { throw err; });
-      }
-      return response.json();
-    })
-    .then(data => {
-      if (data.error) {
-        throw new Error(data.error);
-      }
-      alert(data.message || "Task assigned successfully");
-      closeModal(document.getElementById("assignTaskModal"));
-      fetchAdminData(); // Refresh the task list
-    })
-    .catch(error => {
-      console.error("Error assigning task:", error);
-      alert(error.message || "Failed to assign task");
-    });
-  }
-  
-  // Enhanced showEditTaskModal function
-  function showEditTaskModal(taskId) {
-  const task = allTasks.find(t => t._id === taskId);
-  if (!task) {
-    alert("Task not found");
-    return;
-  }
 
-  const modal = document.getElementById("editTaskModal");
-  const content = document.getElementById("edit-modal-content");
-  
-  // Clear previous content
-  content.innerHTML = '';
-  
-  // Create form with all task data pre-populated
-  const form = document.createElement('div');
-  form.innerHTML = `
+    // Update the assignTask function to include workOn
+    function assignTask(taskId) {
+      const userId = document.getElementById("assign-user-select").value;
+      const employeeId = document.getElementById("assign-employee-select").value;
+
+      if (!userId && !employeeId) {
+        alert("Please select at least one assignee");
+        return;
+      }
+
+      fetch(`/api/assign-task/${taskId}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          userId: userId || undefined,
+          workOn: employeeId || undefined
+        })
+      })
+        .then(response => {
+          if (!response.ok) {
+            return response.json().then(err => { throw err; });
+          }
+          return response.json();
+        })
+        .then(data => {
+          if (data.error) {
+            throw new Error(data.error);
+          }
+          alert(data.message || "Task assigned successfully");
+          closeModal(document.getElementById("assignTaskModal"));
+          fetchAdminData(); // Refresh the task list
+        })
+        .catch(error => {
+          console.error("Error assigning task:", error);
+          alert(error.message || "Failed to assign task");
+        });
+    }
+
+    // Enhanced showEditTaskModal function
+    function showEditTaskModal(taskId) {
+      const task = allTasks.find(t => t._id === taskId);
+      if (!task) {
+        alert("Task not found");
+        return;
+      }
+
+      const modal = document.getElementById("editTaskModal");
+      const content = document.getElementById("edit-modal-content");
+
+      // Clear previous content
+      content.innerHTML = '';
+
+      // Create form with all task data pre-populated
+      const form = document.createElement('div');
+      form.innerHTML = `
     <div class="mb-3">
       <label for="edit-task-title" class="form-label">Title:</label>
       <input type="text" id="edit-task-title" class="form-control" 
@@ -1709,125 +1729,126 @@ document.getElementById('edit-user-form').addEventListener('submit', function(e)
       <button type="button" onclick="updateTask('${taskId}')" class="btn btn-primary">Update Task</button>
     </div>
   `;
-  
-  content.appendChild(form);
-  modal.style.display = "block";
-}
 
-  // Update the updateTask function to include priority
-  function updateTask(taskId) {
-  const title = document.getElementById("edit-task-title").value;
-  const description = document.getElementById("edit-task-description").value;
-  const status = document.getElementById("edit-task-status").value;
-  const priority = document.getElementById("edit-task-priority").value;
-  
-  if (!title || !description || !status || !priority) {
-    alert("Please fill in all required fields");
-    return;
-  }
-  
-  fetch(`/api/update-task/${taskId}`, {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ 
-      title, 
-      description, 
-      status, 
-      priority,
-      updatedAt: new Date()  // Add update timestamp
-    })
-  })
-  .then(response => {
-    if (!response.ok) {
-      return response.json().then(err => { throw err; });
+      content.appendChild(form);
+      modal.style.display = "block";
     }
-    return response.json();
-  })
-  .then(data => {
-    alert(data.message || "Task updated successfully");
-    closeModal(document.getElementById("editTaskModal"));
-    fetchAdminData(); // Refresh the task list
-  })
-  .catch(error => {
-    console.error("Error updating task:", error);
-    alert(error.error || "Failed to update task");
-  });
-}
-    
-  // Delete task function
-  function deleteTask(taskId) {
-    if (!confirm("Are you sure you want to delete this task? This action cannot be undone.")) {
-      return;
-    }
-    
-    fetch(`/api/delete-task/${taskId}`, {
-      method: "DELETE"
-    })
-    .then(response => {
-      if (!response.ok) {
-        return response.json().then(err => { throw err; });
+
+    // Update the updateTask function to include priority
+    function updateTask(taskId) {
+      const title = document.getElementById("edit-task-title").value;
+      const description = document.getElementById("edit-task-description").value;
+      const status = document.getElementById("edit-task-status").value;
+      const priority = document.getElementById("edit-task-priority").value;
+
+      if (!title || !description || !status || !priority) {
+        alert("Please fill in all required fields");
+        return;
       }
-      return response.json();
-    })
-    .then(data => {
-      alert(data.message || "Task deleted successfully");
-      fetchAdminData(); // Refresh the task list
-    })
-    .catch(error => {
-      console.error("Error deleting task:", error);
-      alert(error.error || "Failed to delete task");
-    });
-  }
-                                            //contact request functions //
-                                            function acceptRequest(requestId, requestType) {
-      if (!confirm("Accept this request and create a task?")) return;
-      
-      fetch(`/api/accept-contact/${requestId}`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ requestType })
+
+      fetch(`/api/update-task/${taskId}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          title,
+          description,
+          status,
+          priority,
+          updatedAt: new Date()  // Add update timestamp
+        })
       })
-      .then(response => {
+        .then(response => {
+          if (!response.ok) {
+            return response.json().then(err => { throw err; });
+          }
+          return response.json();
+        })
+        .then(data => {
+          alert(data.message || "Task updated successfully");
+          closeModal(document.getElementById("editTaskModal"));
+          fetchAdminData(); // Refresh the task list
+        })
+        .catch(error => {
+          console.error("Error updating task:", error);
+          alert(error.error || "Failed to update task");
+        });
+    }
+
+    // Delete task function
+    function deleteTask(taskId) {
+      if (!confirm("Are you sure you want to delete this task? This action cannot be undone.")) {
+        return;
+      }
+
+      fetch(`/api/delete-task/${taskId}`, {
+        method: "DELETE"
+      })
+        .then(response => {
+          if (!response.ok) {
+            return response.json().then(err => { throw err; });
+          }
+          return response.json();
+        })
+        .then(data => {
+          alert(data.message || "Task deleted successfully");
+          fetchAdminData(); // Refresh the task list
+        })
+        .catch(error => {
+          console.error("Error deleting task:", error);
+          alert(error.error || "Failed to delete task");
+        });
+    }
+    //contact request functions //
+    function acceptRequest(requestId, requestType) {
+      if (!confirm("Accept this request and create a task?")) return;
+
+      fetch(`/api/accept-contact/${requestId}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ requestType })
+      })
+        .then(response => {
           if (!response.ok) throw new Error('Network response was not ok');
           return response.json();
-      })
-      .then(data => {
+        })
+        .then(data => {
           alert(data.message || "Request accepted and task created");
           fetchAdminData();
-      })
-      .catch(err => {
+        })
+        .catch(err => {
           console.error("Error accepting request:", err);
           alert(err.message || "Error accepting request");
-      });
-  }
+        });
+    }
 
-  function deleteRequest(requestId, requestType) {
+    function deleteRequest(requestId, requestType) {
       if (!confirm("Are you sure you want to delete this request?")) return;
-      
-      const endpoint = requestType === 'form' 
-          ? `/api/form-requests/${requestId}`
-          : `/api/contact-requests/${requestId}`;
-      
+
+      const endpoint = requestType === 'form'
+        ? `/api/form-requests/${requestId}`
+        : `/api/contact-requests/${requestId}`;
+
       fetch(endpoint, { method: "DELETE" })
-      .then(response => {
+        .then(response => {
           if (!response.ok) throw new Error('Network response was not ok');
           return response.json();
-      })
-      .then(data => {
+        })
+        .then(data => {
           alert(data.message || "Request deleted successfully");
           fetchAdminData();
-      })
-      .catch(err => {
+        })
+        .catch(err => {
           console.error("Error deleting request:", err);
           alert(err.message || "Error deleting request");
-      });
-  }
-  
-  // Close modal
-  function closeModal(modal) {
-    modal.style.display = "none";
-  }
-</script>
+        });
+    }
+
+    // Close modal
+    function closeModal(modal) {
+      modal.style.display = "none";
+    }
+  </script>
 
 </body>
+
 </html>

@@ -15,157 +15,61 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet"> 
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap"
+        rel="stylesheet">
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-    <style>
-        .upload-container {
- width: 80%;
- max-width: 500px;
-}
-
-.upload-box {
- background: #1E1E1E;
- border: 1px dashed #3A3A3A;
- padding: 20px;
- text-align: center;
- margin-bottom: 15px;
- border-radius: 8px;
-}
-
-
-
-.upload-label {
- display: flex;
- flex-direction: column;
- align-items: center;
- cursor: pointer;
-}
-
-.upload-label input {
- display: none;
-}
-
-.upload-label img {
- width: 24px;
- opacity: 0.7;
-}
-
-.upload-label p {
- margin-top: 8px;
- font-size: 14px;
- color: #bbb;
-}
-
-     </style>
-<!-- progress bar -->
-     <style>
-.progress {
-    height: 20px;
-    border-radius: 4px;
-    background-color:  rgb(35, 165, 81);
-    margin-top: 10px;
-}
-
-.progress-bar {
-    transition: width 0.3s ease;
-}
-
-#uploadStatus {
-    font-size: 0.8rem;
-    margin-top: 5px;
-}
-
-/* Style for the upload box */
-.upload-box {
-    background: #1E1E1E;
-    border: 1px dashed #3A3A3A;
-    padding: 20px;
-    text-align: center;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    transition: all 0.3s;
-}
-
-.upload-box:hover {
-    border-color: #666;
-    background: #252525;
-}
-
-.upload-label {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-}
-
-.upload-label input {
-    display: none;
-}
-
-.upload-label img {
-    width: 24px;
-    opacity: 0.7;
-    transition: opacity 0.3s;
-}
-
-.upload-label:hover img {
-    opacity: 1;
-}
-
-.upload-label p {
-    margin-top: 8px;
-    font-size: 14px;
-    color: #bbb;
-    transition: color 0.3s;
-}
-
-.upload-label:hover p {
-    color: #fff;
-}
-</style>
+    <link href="css/modern-ios.css" rel="stylesheet">
 </head>
 
 <body>
     <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
             <span class="sr-only">Loading...</span>
         </div>
     </div>
     <!-- Spinner End -->
 
- <!-- NAVBAR -->
-  <div class="navbar" id="navbar">
-    <div class="nav-inner">
-      <a class="brand" href="index.html" aria-label="IInsilico Home">
-        <img src="img/1000472452-removebg-preview.png" alt="IInsilico logo" />
-      </a>
-      <div class="spacer"></div>
-      <button class="burger" id="burger" aria-label="Toggle menu">☰</button>
-      <nav class="nav-links" id="navLinks">
-        <a href="index.html" class="items">Home</a>
-        <a href="service.html" class="items">Services</a>
-        <a href="about.html" class="items">About</a>
-        
-        <a href="/logout" class="btn btn-primary" style="height: 40px;">Log Out</a>
-      </nav>
+    <!-- NAVBAR - Desktop -->
+    <nav class="navbar-custom glass" id="navbar">
+        <a class="brand" href="index.html">
+            <img src="img/1000472452-removebg-preview.png" alt="IInsilico logo" />
+        </a>
+        <div class="nav-links-desktop">
+            <a href="index.html">Home</a>
+            <a href="service.html">Services</a>
+            <a href="about.html">About</a>
+            <a id="ProfileSign" href="/register">Sign Up</a>
+            <a href="/Login" class="nav-btn">Log In</a>
+        </div>
+    </nav>
+
+    <!-- NAVBAR - Mobile/Tablet -->
+    <div class="mobile-nav glass">
+        <a href="index.html" class="mobile-nav-item">
+            <i class="bi bi-house-door"></i>
+            <span>Home</span>
+        </a>
+        <a href="service.html" class="mobile-nav-item active">
+            <i class="bi bi-grid"></i>
+            <span>Services</span>
+        </a>
+        <a href="about.html" class="mobile-nav-item">
+            <i class="bi bi-info-circle"></i>
+            <span>About</span>
+        </a>
+        <a href="Login.html" class="mobile-nav-item">
+            <i class="bi bi-person"></i>
+            <span>Account</span>
+        </a>
     </div>
-  </div>
-  <!-- End Navbar -->
 
 
     <!-- Page Header Start -->
@@ -181,25 +85,25 @@
         </div>
     </div>
     <!-- Page Header End -->
-<!-- Login Required Modal -->
-<div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Login Required</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>You must be logged in to submit this form. Please log in or register.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <a href="/login" class="btn btn-primary">Go to Login</a>
-                <a href="/register" class="btn btn-outline-primary">Register</a>
+    <!-- Login Required Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Login Required</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>You must be logged in to submit this form. Please log in or register.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="/login" class="btn btn-primary">Go to Login</a>
+                    <a href="/register" class="btn btn-outline-primary">Register</a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
     <!-- Contact Start -->
     <div class="container-fluid bg-light overflow-hidden px-lg-0" style="margin: 6rem 0;">
@@ -207,11 +111,11 @@
             <div class="row g-0 mx-lg-0">
                 <div class="col-lg-3 pe-lg-0" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                      
+
                     </div>
                 </div>
                 <div class="col-lg-9 contact-text py-5 wow fadeIn" data-wow-delay="0.5s">
-                    <div class="p-lg-5 ps-lg-0">
+                    <div class="p-lg-5 ps-lg-0 glass-card glass" style="border-radius: 20px; padding: 40px !important;">
                         <h6 class="text-primary">(MS)</h6>
                         <h1 class="mb-4">molecular simulation</h1>
                         <form action="/submit-contact" method="POST" enctype="multipart/form-data">
@@ -219,78 +123,85 @@
                             <div class="row g-3">
                                 <div class="col-md-9">
                                     <div class="form-group">
-                                        <label for="options" >Choose The Type</label>
+                                        <label for="options">Choose The Type</label>
                                         <select required name="Type" id="options" class="form-control bg-white">
-                                          <option value="" disabled selected>Type</option>
-                                          <option value="One Molecule">One Molecule</option>
-                                          <option value="complex">Complex</option>
+                                            <option value="" disabled selected>Type</option>
+                                            <option value="One Molecule">One Molecule</option>
+                                            <option value="complex">Complex</option>
                                         </select>
-                                      </div>
                                     </div>
+                                </div>
                                 <div class="col-md-9">
                                     <div class="form-group">
-                                        <label for="options" >One molecule</label>
+                                        <label for="options">One molecule</label>
                                         <select required name="MoleculeType" id="options" class="form-control bg-white">
-                                          <option value="" disabled selected>Select your molecule</option>
-                                          <option value="protein">protein</option>
-                                          <option value="peptide">peptide</option>
-                                          <option value="RNA">RNA</option>
-                                          <option value="DNA">DNA</option>
-                                          <option value="Small molecule">Small molecule</option>
-                                          <option value="Other">Other</option>
+                                            <option value="" disabled selected>Select your molecule</option>
+                                            <option value="protein">protein</option>
+                                            <option value="peptide">peptide</option>
+                                            <option value="RNA">RNA</option>
+                                            <option value="DNA">DNA</option>
+                                            <option value="Small molecule">Small molecule</option>
+                                            <option value="Other">Other</option>
                                         </select>
-                                      </div>
-                            </div>
+                                    </div>
+                                </div>
                                 <div class="col-md-9" id="secondMoleculeContainer" style="display:none;">
-                                        <div class="form-group">
-                                            <label for="options" >Choose Complex</label>
-                                            <select name="MoleculeTypeT" id="options" class="form-control bg-white">
-                                              <option value="" disabled selected>Select your molecule</option>
+                                    <div class="form-group">
+                                        <label for="options">Choose Complex</label>
+                                        <select name="MoleculeTypeT" id="options" class="form-control bg-white">
+                                            <option value="" disabled selected>Select your molecule</option>
                                             <option value="protein">protein</option>
                                             <option value="nucleic acid">nucleic acid</option>
                                             <option value="small molecule">Small molecule</option>
                                             <option value="Other">Other</option>
-                                            </select>
-                                          </div>
+                                        </select>
+                                    </div>
                                 </div>
-                            <div class="col-md-9">
-    <div class="form-group">
-        <label for="fileUpload">Upload Zipped File</label>
-        <div class="upload-box">
-            <label class="upload-label">
-                <input name="file" type="file" class="fileupload" id="fileInput" accept=".zip">
-                <img src="img/paperclip-icon.png" alt="Attachment">
-                <p>Add an attachment (optional)</p>
-            </label>
-        </div>
-        <!-- Progress Bar -->
-        <div class="progress mt-3" id="progressBar" style="display: none; height: 20px;">
-            <div id="uploadProgress" class="progress-bar progress-bar-striped progress-bar-animated" 
-                 role="progressbar" style="width: 0%"></div>
-        </div>
-        <div id="uploadStatus" class="mt-2 text-muted small"></div>
-    </div>
-</div>
-     
+                                <div class="col-md-9">
+                                    <div class="form-group">
+                                        <label for="fileUpload">Upload Zipped File</label>
+                                        <div class="upload-box">
+                                            <label class="upload-label">
+                                                <input name="file" type="file" class="fileupload" id="fileInput"
+                                                    accept=".zip">
+                                                <img src="img/paperclip-icon.png" alt="Attachment">
+                                                <p>Add an attachment (optional)</p>
+                                            </label>
+                                        </div>
+                                        <!-- Progress Bar -->
+                                        <div class="progress mt-3" id="progressBar"
+                                            style="display: none; height: 20px;">
+                                            <div id="uploadProgress"
+                                                class="progress-bar progress-bar-striped progress-bar-animated"
+                                                role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                        <div id="uploadStatus" class="mt-2 text-muted small"></div>
+                                    </div>
+                                </div>
+
                                 <div class="col-9">
                                     <div class="form-floating">
-                                        <input required name="MonomerN" type="number" class="form-control" id="monomer" placeholder="monomer">
+                                        <input required name="MonomerN" type="number" class="form-control" id="monomer"
+                                            placeholder="monomer">
                                         <label for="monomer">No. Monomer</label>
                                     </div>
                                 </div>
-                           
+
                                 <div class="col-9">
                                     <div class="form-floating">
-                                        <textarea required name="Abstract" class="form-control" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
+                                        <textarea required name="Abstract" class="form-control"
+                                            placeholder="Leave a message here" id="message"
+                                            style="height: 100px"></textarea>
                                         <label for="message">Abstract</label>
                                     </div>
                                 </div>
-                                                          <!-- Price display box -->
-<div class="col-md-9">
-  <div id="priceDisplay" class="alert alert-info" style="display:none; margin-top:10px;">
-    Please select receptor and ligand to see the price.
-  </div>
-</div>
+                                <!-- Price display box -->
+                                <div class="col-md-9">
+                                    <div id="priceDisplay" class="alert alert-info"
+                                        style="display:none; margin-top:10px;">
+                                        Please select receptor and ligand to see the price.
+                                    </div>
+                                </div>
                                 <div class="col-12">
                                     <button class="btn btn-primary py-3 px-5" type="submit">Submit</button>
                                 </div>
@@ -298,171 +209,198 @@
                         </form>
                     </div>
                 </div>
-             
+
             </div>
         </div>
     </div>
     <!-- Contact End -->
 
- <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner bg-dark">
-      <div class="fcol">
-        <h4>IInsilico</h4>
-        <p>Egypt</p>
-        <p>01555073127<br>01144299280</p>
-        <p>IInSilico@iinsilico.com</p>
-      </div>
-      <div class="fcol">
-        <h4>Quick Links</h4>
-        <p><a href="about.html">About Us</a></p>
-        <p><a href="service.html">Our Services</a></p>
-        <p><a href="terms.html">Terms &amp; Conditions</a></p>
-      </div>
-      <div class="fcol">
-        <h4>Follow</h4>
-        <p><a href="https://www.facebook.com/iinsilico">Facebook</a></p>
-        <p><a href="https://www.linkedin.com/company/iinsilico/">LinkedIn</a></p>
-        <p style="margin-top:16px; color:var(--muted)">© i‑insilico [2025]. Science with a Smile.</p>
-      </div>
-    </div>
-  </footer>
-  <!-- the progress bar code for the upload  -->
-   <script>
-document.getElementById('fileInput').addEventListener('change', function(e) {
-    const file = this.files[0];
-    if (!file) return;
+    <!-- FOOTER -->
+    <footer class="glass-footer glass">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-primary mb-4 fw-bold">IInSilico</h4>
+                    <p class="mb-4 text-muted">Science with a Smile. We are pioneers in bioinformatics, delivering
+                        high-quality in-silico research solutions.</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-square btn-outline-primary rounded-circle me-2"
+                            href="https://www.facebook.com/iinsilico"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-outline-primary rounded-circle me-2"
+                            href="https://www.linkedin.com/company/iinsilico/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-dark mb-4 fw-bold">Services</h5>
+                    <a class="btn btn-link" href="3d modeling.html">3D Modeling</a>
+                    <a class="btn btn-link" href="Genomics.html">Genomics</a>
+                    <a class="btn btn-link" href="molecular Docking.html">Docking</a>
+                    <a class="btn btn-link" href="service.html">All Services</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-dark mb-4 fw-bold">Quick Links</h5>
+                    <a class="btn btn-link" href="about.html">About Us</a>
+                    <a class="btn btn-link" href="service.html">Services</a>
+                    <a class="btn btn-link" href="terms.html">Terms & Condition</a>
+                    <a class="btn btn-link" href="Login.html">Login</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-dark mb-4 fw-bold">Contact</h5>
+                    <p class="text-muted"><i class="fa fa-map-marker-alt me-3 text-primary"></i>Egypt</p>
+                    <p class="text-muted"><i class="fa fa-phone-alt me-3 text-primary"></i>01555073127</p>
+                    <p class="text-muted"><i class="fa fa-envelope me-3 text-primary"></i>IInSilico@iinsilico.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0 text-muted">
+                        &copy; <a href="#" class="text-primary">IInSilico</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end text-muted">
+                        Designed By <a href="https://github.com/medoiiehab">Medo Ehab</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- the progress bar code for the upload  -->
+    <script>
+        document.getElementById('fileInput').addEventListener('change', function (e) {
+            const file = this.files[0];
+            if (!file) return;
 
-    // Show upload UI
-    const progressBar = document.getElementById('progressBar');
-    const progressFill = document.getElementById('uploadProgress');
-    const statusText = document.getElementById('uploadStatus');
-    
-    progressBar.style.display = 'block';
-    statusText.textContent = 'Preparing upload...';
+            // Show upload UI
+            const progressBar = document.getElementById('progressBar');
+            const progressFill = document.getElementById('uploadProgress');
+            const statusText = document.getElementById('uploadStatus');
 
-    // Create a test FormData object (won't actually upload yet)
-    const testFormData = new FormData();
-    testFormData.append('testFile', file);
+            progressBar.style.display = 'block';
+            statusText.textContent = 'Preparing upload...';
 
-    // Create a test XMLHttpRequest to monitor progress
-    const xhr = new XMLHttpRequest();
-    
-    xhr.upload.onprogress = function(e) {
-        if (e.lengthComputable) {
-            const percentComplete = Math.round((e.loaded / e.total) * 100);
-            progressFill.style.width = percentComplete + '%';
-            statusText.textContent = `Uploading: ${percentComplete}% (${formatBytes(e.loaded)} of ${formatBytes(e.total)})`;
-        }
-    };
+            // Create a test FormData object (won't actually upload yet)
+            const testFormData = new FormData();
+            testFormData.append('testFile', file);
 
-    xhr.upload.onloadstart = function() {
-        statusText.textContent = 'Starting upload...';
-    };
+            // Create a test XMLHttpRequest to monitor progress
+            const xhr = new XMLHttpRequest();
 
-    xhr.upload.onload = function() {
-        statusText.textContent = 'Upload complete! Ready to submit form.';
-        progressFill.classList.remove('progress-bar-animated');
-        progressFill.classList.add('bg-success');
-    };
+            xhr.upload.onprogress = function (e) {
+                if (e.lengthComputable) {
+                    const percentComplete = Math.round((e.loaded / e.total) * 100);
+                    progressFill.style.width = percentComplete + '%';
+                    statusText.textContent = `Uploading: ${percentComplete}% (${formatBytes(e.loaded)} of ${formatBytes(e.total)})`;
+                }
+            };
 
-    xhr.upload.onerror = function() {
-        statusText.textContent = 'Upload failed!';
-        progressFill.classList.remove('progress-bar-animated');
-        progressFill.classList.add('bg-danger');
-    };
+            xhr.upload.onloadstart = function () {
+                statusText.textContent = 'Starting upload...';
+            };
 
-    // This is just for demonstration - doesn't actually send
-    xhr.open('POST', '/upload-test', true);
-    xhr.send(testFormData);
+            xhr.upload.onload = function () {
+                statusText.textContent = 'Upload complete! Ready to submit form.';
+                progressFill.classList.remove('progress-bar-animated');
+                progressFill.classList.add('bg-success');
+            };
 
-    // Helper function to format bytes
-    function formatBytes(bytes, decimals = 2) {
-        if (bytes === 0) return '0 Bytes';
-        const k = 1024;
-        const sizes = ['Bytes', 'KB', 'MB', 'GB'];
-        const i = Math.floor(Math.log(bytes) / Math.log(k));
-        return parseFloat(bytes / Math.pow(k, i)).toFixed(decimals) + ' ' + sizes[i];
-    }
-});
+            xhr.upload.onerror = function () {
+                statusText.textContent = 'Upload failed!';
+                progressFill.classList.remove('progress-bar-animated');
+                progressFill.classList.add('bg-danger');
+            };
 
-// Then keep your existing form submission handler
-document.getElementById('myForm').addEventListener('submit', async function(e) {
-    
-});
-</script>
+            // This is just for demonstration - doesn't actually send
+            xhr.open('POST', '/upload-test', true);
+            xhr.send(testFormData);
+
+            // Helper function to format bytes
+            function formatBytes(bytes, decimals = 2) {
+                if (bytes === 0) return '0 Bytes';
+                const k = 1024;
+                const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+                const i = Math.floor(Math.log(bytes) / Math.log(k));
+                return parseFloat(bytes / Math.pow(k, i)).toFixed(decimals) + ' ' + sizes[i];
+            }
+        });
+
+        // Then keep your existing form submission handler
+        document.getElementById('myForm').addEventListener('submit', async function (e) {
+
+        });
+    </script>
     <!-- the form submission code  -->
     <script>
-           document.querySelector("form").addEventListener("submit", async function(event) {
-        event.preventDefault();
-        
-        // Check if user is logged in
-        try {
-            const authCheck = await fetch("/api/user-data");
-            if (authCheck.status === 401) {
-                // Show login modal
-                const modal = new bootstrap.Modal(document.getElementById('loginModal'));
-                modal.show();
-                return;
+        document.querySelector("form").addEventListener("submit", async function (event) {
+            event.preventDefault();
+
+            // Check if user is logged in
+            try {
+                const authCheck = await fetch("/api/user-data");
+                if (authCheck.status === 401) {
+                    // Show login modal
+                    const modal = new bootstrap.Modal(document.getElementById('loginModal'));
+                    modal.show();
+                    return;
+                }
+
+                // Proceed with form submission if logged in
+                const formData = new FormData(this);
+
+                // For file uploads, use the original form submission
+                if (this.enctype === "multipart/form-data") {
+                    const response = await fetch(this.action, {
+                        method: "POST",
+                        body: formData
+                    });
+
+                    if (!response.ok) throw new Error('Submission failed');
+                    const result = await response.text();
+                    alert("Request submitted successfully!");
+                }
+                // For JSON submissions
+                else {
+                    const data = Object.fromEntries(formData.entries());
+                    const response = await fetch("/submit-form", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(data)
+                    });
+
+                    if (!response.ok) throw new Error('Submission failed');
+                    const result = await response.json();
+                    alert(result.message || "Request submitted successfully!");
+                }
+
+                this.reset();
+            } catch (error) {
+                console.error("Error:", error);
+                alert("Submission failed. Please try again.");
             }
-            
-            // Proceed with form submission if logged in
-            const formData = new FormData(this);
-            
-            // For file uploads, use the original form submission
-            if (this.enctype === "multipart/form-data") {
-                const response = await fetch(this.action, {
-                    method: "POST",
-                    body: formData
-                });
-                
-                if (!response.ok) throw new Error('Submission failed');
-                const result = await response.text();
-                alert("Request submitted successfully!");
-            } 
-            // For JSON submissions
-            else {
-                const data = Object.fromEntries(formData.entries());
-                const response = await fetch("/submit-form", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(data)
-                });
-                
-                if (!response.ok) throw new Error('Submission failed');
-                const result = await response.json();
-                alert(result.message || "Request submitted successfully!");
+        });
+    </script>
+    <!-- a script just for selecting and hiding the second option -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const typeSelect = document.querySelector('select[name="Type"]');
+            const secondMoleculeContainer = document.getElementById("secondMoleculeContainer");
+
+            function toggleSecondMolecule() {
+                if (typeSelect.value.toLowerCase() === "complex") {
+                    secondMoleculeContainer.style.display = "block";
+                } else {
+                    secondMoleculeContainer.style.display = "none";
+                    document.getElementById("secondMolecule").value = ""; // reset selection
+                }
             }
-            
-            this.reset();
-        } catch (error) {
-            console.error("Error:", error);
-            alert("Submission failed. Please try again.");
-        }
-    });
-        </script>
-<!-- a script just for selecting and hiding the second option -->
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const typeSelect = document.querySelector('select[name="Type"]');
-  const secondMoleculeContainer = document.getElementById("secondMoleculeContainer");
 
-  function toggleSecondMolecule() {
-    if (typeSelect.value.toLowerCase() === "complex") {
-      secondMoleculeContainer.style.display = "block";
-    } else {
-      secondMoleculeContainer.style.display = "none";
-      document.getElementById("secondMolecule").value = ""; // reset selection
-    }
-  }
+            typeSelect.addEventListener("change", toggleSecondMolecule);
+            toggleSecondMolecule(); // run on load in case form has pre-selected value
+        });
+    </script>
 
-  typeSelect.addEventListener("change", toggleSecondMolecule);
-  toggleSecondMolecule(); // run on load in case form has pre-selected value
-});
-</script>
-
-    <!-- JavaScript Libraries -->
-     <script src="js/Authcode.js"></script>
+    <!-- Template Javascript -->
+    <script src="js/Authcode.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
@@ -470,11 +408,9 @@ document.addEventListener("DOMContentLoaded", function () {
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
-
-    <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script src="js/ui-init.js"></script>
 </body>
 
 </html>

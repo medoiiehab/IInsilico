@@ -2,331 +2,325 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>IInSilico</title>
-    <link rel="icon" href="img/ICO.ico">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+  <meta charset="utf-8">
+  <title>IInSilico</title>
+  <link rel="icon" href="img/ICO.ico">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+  <!-- Favicon -->
+  <link href="img/favicon.ico" rel="icon">
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet"> 
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap"
+    rel="stylesheet">
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-    <style>
-.form-floating h5 {font-weight: lighter;justify-content: baseline;margin-top: 10px;font-size: small;color: #3A3A3A; }
-.form-floating {margin-top : 20px}
-        .upload-container {
- width: 80%;
- max-width: 500px;
-}
-
-.upload-box {
- background: #1E1E1E;
- border: 1px dashed #3A3A3A;
- padding: 20px;
- text-align: center;
- margin-bottom: 15px;
- border-radius: 8px;
-}
-
-
-
-.upload-label {
- display: flex;
- flex-direction: column;
- align-items: center;
- cursor: pointer;
-}
-
-.upload-label input {
- display: none;
-}
-
-.upload-label img {
- width: 24px;
- opacity: 0.7;
-}
-
-.upload-label p {
- margin-top: 8px;
- font-size: 14px;
- color: #bbb;
-}
-
-     </style>
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/modern-ios.css" rel="stylesheet">
 </head>
 
 <body>
-    <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
+  <!-- Spinner Start -->
+  <div id="spinner"
+    class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+      <span class="sr-only">Loading...</span>
     </div>
-    <!-- Spinner End -->
+  </div>
+  <!-- Spinner End -->
 
 
-    <!-- NAVBAR -->
-  <div class="navbar" id="navbar">
-    <div class="nav-inner">
-      <a class="brand" href="index.html" aria-label="IInsilico Home">
-        <img src="img/1000472452-removebg-preview.png" alt="IInsilico logo" />
-      </a>
-      <div class="spacer"></div>
-      <button class="burger" id="burger" aria-label="Toggle menu">☰</button>
-      <nav class="nav-links" id="navLinks">
-        <a href="index.html" class="items">Home</a>
-        <a href="service.html" class="items">Services</a>
-        <a href="about.html" class="items">About</a>
-        <a id="ProfileSign" class="items" href="/register">Sign Up</a>
-        <a href="/Login" class="btn btn-primary" style="height: 40px;">Log In</a>
+  <!-- NAVBAR - Desktop -->
+  <nav class="navbar-custom glass" id="navbar">
+    <a class="brand" href="index.html">
+      <img src="img/1000472452-removebg-preview.png" alt="IInsilico logo" />
+    </a>
+    <div class="nav-links-desktop">
+      <a href="index.html">Home</a>
+      <a href="service.html">Services</a>
+      <a href="about.html">About</a>
+      <a id="ProfileSign" href="/register">Sign Up</a>
+      <a href="/Login" class="nav-btn">Log In</a>
+    </div>
+  </nav>
+
+  <!-- NAVBAR - Mobile/Tablet -->
+  <div class="mobile-nav glass">
+    <a href="index.html" class="mobile-nav-item">
+      <i class="bi bi-house-door"></i>
+      <span>Home</span>
+    </a>
+    <a href="service.html" class="mobile-nav-item active">
+      <i class="bi bi-grid"></i>
+      <span>Services</span>
+    </a>
+    <a href="about.html" class="mobile-nav-item">
+      <i class="bi bi-info-circle"></i>
+      <span>About</span>
+    </a>
+    <a href="Login.html" class="mobile-nav-item">
+      <i class="bi bi-person"></i>
+      <span>Account</span>
+    </a>
+  </div>
+
+  <!-- Page Header Start -->
+  <div class="container-fluid page-header py-5 mb-5">
+    <div class="container py-5">
+      <h1 class="display-3 text-white mb-3 animated slideInDown">3D Modeling</h1>
+      <nav aria-label="breadcrumb animated slideInDown">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+          <li class="breadcrumb-item text-white active" aria-current="page">3D Modeling </li>
+        </ol>
       </nav>
     </div>
   </div>
-
-    <!-- Page Header Start -->
-    <div class="container-fluid page-header py-5 mb-5">
-        <div class="container py-5">
-            <h1 class="display-3 text-white mb-3 animated slideInDown">3D Modeling</h1>
-            <nav aria-label="breadcrumb animated slideInDown">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
-                    <li class="breadcrumb-item text-white active" aria-current="page">3D Modeling </li>
-                </ol>
-            </nav>
+  <!-- Page Header End -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Login Required</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-    </div>
-    <!-- Page Header End -->
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Login Required</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>You must be logged in to submit this form. Please log in or register.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <a href="/login" class="btn btn-primary">Go to Login</a>
-                    <a href="/register" class="btn btn-outline-primary">Register</a>
-                </div>
-            </div>
+        <div class="modal-body">
+          <p>You must be logged in to submit this form. Please log in or register.</p>
         </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <a href="/login" class="btn btn-primary">Go to Login</a>
+          <a href="/register" class="btn btn-outline-primary">Register</a>
+        </div>
+      </div>
     </div>
-
-    <!-- Contact Start -->
-    <div class="container-fluid bg-light overflow-hidden px-lg-0" style="margin: 6rem 0;">
-        <div class="container contact px-lg-0">
-            <div class="row g-0 mx-lg-0">
-                <div class="col-lg-3 pe-lg-0" style="min-height: 400px;">
-                    <div class="position-relative h-100">
-                      
-                    </div>
-                </div>
-                <div class="col-lg-9 contact-text py-5 wow fadeIn" data-wow-delay="0.5s">
-                    <div class="p-lg-5 ps-lg-0">
-                        <h1 class="mb-4">3D Modeling </h1>
-                        <form action="/submit-contact" method="POST" enctype="multipart/form-data" id="mdForm">
-                            <input type="hidden" name="formType" value="3D Modelling">
-                            <div class="col-md-9">
-                                <div class="form-group">
-                                    <label for="options" >Type</label>
-                                    <select name="MoleculeType" id="options" class="form-control bg-white" required>
-                                      <option value="" disabled selected>Select your molecule</option>
-                                      <option value="Protein">protein</option>
-                                      <option value="Peptide">Peptide</option>
-                                      <option value="RNA">RNA</option>
-                                      <option value="DNA">DNA</option>
-                                      <option value="Other">Other</option>
-                                    </select>
-                                  </div>
-                        </div>
-                            <div class="col-9">
-                                <div class="form-floating">
-                                   <h5> Molecule Name</h5>
-                                    <input required name="MoleculeName" type="text" class="form-control" id="Study" placeholder="Study">  
-                                </div>
-                            </div>
-                            <div class="col-9">
-                                <div class="form-floating">
-                                   <h5>Your Favorite Application</h5>
-                                    <input required name="Application" type="text" class="form-control" id="App" placeholder="App">  
-                                </div>
-                            </div>
-
-                            <div class="row g-3">
-                                <div class="col-9">
-                                    <div class="form-floating">
-                                        <textarea name="Abstract" class="form-control" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
-                                        <label for="message">Abstract</label>
-                                    </div>
-                                </div>
-                                                                                          <!-- Price display box -->
-<div class="col-md-9">
-  <div id="priceDisplay" class="alert alert-info" style="display:none; margin-top:10px;">
-    Please select receptor and ligand to see the price.
   </div>
-</div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary py-3 px-5" type="submit">Submit</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-             
-            </div>
+
+  <!-- Contact Start -->
+  <div class="container-fluid bg-light overflow-hidden px-lg-0" style="margin: 6rem 0;">
+    <div class="container contact px-lg-0">
+      <div class="row g-0 mx-lg-0">
+        <div class="col-lg-3 pe-lg-0" style="min-height: 400px;">
+          <div class="position-relative h-100">
+
+          </div>
         </div>
+        <div class="col-lg-9 contact-text py-5 wow fadeIn" data-wow-delay="0.5s">
+          <div class="p-lg-5 ps-lg-0 glass-card glass" style="border-radius: 20px; padding: 40px !important;">
+            <h1 class="mb-4">3D Modeling </h1>
+            <form action="/submit-contact" method="POST" enctype="multipart/form-data" id="mdForm">
+              <input type="hidden" name="formType" value="3D Modelling">
+              <div class="col-md-9">
+                <div class="form-group">
+                  <label for="options">Type</label>
+                  <select name="MoleculeType" id="options" class="form-control bg-white" required>
+                    <option value="" disabled selected>Select your molecule</option>
+                    <option value="Protein">protein</option>
+                    <option value="Peptide">Peptide</option>
+                    <option value="RNA">RNA</option>
+                    <option value="DNA">DNA</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-9">
+                <div class="form-floating">
+                  <h5> Molecule Name</h5>
+                  <input required name="MoleculeName" type="text" class="form-control" id="Study" placeholder="Study">
+                </div>
+              </div>
+              <div class="col-9">
+                <div class="form-floating">
+                  <h5>Your Favorite Application</h5>
+                  <input required name="Application" type="text" class="form-control" id="App" placeholder="App">
+                </div>
+              </div>
+
+              <div class="row g-3">
+                <div class="col-9">
+                  <div class="form-floating">
+                    <textarea name="Abstract" class="form-control" placeholder="Leave a message here" id="message"
+                      style="height: 100px"></textarea>
+                    <label for="message">Abstract</label>
+                  </div>
+                </div>
+                <!-- Price display box -->
+                <div class="col-md-9">
+                  <div id="priceDisplay" class="alert alert-info" style="display:none; margin-top:10px;">
+                    Please select receptor and ligand to see the price.
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-primary py-3 px-5" type="submit">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
     </div>
-    <!-- Contact End -->
+  </div>
+  <!-- Contact End -->
 
 
-   
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner bg-dark">
-      <div class="fcol">
-        <h4>IInsilico</h4>
-        <p>Egypt</p>
-        <p>01555073127<br>01144299280</p>
-        <p>IInSilico@iinsilico.com</p>
+
+  <footer class="glass-footer glass">
+    <div class="container py-5">
+      <div class="row g-5">
+        <div class="col-lg-4 col-md-6">
+          <h4 class="text-primary mb-4 fw-bold">IInSilico</h4>
+          <p class="mb-4 text-muted">Science with a Smile. We are pioneers in bioinformatics, delivering high-quality
+            in-silico research solutions.</p>
+          <div class="d-flex pt-2">
+            <a class="btn btn-square btn-outline-primary rounded-circle me-2"
+              href="https://www.facebook.com/iinsilico"><i class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-square btn-outline-primary rounded-circle me-2"
+              href="https://www.linkedin.com/company/iinsilico/"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h5 class="text-dark mb-4 fw-bold">Services</h5>
+          <a class="btn btn-link" href="3d modeling.html">3D Modeling</a>
+          <a class="btn btn-link" href="Genomics.html">Genomics</a>
+          <a class="btn btn-link" href="molecular Docking.html">Docking</a>
+          <a class="btn btn-link" href="service.html">All Services</a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5 class="text-dark mb-4 fw-bold">Quick Links</h5>
+          <a class="btn btn-link" href="about.html">About Us</a>
+          <a class="btn btn-link" href="service.html">Services</a>
+          <a class="btn btn-link" href="terms.html">Terms & Condition</a>
+          <a class="btn btn-link" href="Login.html">Login</a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5 class="text-dark mb-4 fw-bold">Contact</h5>
+          <p class="text-muted"><i class="fa fa-map-marker-alt me-3 text-primary"></i>Egypt</p>
+          <p class="text-muted"><i class="fa fa-phone-alt me-3 text-primary"></i>01555073127</p>
+          <p class="text-muted"><i class="fa fa-envelope me-3 text-primary"></i>IInSilico@iinsilico.com</p>
+        </div>
       </div>
-      <div class="fcol">
-        <h4>Quick Links</h4>
-        <p><a href="about.html">About Us</a></p>
-        <p><a href="service.html">Our Services</a></p>
-        <p><a href="terms.html">Terms &amp; Conditions</a></p>
-      </div>
-      <div class="fcol">
-        <h4>Follow</h4>
-        <p><a href="https://www.facebook.com/iinsilico">Facebook</a></p>
-        <p><a href="https://www.linkedin.com/company/iinsilico/">LinkedIn</a></p>
-        <p style="margin-top:16px; color:var(--muted)">© i‑insilico [2025]. Science with a Smile.</p>
+    </div>
+    <div class="container-fluid copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0 text-muted">
+            &copy; <a href="#" class="text-primary">IInSilico</a>, All Right Reserved.
+          </div>
+          <div class="col-md-6 text-center text-md-end text-muted">
+            Designed By <a href="https://github.com/medoiiehab">Medo Ehab</a>
+          </div>
+        </div>
       </div>
     </div>
   </footer>
 
-   <script>
-        document.querySelector("form").addEventListener("submit", async function(event) {
-        event.preventDefault();
-        
-        // Check if user is logged in
-        try {
-            const authCheck = await fetch("/api/user-data");
-            if (authCheck.status === 401) {
-                // Show login modal
-                const modal = new bootstrap.Modal(document.getElementById('loginModal'));
-                modal.show();
-                return;
-            }
-            
-            // Proceed with form submission if logged in
-            const formData = new FormData(this);
-            
-            // For file uploads, use the original form submission
-            if (this.enctype === "multipart/form-data") {
-                const response = await fetch(this.action, {
-                    method: "POST",
-                    body: formData
-                });
-                
-                if (!response.ok) throw new Error('Submission failed');
-                const result = await response.text();
-                alert("Request submitted successfully!");
-            } 
-            // For JSON submissions
-            else {
-                const data = Object.fromEntries(formData.entries());
-                const response = await fetch("/submit-form", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(data)
-                });
-                
-                if (!response.ok) throw new Error('Submission failed');
-                const result = await response.json();
-                alert(result.message || "Request submitted successfully!");
-            }
-            
-            this.reset();
-        } catch (error) {
-            console.error("Error:", error);
-            alert("Submission failed. Please try again.");
+  <script>
+    document.querySelector("form").addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      // Check if user is logged in
+      try {
+        const authCheck = await fetch("/api/user-data");
+        if (authCheck.status === 401) {
+          // Show login modal
+          const modal = new bootstrap.Modal(document.getElementById('loginModal'));
+          modal.show();
+          return;
         }
+
+        // Proceed with form submission if logged in
+        const formData = new FormData(this);
+
+        // For file uploads, use the original form submission
+        if (this.enctype === "multipart/form-data") {
+          const response = await fetch(this.action, {
+            method: "POST",
+            body: formData
+          });
+
+          if (!response.ok) throw new Error('Submission failed');
+          const result = await response.text();
+          alert("Request submitted successfully!");
+        }
+        // For JSON submissions
+        else {
+          const data = Object.fromEntries(formData.entries());
+          const response = await fetch("/submit-form", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+          });
+
+          if (!response.ok) throw new Error('Submission failed');
+          const result = await response.json();
+          alert(result.message || "Request submitted successfully!");
+        }
+
+        this.reset();
+      } catch (error) {
+        console.error("Error:", error);
+        alert("Submission failed. Please try again.");
+      }
     });
-        </script>
-        <!-- the prices of the 3d modeling " modeling prices " -->
-        <script>
-async function loadModellingPrices() {
-  const response = await fetch("modelling_prices.json");
-  const prices = await response.json();
+  </script>
+  <!-- the prices of the 3d modeling " modeling prices " -->
+  <script>
+    async function loadModellingPrices() {
+      const response = await fetch("modelling_prices.json");
+      const prices = await response.json();
 
-  const molSelect = document.querySelector('select[name="MoleculeType"]');
-  const priceDisplay = document.getElementById("priceDisplay");
+      const molSelect = document.querySelector('select[name="MoleculeType"]');
+      const priceDisplay = document.getElementById("priceDisplay");
 
-  function updatePrice() {
-    const selected = molSelect.value;
-    if (!selected) {
-      priceDisplay.style.display = "block";
-      priceDisplay.innerHTML = "Please select a molecule type to see the price.";
-      return;
-    }
+      function updatePrice() {
+        const selected = molSelect.value;
+        if (!selected) {
+          priceDisplay.style.display = "block";
+          priceDisplay.innerHTML = "Please select a molecule type to see the price.";
+          return;
+        }
 
-    const entry = prices.find(item => item.MoleculeType.toLowerCase() === selected.toLowerCase());
+        const entry = prices.find(item => item.MoleculeType.toLowerCase() === selected.toLowerCase());
 
-    if (entry) {
-      priceDisplay.style.display = "block";
-      priceDisplay.innerHTML = `
+        if (entry) {
+          priceDisplay.style.display = "block";
+          priceDisplay.innerHTML = `
         <strong>Service:</strong> 3D Modelling of ${entry.MoleculeType}<br>
         <strong>Price:</strong> ${entry.Price} EGP
       `;
-    } else {
-      priceDisplay.style.display = "block";
-      priceDisplay.innerHTML = `<em>No price available for this selection</em>`;
+        } else {
+          priceDisplay.style.display = "block";
+          priceDisplay.innerHTML = `<em>No price available for this selection</em>`;
+        }
+      }
+
+      molSelect.addEventListener("change", updatePrice);
     }
-  }
 
-  molSelect.addEventListener("change", updatePrice);
-}
+    loadModellingPrices();
+  </script>
 
-loadModellingPrices();
-</script>
-
-        <script src="js/Authcode.js"></script>
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+  <!-- Template Javascript -->
+  <script src="js/Authcode.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/lightbox/js/lightbox.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/ui-init.js"></script>
 </body>
 
 </html>

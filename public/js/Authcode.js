@@ -1,37 +1,68 @@
- // Check authentication status and update button
-    function updateAuthButton() {
-        fetch('/api/check-auth')
-            .then(response => response.json())
-            .then(data => {
-                const loginBtn = document.querySelector('.navbar .btn-primary');
-                const signupLink = document.getElementById('ProfileSign');
+// Check authentication status and update buttons
+function updateAuthButton() {
+    fetch('/api/check-auth')
+        .then(response => response.json())
+        .then(data => {
+            // Desktop elements
+            const loginBtn = document.querySelector('.nav-btn');
+            const signupLink = document.getElementById('ProfileSign');
 
-                if (data.isAuthenticated) {
-                    loginBtn.innerHTML = '<i class="fa fa-sign-out-alt me-2"></i>Log Out';
+            // Mobile elements
+            const accountNavItem = document.querySelector('.mobile-nav-item:last-child');
+            const accountSpan = accountNavItem?.querySelector('span');
+            const accountIcon = accountNavItem?.querySelector('i');
+
+            if (data.isAuthenticated) {
+                // Desktop
+                if (loginBtn) {
+                    loginBtn.innerHTML = 'Log Out';
                     loginBtn.href = '/logout';
-                    signupLink.innerHTML = 'Profile';
-                    signupLink.href = '/dashboard'; 
-                } else {
-                    loginBtn.innerHTML = '<i class="fa fa-arrow-right me-2"></i>Log In';
-                    loginBtn.href = '/Login';
-                     signupLink.innerHTML = 'SignUp'; 
-                    signupLink.href = 'register.html';
                 }
-            })
-            .catch(error => console.error('Error checking auth status:', error));
-    }
+                if (signupLink) {
+                    signupLink.innerHTML = 'Dashboard';
+                    signupLink.href = '/dashboard';
+                }
 
-    // Run on page load
-    document.addEventListener('DOMContentLoaded', updateAuthButton);
+                // Mobile
+                if (accountSpan) accountSpan.innerHTML = 'Dashboard';
+                if (accountNavItem) accountNavItem.href = '/dashboard';
+                if (accountIcon) {
+                    accountIcon.classList.remove('bi-person');
+                    accountIcon.classList.add('bi-speedometer2');
+                }
+            } else {
+                // Desktop
+                if (loginBtn) {
+                    loginBtn.innerHTML = 'Log In';
+                    loginBtn.href = '/Login';
+                }
+                if (signupLink) {
+                    signupLink.innerHTML = 'Sign Up';
+                    signupLink.href = '/register';
+                }
 
+                // Mobile
+                if (accountSpan) accountSpan.innerHTML = 'Account';
+                if (accountNavItem) accountNavItem.href = '/Login';
+                if (accountIcon) {
+                    accountIcon.classList.remove('bi-speedometer2');
+                    accountIcon.classList.add('bi-person');
+                }
+            }
+        })
+        .catch(error => console.error('Error checking auth status:', error));
+}
 
-            // Mobile nav
+// Run on page load
+document.addEventListener('DOMContentLoaded', updateAuthButton);
+
+// Mobile Nav Helper
+document.addEventListener('DOMContentLoaded', () => {
     const burger = document.getElementById('burger');
     const navbar = document.getElementById('navbar');
-    burger?.addEventListener('click', ()=>{
-      navbar.classList.toggle('nav-open');
-    });
-
-    // Back to top
-    const btt = document.getElementById('backToTop');
-    btt.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
+    if (burger && navbar) {
+        burger.addEventListener('click', () => {
+            navbar.classList.toggle('nav-open');
+        });
+    }
+});
